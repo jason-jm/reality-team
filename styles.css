@@ -44,14 +44,11 @@ html {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: clip;
-  max-width: 100%;
 }
 
 body {
   margin: 0;
   overflow-x: clip;
-  max-width: 100%;
   line-height: 1.6;
 }
 

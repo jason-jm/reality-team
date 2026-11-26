@@ -818,21 +818,27 @@ function updateLightbox() {
   document.getElementById("lightboxNext").style.display = showNav ? "grid" : "none";
 }
 
-/* --- Scroll Reveal (Progressive + Hash-Safe) --- */
+/* --- Scroll Reveal (Progressive, Hash-Safe, Never Blocks Content) --- */
 let revealObserver = null;
 function sweepVisibleReveals() {
   const vh = window.innerHeight || 900;
   document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => {
     const rect = el.getBoundingClientRect();
-    if (rect.top < vh + 140) {
+    if (rect.top < vh + 240) {
       el.classList.add("is-visible");
     }
   });
 }
 
 function observeReveals() {
-  document.documentElement.classList.add("js-reveal");
   if (revealObserver) revealObserver.disconnect();
+  // If user jumped via hash anchor, show all sections immediately so nothing ever appears blank
+  if (window.location.hash) {
+    document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-visible"));
+    return;
+  }
+  sweepVisibleReveals();
+  document.documentElement.classList.add("js-reveal");
   revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -840,10 +846,9 @@ function observeReveals() {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.02, rootMargin: "120px 0px 120px 0px" });
+  }, { threshold: 0.01, rootMargin: "160px 0px 160px 0px" });
 
-  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
-  requestAnimationFrame(sweepVisibleReveals);
+  document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => revealObserver.observe(el));
 }
 
 /* --- Render Everything --- */
