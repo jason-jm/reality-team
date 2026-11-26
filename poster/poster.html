@@ -2,1075 +2,941 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>The Reality Team — Reality 全系 8 款空间生产力软件全景长图</title>
+  <title>Reality — Eight Native Spatial Apps · Editorial Monograph Poster</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
       width: 1280px;
-      background: #07090e;
-      color: #f6f7fb;
-      font-family: "SF Pro Display", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+      background: #fbfbf9;
+      color: #0a0b0d;
+      font-family: "SF Pro Display", "PingFang SC", "Hiragino Sans GB", -apple-system, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
-    .poster {
-      width: 1280px;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse 90% 600px at 50% 0%, rgba(56, 189, 248, 0.16), transparent 70%),
-        radial-gradient(ellipse 80% 700px at 85% 32%, rgba(139, 92, 246, 0.12), transparent 65%),
-        radial-gradient(ellipse 80% 700px at 15% 65%, rgba(37, 99, 235, 0.12), transparent 65%),
-        radial-gradient(ellipse 90% 600px at 50% 100%, rgba(216, 255, 91, 0.10), transparent 70%),
-        #07090e;
+    .mono {
+      font-family: "SF Mono", ui-monospace, monospace;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .grid-overlay {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 64px 64px;
-      pointer-events: none;
+    .serif {
+      font-family: Georgia, "Times New Roman", "Songti SC", serif;
+      font-style: italic;
+      font-weight: 400;
+      padding-right: 6px;
     }
 
-    .inner {
-      position: relative;
-      z-index: 2;
-      padding: 52px 56px 64px;
+    img { display: block; width: 100%; }
+
+    /* ================= BAND 1 · LUMINOUS GALLERY COVER ================= */
+    .band-cover {
+      background: #fbfbf9;
+      color: #0a0b0d;
+      padding: 56px 64px 72px;
     }
 
-    /* ================= HERO HEADER ================= */
-    .top-bar {
+    .coord {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding-bottom: 24px;
-      border-bottom: 1px solid rgba(255,255,255,0.10);
-      margin-bottom: 46px;
-      font-family: "SF Mono", ui-monospace, monospace;
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.68);
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(10,11,13,0.12);
+      color: rgba(10,11,13,0.45);
+      margin-bottom: 52px;
     }
 
-    .brand-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #ffffff;
+    .cover-h1 {
+      font-size: 76px;
       font-weight: 700;
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+      margin-bottom: 26px;
+    }
+    .cover-h1 .muted { color: rgba(10,11,13,0.34); font-weight: 600; }
+
+    .cover-lead {
+      max-width: 960px;
+      font-size: 20px;
+      line-height: 1.68;
+      color: rgba(10,11,13,0.68);
+      margin-bottom: 48px;
     }
 
-    .brand-grid {
-      width: 18px;
-      height: 18px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.5px;
-    }
-    .brand-grid span { border-radius: 2.5px; background: #fff; }
-    .brand-grid span:nth-child(2) { background: #60a5fa; }
-    .brand-grid span:nth-child(3) { background: #a78bfa; }
-    .brand-grid span:nth-child(4) { background: #d8ff5b; }
-
-    .hero-block {
-      position: relative;
-      text-align: center;
-      padding: 12px 0 42px;
-    }
-
-    .hero-watermark {
-      position: absolute;
-      top: -42px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 280px;
-      font-weight: 900;
-      letter-spacing: -0.06em;
-      color: rgba(255,255,255,0.035);
-      line-height: 1;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 18px;
-      border-radius: 999px;
-      background: rgba(216, 255, 91, 0.10);
-      border: 1px solid rgba(216, 255, 91, 0.30);
-      color: #d8ff5b;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.10em;
-      margin-bottom: 24px;
-    }
-
-    .hero-h1 {
-      font-size: 68px;
-      font-weight: 900;
-      line-height: 1.09;
-      letter-spacing: -0.035em;
-      color: #ffffff;
-      margin-bottom: 20px;
-    }
-
-    .hero-h1 .lime {
-      color: #d8ff5b;
-    }
-
-    .hero-sub {
-      max-width: 920px;
-      margin: 0 auto 38px;
-      font-size: 21px;
-      line-height: 1.65;
-      color: rgba(246, 247, 251, 0.76);
-      font-weight: 400;
-    }
-
-    /* 8-App Hero Dock */
-    .hero-dock {
+    /* Clean Architectural 8-Icon Row */
+    .icon-specimen {
       display: grid;
       grid-template-columns: repeat(8, 1fr);
-      gap: 12px;
-      padding: 18px 20px;
-      border-radius: 26px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.14);
-      box-shadow: 0 24px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.16);
-      margin-bottom: 28px;
+      gap: 14px;
+      padding: 28px 0;
+      border-top: 1px solid rgba(10,11,13,0.12);
+      border-bottom: 1px solid rgba(10,11,13,0.12);
+      margin-bottom: 36px;
     }
 
-    .hero-dock-item {
+    .spec-app {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 9px;
       text-align: center;
+      gap: 10px;
     }
 
-    .hero-dock-item img {
-      width: 72px;
-      height: 72px;
+    .spec-app img {
+      width: 74px;
+      height: 74px;
       border-radius: 18px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+      box-shadow: 0 12px 26px rgba(10,11,13,0.14);
     }
 
-    .hero-dock-item .d-name {
+    .spec-app .sn {
       font-size: 13px;
       font-weight: 700;
-      color: #ffffff;
+      letter-spacing: -0.015em;
+      color: #0a0b0d;
       line-height: 1.25;
     }
 
-    .hero-dock-item .d-role {
+    .spec-app .sr {
       font-size: 11px;
-      color: rgba(255,255,255,0.52);
+      color: rgba(10,11,13,0.48);
     }
 
-    .kpi-strip {
+    .cover-figures {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-bottom: 48px;
+      gap: 24px;
     }
 
-    .kpi-box {
-      padding: 18px 20px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.09);
-      text-align: center;
-    }
-
-    .kpi-num {
-      font-size: 32px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      color: #ffffff;
-      line-height: 1.1;
-      margin-bottom: 5px;
-    }
-
-    .kpi-num span { color: #d8ff5b; }
-
-    .kpi-label {
-      font-size: 13.5px;
-      color: rgba(255,255,255,0.62);
-    }
-
-    /* ================= SECTION DIVIDER ================= */
-    .sec-divider {
+    .fig-item {
       display: flex;
-      align-items: center;
-      gap: 16px;
-      margin: 12px 0 28px;
-      font-family: "SF Mono", ui-monospace, monospace;
-      font-size: 12.5px;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .fig-item strong {
+      font-size: 46px;
       font-weight: 700;
-      letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.50);
-      text-transform: uppercase;
-    }
-    .sec-divider::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.16), transparent);
+      letter-spacing: -0.045em;
+      line-height: 1;
     }
 
-    /* ================= 8 APP FLAGSHIP SLABS ================= */
-    .apps-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      margin-bottom: 48px;
+    .fig-item span {
+      font-size: 14px;
+      color: rgba(10,11,13,0.60);
     }
 
-    .app-slab {
-      position: relative;
-      border-radius: 28px;
-      padding: 28px 30px 26px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.025) 100%);
-      border: 1px solid rgba(255,255,255,0.12);
-      overflow: hidden;
-      box-shadow: 0 22px 54px rgba(0,0,0,0.42), inset 0 1px 0 rgba(255,255,255,0.12);
+    /* ================= BAND 2 · PITCH-BLACK PRO CREATIVE ================= */
+    .band-dark {
+      background: #000000;
+      color: #f5f5f7;
+      padding: 84px 64px 92px;
     }
 
-    .app-slab::before {
-      content: "";
-      position: absolute;
-      top: -90px;
-      right: -80px;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--glow), transparent 70%);
-      pointer-events: none;
+    .chap-eyebrow {
+      color: rgba(245,245,247,0.45);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .chap-eyebrow.light { color: rgba(10,11,13,0.44); }
+
+    .chap-h2 {
+      font-size: 56px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      margin-bottom: 64px;
     }
 
-    .slab-head {
-      position: relative;
-      z-index: 2;
+    .app-head {
+      display: grid;
+      grid-template-columns: 0.92fr 1.15fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .app-id {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 20px;
+      gap: 18px;
     }
 
-    .slab-title-group {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .slab-icon {
+    .app-id img {
       width: 62px;
       height: 62px;
-      border-radius: 16px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+      border-radius: 15px;
       flex-shrink: 0;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.5);
     }
 
-    .slab-kicker {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 4px;
+    .app-id.light img {
+      box-shadow: 0 12px 24px rgba(10,11,13,0.14);
     }
 
-    .slab-num {
-      font-family: "SF Mono", ui-monospace, monospace;
-      font-size: 13px;
+    .app-id h3 {
+      font-size: 36px;
       font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 0.08em;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+      margin-top: 4px;
     }
 
-    .slab-cat {
-      padding: 3px 10px;
+    .app-desc {
+      font-size: 16px;
+      line-height: 1.68;
+      color: rgba(245,245,247,0.72);
+    }
+
+    .app-desc.light { color: rgba(10,11,13,0.68); }
+
+    .full-frame {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #101216;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .full-frame.light {
+      border-color: rgba(10,11,13,0.10);
+      box-shadow: 0 24px 60px rgba(10,11,13,0.12);
+    }
+
+    .full-frame img { aspect-ratio: 16 / 10; object-fit: cover; }
+
+    .frame-cap {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      padding: 6px 14px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.72);
+      border: 1px solid rgba(255,255,255,0.16);
       font-size: 12px;
       font-weight: 600;
-      color: rgba(255,255,255,0.88);
-    }
-
-    .slab-name {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
       color: #ffffff;
-      line-height: 1.1;
     }
 
-    .slab-badge {
-      padding: 8px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.14);
-      font-size: 13px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.86);
-      white-space: nowrap;
-    }
-
-    .slab-tagline {
-      position: relative;
-      z-index: 2;
-      font-size: 18px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.92);
-      margin-bottom: 18px;
-      line-height: 1.45;
-    }
-
-    /* Dual-Screenshot Visual Layout */
-    .slab-visuals {
-      position: relative;
-      z-index: 2;
+    .bento-3 {
       display: grid;
-      grid-template-columns: 1.72fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 14px;
-      margin-bottom: 20px;
+    }
+
+    .bento-box {
+      padding: 26px 24px;
+      border-radius: 18px;
+      background: #101216;
+      border: 1px solid rgba(255,255,255,0.11);
+    }
+
+    .bento-box .big {
+      font-size: 46px;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+    .bento-box .big small {
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      margin-left: 5px;
+      letter-spacing: 0;
+    }
+
+    .bento-box h4 { font-size: 16px; font-weight: 700; margin-bottom: 7px; color: #fff; }
+    .bento-box p { font-size: 13.5px; line-height: 1.62; color: rgba(245,245,247,0.68); }
+
+    .rule-dark { border: none; border-top: 1px solid rgba(255,255,255,0.12); margin: 72px 0; }
+    .rule-light { border: none; border-top: 1px solid rgba(10,11,13,0.12); margin: 72px 0; }
+
+    /* Video Cinema Stack (Full Uncropped Timeline + 2-Up Color & Scopes) */
+    .duo-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .duo-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
       align-items: stretch;
     }
 
-    .shot-main {
-      position: relative;
+    .fig-card {
       border-radius: 18px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: #0d1017;
-      aspect-ratio: 16 / 10;
-    }
-
-    .shot-main img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .shot-tag {
-      position: absolute;
-      left: 12px;
-      bottom: 12px;
-      padding: 5px 11px;
-      border-radius: 999px;
-      background: rgba(7, 9, 14, 0.78);
-      border: 1px solid rgba(255,255,255,0.16);
-      font-size: 11.5px;
-      font-weight: 600;
-      color: #ffffff;
-    }
-
-    .shot-side-col {
+      background: #101216;
+      border: 1px solid rgba(255,255,255,0.12);
       display: flex;
       flex-direction: column;
-      gap: 14px;
     }
 
-    .shot-sub {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: #0d1017;
-      aspect-ratio: 16 / 10;
-      flex: none;
-    }
+    .fig-card.stretch img { width: 100%; height: auto; display: block; }
+    .duo-side .fig-card img { flex: 1; aspect-ratio: 16 / 10; object-fit: cover; background: #14161c; }
+    .duo-side .fig-card.scope-fit img { object-fit: contain; background: #d8dae0; }
 
-    .shot-sub img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .metric-box {
-      flex: 1;
-      border-radius: 16px;
-      padding: 16px 20px;
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(255,255,255,0.11);
+    .fig-foot {
+      padding: 12px 16px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 6px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: rgba(245,245,247,0.72);
+      background: #0b0d11;
+      border-top: 1px solid rgba(255,255,255,0.10);
     }
 
-    .metric-big {
-      font-size: 30px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      color: var(--accent);
-      line-height: 1.1;
-    }
-
-    .metric-desc {
-      font-size: 13.5px;
-      color: rgba(255,255,255,0.78);
-      line-height: 1.45;
-    }
-
-    /* 2x2 Highlights Grid */
-    .slab-highlights {
-      position: relative;
-      z-index: 2;
+    .hairline-4 {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px 16px;
-      margin-bottom: 18px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.12);
     }
 
-    .hl-item {
-      padding: 12px 15px;
-      border-radius: 13px;
-      background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(255,255,255,0.075);
-      font-size: 13.8px;
-      line-height: 1.55;
-      color: rgba(246,247,251,0.78);
-    }
-
-    .hl-item strong {
+    .hairline-4 .k {
+      font-family: "SF Mono", ui-monospace, monospace;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
       color: #ffffff;
-      font-weight: 700;
+      margin-bottom: 7px;
+      display: block;
     }
 
-    .hl-dot {
-      display: inline-block;
-      width: 7px;
-      height: 7px;
-      border-radius: 2px;
-      background: var(--accent);
-      margin-right: 8px;
-      vertical-align: 1px;
-    }
+    .hairline-4 p { font-size: 13px; line-height: 1.6; color: rgba(245,245,247,0.68); }
 
-    .slab-specs {
+    /* CAD Volumetric Spread */
+    .vol-hero {
       position: relative;
-      z-index: 2;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      margin-bottom: 16px;
+    }
+    .vol-hero img { aspect-ratio: 16 / 9; object-fit: cover; }
+    .vol-cap {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 40px 28px 22px;
+      background: linear-gradient(to top, rgba(0,0,0,0.84), transparent);
+    }
+    .vol-cap .mono { color: #38bdf8; display: block; margin-bottom: 5px; }
+    .vol-cap strong { font-size: 22px; color: #fff; font-weight: 600; }
+
+    .pair-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .cad-bar {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: center;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .cad-bar .cnt { font-size: 48px; font-weight: 700; letter-spacing: -0.05em; line-height: 1; }
+    .cad-bar .lbl { font-size: 13px; color: rgba(255,255,255,0.48); margin-left: 8px; }
+    .cad-bar .fmts { font-family: "SF Mono", ui-monospace, monospace; font-size: 12px; line-height: 1.75; color: rgba(245,245,247,0.70); }
+
+    /* ================= BAND 3 · DAYLIGHT GALLERY (OFFICE & NAS) ================= */
+    .band-warm {
+      background: #f3f2ee;
+      color: #0a0b0d;
+      padding: 84px 64px 92px;
+    }
+
+    .office-triptych {
+      display: grid;
+      grid-template-columns: 1.62fr 0.78fr;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+
+    .office-side { display: flex; flex-direction: column; gap: 16px; }
+    .office-side .full-frame { margin-bottom: 0; flex: 1; }
+    .office-side .full-frame img { height: 100%; }
+
+    .hairline-3-light {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(10,11,13,0.14);
+    }
+    .hairline-3-light h4 { font-size: 16px; font-weight: 700; margin-bottom: 7px; }
+    .hairline-3-light p { font-size: 13.5px; line-height: 1.65; color: rgba(10,11,13,0.68); }
+
+    /* Carved Obsidian Cinema Portal for NAS Player */
+    .nas-portal {
+      background: #090a0d;
+      border-radius: 24px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 14px;
+      margin-bottom: 22px;
+      box-shadow: 0 28px 70px rgba(10,11,13,0.18);
+    }
+    .nas-shot {
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+    }
+    .nas-shot img { aspect-ratio: 16 / 10; object-fit: cover; }
+
+    .proto-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .slab-pill {
-      padding: 5px 11px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.11);
+      justify-content: space-between;
+      gap: 10px 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(10,11,13,0.12);
       font-family: "SF Mono", ui-monospace, monospace;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 600;
-      color: rgba(255,255,255,0.85);
+      color: rgba(10,11,13,0.66);
     }
 
-    /* ================= SUMMARY TABLE ================= */
-    .summary-card {
-      border-radius: 26px;
-      background: #f5f4f0;
-      color: #0e1116;
-      padding: 32px 34px;
-      margin-bottom: 44px;
+    /* ================= BAND 4 · TITANIUM INFRASTRUCTURE ================= */
+    .band-titanium {
+      background: #0b0c0f;
+      color: #f5f5f7;
+      padding: 84px 64px 92px;
     }
 
-    .summary-head {
+    .transfer-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+    .transfer-grid .fig-card img {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .transfer-grid .fig-card.desktop-fit img {
+      object-fit: contain;
+      background: #15171c;
+    }
+
+    .unzip-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 22px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid rgba(14,17,22,0.10);
+      margin-bottom: 28px;
     }
 
-    .summary-kicker {
-      font-family: "SF Mono", ui-monospace, monospace;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      color: rgba(14,17,22,0.48);
-      margin-bottom: 6px;
+    .unzip-big {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
+    .unzip-big strong { font-size: 56px; font-weight: 700; letter-spacing: -0.05em; line-height: 1; }
+    .unzip-big span { font-size: 13px; line-height: 1.45; color: rgba(245,245,247,0.68); }
 
-    .summary-title {
-      font-size: 30px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-    }
-
-    .summary-pillars {
+    .trio-3 {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-bottom: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
     }
 
-    .pillar-box {
-      background: #ffffff;
-      border: 1px solid rgba(14,17,22,0.08);
-      border-radius: 16px;
-      padding: 16px;
+    /* ================= BAND 5 · SWISS MONOGRAPH TABLE ================= */
+    .band-table {
+      background: #fbfbf9;
+      color: #0a0b0d;
+      padding: 76px 64px 80px;
     }
 
-    .pillar-box .p-title {
-      font-size: 15px;
-      font-weight: 800;
-      margin-bottom: 5px;
-      color: #0e1116;
+    .tbl-head-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 28px;
     }
 
-    .pillar-box .p-desc {
-      font-size: 12.5px;
-      line-height: 1.5;
-      color: rgba(14,17,22,0.68);
+    .tbl-head-row h2 {
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -0.035em;
     }
 
-    .matrix-tbl {
+    .mono-tbl {
       width: 100%;
       border-collapse: collapse;
-      background: #ffffff;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(14,17,22,0.08);
+      border-top: 2px solid #0a0b0d;
     }
 
-    .matrix-tbl th {
+    .mono-tbl th {
       text-align: left;
-      padding: 12px 14px;
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: rgba(14,17,22,0.52);
-      background: #faf9f5;
-      border-bottom: 1px solid rgba(14,17,22,0.09);
+      padding: 14px 12px 14px 0;
+      font-family: "SF Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.10em;
+      color: rgba(10,11,13,0.45);
+      border-bottom: 1px solid rgba(10,11,13,0.16);
     }
 
-    .matrix-tbl td {
-      padding: 11px 14px;
-      font-size: 13px;
-      color: rgba(14,17,22,0.78);
-      border-bottom: 1px solid rgba(14,17,22,0.07);
+    .mono-tbl td {
+      padding: 14px 12px 14px 0;
+      font-size: 13.5px;
+      color: rgba(10,11,13,0.74);
+      border-bottom: 1px solid rgba(10,11,13,0.10);
       vertical-align: middle;
     }
 
-    .matrix-tbl tr:last-child td { border-bottom: none; }
-
-    .tbl-app {
+    .tbl-name {
       display: flex;
       align-items: center;
-      gap: 9px;
-      font-weight: 800;
-      color: #0e1116;
+      gap: 10px;
+      font-weight: 700;
+      color: #0a0b0d;
       white-space: nowrap;
     }
 
-    .tbl-app img {
-      width: 26px;
-      height: 26px;
+    .tbl-name img {
+      width: 28px;
+      height: 28px;
       border-radius: 7px;
     }
 
-    /* ================= GRAND FINALE ================= */
-    .finale {
-      border-radius: 30px;
-      padding: 44px 40px 40px;
-      background: linear-gradient(135deg, rgba(59,130,246,0.16), rgba(139,92,246,0.14) 55%, rgba(216,255,91,0.10));
-      border: 1px solid rgba(255,255,255,0.16);
+    /* ================= BAND 6 · PITCH-BLACK CLOSING MONOLITH ================= */
+    .band-finale {
+      background: #000000;
+      color: #ffffff;
+      padding: 84px 64px 72px;
       text-align: center;
     }
 
     .finale-icons {
-      display: flex;
-      justify-content: center;
+      display: inline-flex;
       gap: 16px;
-      margin-bottom: 26px;
+      margin-bottom: 36px;
     }
 
     .finale-icons img {
-      width: 66px;
-      height: 66px;
-      border-radius: 17px;
-      box-shadow: 0 12px 26px rgba(0,0,0,0.45);
-      border: 1px solid rgba(255,255,255,0.16);
+      width: 62px;
+      height: 62px;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.14);
     }
 
     .finale-h2 {
-      font-size: 44px;
-      font-weight: 900;
-      letter-spacing: -0.035em;
-      color: #ffffff;
-      margin-bottom: 12px;
+      font-size: 82px;
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      line-height: 1.0;
+      margin-bottom: 18px;
     }
-
-    .finale-h2 span { color: #d8ff5b; }
 
     .finale-sub {
       font-size: 18px;
-      color: rgba(255,255,255,0.80);
-      margin-bottom: 26px;
+      color: rgba(245,245,247,0.68);
+      margin-bottom: 34px;
     }
 
-    .finale-foot {
+    .finale-bar {
       display: inline-flex;
       align-items: center;
-      gap: 18px;
-      padding: 12px 24px;
+      gap: 16px;
+      padding: 12px 26px;
       border-radius: 999px;
-      background: rgba(7, 9, 14, 0.72);
-      border: 1px solid rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.22);
       font-family: "SF Mono", ui-monospace, monospace;
       font-size: 14px;
-      color: #ffffff;
+      color: rgba(255,255,255,0.88);
     }
 
-    .finale-foot .url {
-      color: #d8ff5b;
-      font-weight: 700;
-    }
+    .finale-bar strong { color: #ffffff; }
   </style>
 </head>
 <body>
   <div class="poster">
-    <div class="grid-overlay"></div>
-    <div class="inner">
-      <!-- Top Editorial Rule -->
-      <div class="top-bar">
-        <div class="brand-pill">
-          <span class="brand-grid"><span></span><span></span><span></span><span></span></span>
-          <span>THE REALITY TEAM</span>
-        </div>
+    <!-- ================ BAND 1 · LUMINOUS GALLERY COVER ================ -->
+    <section class="band-cover">
+      <div class="coord mono">
+        <span>THE REALITY TEAM</span>
         <span>PICO SPACE PRO · PICO OS 6</span>
-        <span>REALITY SUITE · 8 APPS</span>
+        <span>COLLECTION 01 — 08</span>
       </div>
 
-      <!-- Opening Hero -->
-      <header class="hero-block">
-        <div class="hero-watermark">08</div>
-        <div class="hero-tag">● REALITY SERIES · 全场景空间生产力矩阵</div>
-        <h1 class="hero-h1">
-          <span class="lime">8</span> 款原生空间应用，<br />把完整生产力搬进 PICO Space Pro
-        </h1>
-        <p class="hero-sub">
-          办公、专业修图、多轨剪辑、工业建模、NAS 影院、三端互传、解压缩与原生代理——全部基于 PICO SpatialUI 从零精雕，离线优先、零广告、真·桌面级实力。
-        </p>
+      <h1 class="cover-h1">
+        八款原生空间应用，<br />
+        <span class="muted">一座完整的数字工作室。</span>
+      </h1>
 
-        <!-- 8 App Icons Showcase Dock -->
-        <div class="hero-dock">
-          <div class="hero-dock-item"><img src="../assets/icons/office.png" alt="" /><div class="d-name">Reality Office</div><div class="d-role">空间办公</div></div>
-          <div class="hero-dock-item"><img src="../assets/icons/image.png" alt="" /><div class="d-name">Image Studio</div><div class="d-role">图层修图</div></div>
-          <div class="hero-dock-item"><img src="../assets/icons/video.png" alt="" /><div class="d-name">Video Editor</div><div class="d-role">影视剪辑</div></div>
-          <div class="hero-dock-item"><img src="../assets/icons/cad.png" alt="" /><div class="d-name">Reality CAD</div><div class="d-role">工业建模</div></div>
-          <div class="hero-dock-item"><img src="../assets/icons/nas.png" alt="" /><div class="d-name">NAS Player</div><div class="d-role">VR 影院</div></div>
-          <div class="hero-dock-item"><img src="../assets/icons/transfer.png" alt="" /><div class="d-name">File Transfer</div><div class="d-role">三端互传</div></div>
-          <div class="hero-dock-item"><img src="../assets/icons/unzip.png" alt="" /><div class="d-name">Reality Unzip</div><div class="d-role">解压缩</div></div>
-          <div class="hero-dock-item"><img src="../assets/icons/rocket.png" alt="" /><div class="d-name">Reality Rocket</div><div class="d-role">空间代理</div></div>
-        </div>
+      <p class="cover-lead">
+        从文档办公、Photoshop 级图层修图、离线多轨剪辑、空间工业建模，到 NAS 私人影院、三端极速互传、60+ 格式解压缩与原生代理引擎——全系基于 PICO SpatialUI 原生精雕，离线优先，零广告。
+      </p>
 
-        <div class="kpi-strip">
-          <div class="kpi-box"><div class="kpi-num">08<span>款</span></div><div class="kpi-label">全场景原生空间应用</div></div>
-          <div class="kpi-box"><div class="kpi-num">100<span>%</span></div><div class="kpi-label">PICO SpatialUI 原生设计</div></div>
-          <div class="kpi-box"><div class="kpi-num">26<span>语</span></div><div class="kpi-label">最高全球本地化含 RTL</div></div>
-          <div class="kpi-box"><div class="kpi-num">0<span>广告</span></div><div class="kpi-label">离线优先 · 数据完全归你</div></div>
-        </div>
-      </header>
+      <div class="icon-specimen">
+        <div class="spec-app"><img src="../assets/icons/office.png" /><div class="sn">Reality Office</div><div class="sr">01 · 办公套件</div></div>
+        <div class="spec-app"><img src="../assets/icons/image.png" /><div class="sn">Image Studio</div><div class="sr">02 · 图层修图</div></div>
+        <div class="spec-app"><img src="../assets/icons/video.png" /><div class="sn">Video Editor</div><div class="sr">03 · 影视剪辑</div></div>
+        <div class="spec-app"><img src="../assets/icons/cad.png" /><div class="sn">Reality CAD</div><div class="sr">04 · 工业建模</div></div>
+        <div class="spec-app"><img src="../assets/icons/nas.png" /><div class="sn">NAS Player</div><div class="sr">05 · VR 影院</div></div>
+        <div class="spec-app"><img src="../assets/icons/transfer.png" /><div class="sn">File Transfer</div><div class="sr">06 · 三端互传</div></div>
+        <div class="spec-app"><img src="../assets/icons/unzip.png" /><div class="sn">Reality Unzip</div><div class="sr">07 · 解压缩</div></div>
+        <div class="spec-app"><img src="../assets/icons/rocket.png" /><div class="sn">Reality Rocket</div><div class="sr">08 · 空间代理</div></div>
+      </div>
 
-      <div class="sec-divider">01 — 08 · REALITY SUITE PRODUCT SHOWCASE · 真实产品界面与核心亮点</div>
+      <div class="cover-figures">
+        <div class="fig-item"><strong>08</strong><span>款原生空间应用</span></div>
+        <div class="fig-item"><strong>100%</strong><span>PICO SpatialUI 原生</span></div>
+        <div class="fig-item"><strong>26</strong><span>最高多语言含 RTL</span></div>
+        <div class="fig-item"><strong>0</strong><span>广告 · 追踪 · 云端绑架</span></div>
+      </div>
+    </section>
 
-      <!-- 8 Flagship Product Slabs -->
-      <main class="apps-stack">
+    <!-- ================ BAND 2 · PITCH-BLACK PRO CREATIVE ================ -->
+    <section class="band-dark">
+      <span class="chap-eyebrow mono">CHAPTER I · PRO CREATIVE SUITE</span>
+      <h2 class="chap-h2">修图、剪辑、工业建模。<br /><span class="serif">Pro-grade</span> 创作，原生运行于头显。</h2>
 
-        <!-- 01 REALITY OFFICE -->
-        <section class="app-slab" style="--accent:#60A5FA;--glow:rgba(37,99,235,0.22);">
-          <div class="slab-head">
-            <div class="slab-title-group">
-              <img class="slab-icon" src="../assets/icons/office.png" alt="Reality Office" />
-              <div>
-                <div class="slab-kicker"><span class="slab-num">01 / 08</span><span class="slab-cat">空间办公套件</span></div>
-                <h2 class="slab-name">Reality Office</h2>
-              </div>
-            </div>
-            <div class="slab-badge">开源免费 · 零联网权限 · 18 语言</div>
-          </div>
-          <p class="slab-tagline">Pages 文档 · Sheets 表格 · Slides 演示三合一，支持空间多窗口并行与贴墙演示</p>
-          <div class="slab-visuals">
-            <div class="shot-main">
-              <img src="../assets/shots/office-1.webp" alt="Reality Office Slides" />
-              <span class="shot-tag">Slides · 演示文稿与空间上墙放映</span>
-            </div>
-            <div class="shot-side-col">
-              <div class="shot-sub">
-                <img src="../assets/shots/office-2.webp" alt="Reality Office Sheets" />
-                <span class="shot-tag">Sheets · 公式与条件格式</span>
-              </div>
-              <div class="metric-box">
-                <div class="metric-big">3 合 1 · 离线</div>
-                <div class="metric-desc">DOCX / XLSX / PPTX / ODT 原生读写 + 一键导出 PDF</div>
-              </div>
-            </div>
-          </div>
-          <div class="slab-highlights">
-            <div class="hl-item"><span class="hl-dot"></span><strong>空间多窗口对照</strong>：支持新窗口并行打开文档与表格，蓝牙键盘快捷键完备。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>Pages 修订审阅</strong>：大纲目录、脚注、修订追踪（Track Changes）、文档差异对比与批注。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>Sheets 公式分析</strong>：SUMIFS / XLOOKUP 跨表函数、单变量求解（Goal Seek）与图表。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>Slides 空间上墙</strong>：演讲者控制台 + Present on Wall 实景墙面放映，全套件零联网更安心。</div>
-          </div>
-          <div class="slab-specs">
-            <span class="slab-pill">DOCX / XLSX / PPTX</span><span class="slab-pill">ODT / ODS / ODP</span><span class="slab-pill">PDF Export</span><span class="slab-pill">Present on Wall</span><span class="slab-pill">18 Languages</span>
-          </div>
-        </section>
-
-        <!-- 02 REALITY IMAGE STUDIO -->
-        <section class="app-slab" style="--accent:#C084FC;--glow:rgba(168,85,247,0.22);">
-          <div class="slab-head">
-            <div class="slab-title-group">
-              <img class="slab-icon" src="../assets/icons/image.png" alt="Reality Image Studio" />
-              <div>
-                <div class="slab-kicker"><span class="slab-num">02 / 08</span><span class="slab-cat">专业图层修图</span></div>
-                <h2 class="slab-name">Reality Image Studio</h2>
-              </div>
-            </div>
-            <div class="slab-badge">Photoshop 级工作流 · 原生 PSD 读写</div>
-          </div>
-          <p class="slab-tagline">从零自研瓦片图像内核：27 混合模式、40 款实时滤镜与 3D 炸裂空间图层视图</p>
-          <div class="slab-visuals">
-            <div class="shot-main">
-              <img src="../assets/shots/image-1.webp" alt="Spatial Layer View" />
-              <span class="shot-tag">Spatial Layer View · 3D 空间图层景深展开</span>
-            </div>
-            <div class="shot-side-col">
-              <div class="shot-sub">
-                <img src="../assets/shots/image-2.webp" alt="Layers and Effects" />
-                <span class="shot-tag">图层样式 · 外发光与色盘面板</span>
-              </div>
-              <div class="metric-box">
-                <div class="metric-big">27 / 40 / 32</div>
-                <div class="metric-desc">27 种混合模式 · 40 款滤镜 · 32 款专业修图工具</div>
-              </div>
-            </div>
-          </div>
-          <div class="slab-highlights">
-            <div class="hl-item"><span class="hl-dot"></span><strong>Spatial Layer View</strong>：将图层沿 Z 轴实时炸裂展示在真实空间中，直观查看层叠结构。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>PSD 双向兼容</strong>：完整读写 Photoshop PSD 图层、嵌套组、蒙版、参考线与 27 种混合模式。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>Camera Raw 与液化</strong>：40 款滤镜 + 16 项无损调整，交互式曲线、色阶与 8 种实时图层样式。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>PatchMatch 内容识别</strong>：内置内容识别填充、污点修复画笔、自由变换透视与全历史回溯。</div>
-          </div>
-          <div class="slab-specs">
-            <span class="slab-pill">256px Tiled Engine</span><span class="slab-pill">Native PSD I/O</span><span class="slab-pill">Camera Raw</span><span class="slab-pill">Liquify</span><span class="slab-pill">PatchMatch Inpaint</span>
-          </div>
-        </section>
-
-        <!-- 03 REALITY VIDEO EDITOR -->
-        <section class="app-slab" style="--accent:#818CF8;--glow:rgba(79,70,229,0.24);">
-          <div class="slab-head">
-            <div class="slab-title-group">
-              <img class="slab-icon" src="../assets/icons/video.png" alt="Reality Video Editor" />
-              <div>
-                <div class="slab-kicker"><span class="slab-num">03 / 08</span><span class="slab-cat">离线多轨影视剪辑</span></div>
-                <h2 class="slab-name">Reality Video Editor</h2>
-              </div>
-            </div>
-            <div class="slab-badge">开源免费 · 16 轨非编 · FCPXML 1.10</div>
-          </div>
-          <p class="slab-tagline">头显端全流程后期：8 视频 + 8 音频多轨精剪、四色轮示波器调色与专业混音</p>
-          <div class="slab-visuals">
-            <div class="shot-main">
-              <img src="../assets/shots/video-1.webp" alt="Video Editor Timeline" />
-              <span class="shot-tag">多轨剪辑 · 双监看 + 底部精准步进拨轮</span>
-            </div>
-            <div class="shot-side-col">
-              <div class="shot-sub">
-                <img src="../assets/shots/video-2.webp" alt="Video Editor Color Grading" />
-                <span class="shot-tag">一级调色 · 四色轮与示波器</span>
-              </div>
-              <div class="metric-box">
-                <div class="metric-big">8V + 8A 轨</div>
-                <div class="metric-desc">四色轮 · 4 大示波器 · .cube LUT · LUFS 响度表</div>
-              </div>
-            </div>
-          </div>
-          <div class="slab-highlights">
-            <div class="hl-item"><span class="hl-dot"></span><strong>专业非编修剪</strong>：J/L-Cut 音画分剪、波纹/滚动/滑移修剪、匹配帧、关键帧与变速曲线。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>电影级调色台</strong>：Lift/Gamma/Gain/Offset 四色轮、波形/RGB 分量/矢量示波器与跟踪遮罩。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>广播级音频处理</strong>：四段参量 EQ、齿音消除、对白侧链闪避、混音总线与 LUFS 响度监测。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>多画幅与工程互通</strong>：16:9 / 9:16 竖屏裁切、SRT 多语字幕、H.264/H.265 及 FCPXML/EDL 交接。</div>
-          </div>
-          <div class="slab-specs">
-            <span class="slab-pill">8V + 8A Tracks</span><span class="slab-pill">RGB Parade & Wheels</span><span class="slab-pill">.cube LUT</span><span class="slab-pill">H.264 / H.265</span><span class="slab-pill">FCPXML 1.10 / EDL</span>
-          </div>
-        </section>
-
-        <!-- 04 REALITY CAD -->
-        <section class="app-slab" style="--accent:#38BDF8;--glow:rgba(14,165,233,0.24);">
-          <div class="slab-head">
-            <div class="slab-title-group">
-              <img class="slab-icon" src="../assets/icons/cad.png" alt="Reality CAD" />
-              <div>
-                <div class="slab-kicker"><span class="slab-num">04 / 08</span><span class="slab-cat">空间工业设计与 CAD</span></div>
-                <h2 class="slab-name">Reality CAD</h2>
-              </div>
-            </div>
-            <div class="slab-badge">52 种工业格式体系 · 空间悬浮转台</div>
-          </div>
-          <p class="slab-tagline">把 3D 零件请出屏幕：参数化特征树、斑马纹曲面诊断与真实空间 CMF 审阅</p>
-          <div class="slab-visuals">
-            <div class="shot-main">
-              <img src="../assets/shots/cad-1.webp" alt="Reality CAD Modeling" />
-              <span class="shot-tag">参数化建模 · 特征树、三维尺寸与实时抽壳</span>
-            </div>
-            <div class="shot-side-col">
-              <div class="shot-sub">
-                <img src="../assets/shots/cad-2.webp" alt="Reality CAD Space View" />
-                <span class="shot-tag">Space View · 悬浮空间转台与 CMF 材质面板</span>
-              </div>
-              <div class="metric-box">
-                <div class="metric-big">52 种格式</div>
-                <div class="metric-desc">SolidWorks / CATIA / Rhino / Creo / DXF 交付体系</div>
-              </div>
-            </div>
-          </div>
-          <div class="slab-highlights">
-            <div class="hl-item"><span class="hl-dot"></span><strong>Space View 空间转台</strong>：一键脱离平面窗框，把 3D 模型与立体尺寸悬浮摆放在桌面评审。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>参数化特征与装配</strong>：草图、拉伸、曲面放样、圆角、抽壳、拔模层级清晰，支持装配体拆解。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>G2 曲面质量诊断</strong>：实时切换着色、线框、斑马纹（Zebra）、曲率分析与剖切面，兼顾 2D DXF。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>工业级交付中心</strong>：内置导出队列、批量转换、交付记录与 5 大类 52 种 CAD 格式对照表。</div>
-          </div>
-          <div class="slab-specs">
-            <span class="slab-pill">52 CAD Formats</span><span class="slab-pill">Volumetric Space View</span><span class="slab-pill">Zebra & Curvature</span><span class="slab-pill">2D DXF</span><span class="slab-pill">Batch Delivery</span>
-          </div>
-        </section>
-
-        <!-- 05 REALITY NAS PLAYER -->
-        <section class="app-slab" style="--accent:#A78BFA;--glow:rgba(99,102,241,0.24);">
-          <div class="slab-head">
-            <div class="slab-title-group">
-              <img class="slab-icon" src="../assets/icons/nas.png" alt="Reality NAS Player" />
-              <div>
-                <div class="slab-kicker"><span class="slab-num">05 / 08</span><span class="slab-cat">NAS 海报墙与 VR 影院</span></div>
-                <h2 class="slab-name">Reality NAS Player</h2>
-              </div>
-            </div>
-            <div class="slab-badge">开源免费 · PICO / Mac / Win · 23 语言</div>
-          </div>
-          <p class="slab-tagline">免密钥智能刮削海报墙 + 4 大沉浸式 VR 影院 + 蓝光原盘与 180°/360° 全景播放</p>
-          <div class="slab-visuals">
-            <div class="shot-main">
-              <img src="../assets/shots/nas-1.webp" alt="Reality NAS Player Poster Wall" />
-              <span class="shot-tag">智能海报墙 · 电影 / 剧集 / 纪录片 / 动漫自动归档</span>
-            </div>
-            <div class="shot-side-col">
-              <div class="shot-sub">
-                <img src="../assets/shots/nas-2.webp" alt="Space Lounge VR Cinema" />
-                <span class="shot-tag">太空观景厅 · 4 大 VR 沉浸影院之一</span>
-              </div>
-              <div class="metric-box">
-                <div class="metric-big">4 大 VR 影院</div>
-                <div class="metric-desc">全协议 NAS 直连 · 免 API Key 刮削 · 蓝光 ISO/BDMV</div>
-              </div>
-            </div>
-          </div>
-          <div class="slab-highlights">
-            <div class="hl-item"><span class="hl-dot"></span><strong>免密钥精准刮削</strong>：融合公开片库、NeoDB、AniList、Bangumi 与 Kodi NFO，开箱即得精装海报墙。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>全协议 NAS 直连</strong>：原生支持 SMB / WebDAV / NFS / FTP / SFTP / DLNA 及 Jellyfin / Emby / Plex。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>原盘与无损音轨</strong>：直播 MKV / ISO / BDMV / VIDEO_TS，支持 ASS/PGS 特效字幕与 DTS / TrueHD。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>4 大影院 + 全景 3D</strong>：太空观景厅（5 座位）、私人影院、小镇广场、沙漠营地 + VR180/360° 立体。</div>
-          </div>
-          <div class="slab-specs">
-            <span class="slab-pill">SMB / WebDAV / NFS</span><span class="slab-pill">Jellyfin / Emby / Plex</span><span class="slab-pill">ISO / BDMV / DTS</span><span class="slab-pill">VR180 & 360°</span><span class="slab-pill">23 Locales</span>
-          </div>
-        </section>
-
-        <!-- 06 REALITY FILE TRANSFER -->
-        <section class="app-slab" style="--accent:#A855F7;--glow:rgba(124,58,237,0.24);">
-          <div class="slab-head">
-            <div class="slab-title-group">
-              <img class="slab-icon" src="../assets/icons/transfer.png" alt="Reality File Transfer" />
-              <div>
-                <div class="slab-kicker"><span class="slab-num">06 / 08</span><span class="slab-cat">三端极速局域网互传</span></div>
-                <h2 class="slab-name">Reality File Transfer</h2>
-              </div>
-            </div>
-            <div class="slab-badge">PICO ↔ Mac ↔ Windows · USB 优先</div>
-          </div>
-          <p class="slab-tagline">三端零云端局域网极速直传：USB 有线自动提速、拔线回落 Wi-Fi 断点续传</p>
-          <div class="slab-visuals">
-            <div class="shot-main">
-              <img src="../assets/shots/transfer-1.webp" alt="File Transfer PICO" />
-              <span class="shot-tag">PICO 端 · 分类文件视图与底部双悬浮发送栏</span>
-            </div>
-            <div class="shot-side-col">
-              <div class="shot-sub">
-                <img src="../assets/shots/transfer-3.webp" alt="File Transfer Desktop" />
-                <span class="shot-tag">桌面端 · 一键同时群发 3 台设备</span>
-              </div>
-              <div class="metric-box">
-                <div class="metric-big">USB → Wi-Fi</div>
-                <div class="metric-desc">有线优先 · 断网自动续传 · 整文件夹目录结构直传</div>
-              </div>
-            </div>
-          </div>
-          <div class="slab-highlights">
-            <div class="hl-item"><span class="hl-dot"></span><strong>三端自动发现互传</strong>：PICO、Mac、Windows 局域网免账号自动发现，零云端中转保护隐私。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>USB 优先 + 无感续传</strong>：插线自动走高速有线通道，拔线或断网后自动切回 Wi-Fi 从断点接着传。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>整文件夹与多台群发</strong>：完整保留嵌套子目录与修改时间，支持一次勾选同时发送给多台设备。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>即时内容缩略图</strong>：自动呈现视频画面、PDF 首页、Office 正文与代码预览，后台最小化静默接收。</div>
-          </div>
-          <div class="slab-specs">
-            <span class="slab-pill">PICO + Mac + Win</span><span class="slab-pill">USB-First</span><span class="slab-pill">Auto Resume</span><span class="slab-pill">SHA-256 Verified</span><span class="slab-pill">8 Languages</span>
-          </div>
-        </section>
-
-        <!-- 07 REALITY UNZIP -->
-        <section class="app-slab" style="--accent:#60A5FA;--glow:rgba(59,130,246,0.22);">
-          <div class="slab-head">
-            <div class="slab-title-group">
-              <img class="slab-icon" src="../assets/icons/unzip.png" alt="Reality Unzip" />
-              <div>
-                <div class="slab-kicker"><span class="slab-num">07 / 08</span><span class="slab-cat">60+ 格式空间解压缩</span></div>
-                <h2 class="slab-name">Reality Unzip</h2>
-              </div>
-            </div>
-            <div class="slab-badge">7-Zip 26.02 引擎 · 免解压看图搜索</div>
-          </div>
-          <p class="slab-tagline">内置原生 7-Zip 与流式压缩引擎：畅解 60+ 格式、包内直览相册与 SHA-256 校验</p>
-          <div class="slab-visuals">
-            <div class="shot-main">
-              <img src="../assets/shots/unzip-1.webp" alt="Reality Unzip Browser" />
-              <span class="shot-tag">归档浏览 · RAR5 分卷、AES ZIP、TAR.ZST / LZ4 / BR</span>
-            </div>
-            <div class="shot-side-col">
-              <div class="shot-sub">
-                <img src="../assets/shots/unzip-2.webp" alt="Reality Unzip Photo Album" />
-                <span class="shot-tag">免解压相册 · 包内看图与按需提取</span>
-              </div>
-              <div class="metric-box">
-                <div class="metric-big">60+ 格式</div>
-                <div class="metric-desc">7-Zip 26.02 · 15 种压缩输出 · SHA-256 清单校验</div>
-              </div>
-            </div>
-          </div>
-          <div class="slab-highlights">
-            <div class="hl-item"><span class="hl-dot"></span><strong>原生 7-Zip + 现代算法</strong>：全面支持 ZIP、7Z、RAR5 分卷、AES 加密及 ZST / LZ4 / Brotli 高速压缩。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>免解压直览与检索</strong>：无需铺满头显空间，直接在压缩包内浏览图片相册、搜文本/代码并精准提取。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>SHA-256 完整性审计</strong>：内置摘要计算与预期哈希核对、分卷缺失检测及解压前容量精准预警。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>逐字节冲突对比</strong>：同名冲突呈现逐字节差异与变更提示，源文件移动自动引导重关联。</div>
-          </div>
-          <div class="slab-specs">
-            <span class="slab-pill">7-Zip 26.02</span><span class="slab-pill">60+ Formats</span><span class="slab-pill">ZST / LZ4 / BR</span><span class="slab-pill">Zero-Extract Preview</span><span class="slab-pill">SHA-256 Verify</span>
-          </div>
-        </section>
-
-        <!-- 08 REALITY ROCKET -->
-        <section class="app-slab" style="--accent:#38BDF8;--glow:rgba(37,87,214,0.28);">
-          <div class="slab-head">
-            <div class="slab-title-group">
-              <img class="slab-icon" src="../assets/icons/rocket.png" alt="Reality Rocket" />
-              <div>
-                <div class="slab-kicker"><span class="slab-num">08 / 08</span><span class="slab-cat">原生空间网络代理</span></div>
-                <h2 class="slab-name">Reality Rocket</h2>
-              </div>
-            </div>
-            <div class="slab-badge">Mihomo v1.19.34 · 扫码推配置 · 26 语言</div>
-          </div>
-          <p class="slab-tagline">Clash Verge 内核 × Shadowrocket 诊断体验：手机扫码免打字推订阅与智能分流</p>
-          <div class="slab-visuals">
-            <div class="shot-main">
-              <img src="../assets/shots/rocket-1.webp" alt="Reality Rocket Dashboard" />
-              <span class="shot-tag">仪表盘 · 实时吞吐图表与一键全站连通性测速</span>
-            </div>
-            <div class="shot-side-col">
-              <div class="shot-sub">
-                <img src="../assets/shots/rocket-2.webp" alt="Reality Rocket Rules" />
-                <span class="shot-tag">分流规则 · 域名命中模拟与自定义覆写</span>
-              </div>
-              <div class="metric-box">
-                <div class="metric-big">26 种语言</div>
-                <div class="metric-desc">原生 arm64 Go 核心 · gVisor TUN · 含阿拉伯语 RTL</div>
-              </div>
-            </div>
-          </div>
-          <div class="slab-highlights">
-            <div class="hl-item"><span class="hl-dot"></span><strong>原生 Mihomo v1.19.34</strong>：arm64 NDK 编译 16KB 页对齐，支持 gVisor TUN、分应用代理与局域网直连绕过。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>手机扫码局域网推配置</strong>：内置一次性令牌二维码推送服务，头显免打字导入 YAML/VLESS/HY2/TUIC/WG。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>Shadowrocket 诊断面板</strong>：48 秒吞吐曲线、Google/Cloudflare/GitHub 等全站测速与 4 路实时 WebSocket 流。</div>
-            <div class="hl-item"><span class="hl-dot"></span><strong>规则模拟器与 GeoDB 热更</strong>：实时模拟域名分流策略、一键在线更新 GeoIP/GeoSite，完整适配 26 国语言。</div>
-          </div>
-          <div class="slab-specs">
-            <span class="slab-pill">Mihomo v1.19.34</span><span class="slab-pill">gVisor TUN</span><span class="slab-pill">QR LAN Push</span><span class="slab-pill">VLESS / HY2 / WG</span><span class="slab-pill">26 Locales + RTL</span>
-          </div>
-        </section>
-
-      </main>
-
-      <!-- Architectural Master Summary Card (Alabaster Contrast Block) -->
-      <section class="summary-card">
-        <div class="summary-head">
+      <!-- 02 IMAGE STUDIO -->
+      <div class="app-head">
+        <div class="app-id">
+          <img src="../assets/icons/image.png" />
           <div>
-            <div class="summary-kicker">MASTER CAPABILITY MATRIX · 全系技术总览</div>
-            <h2 class="summary-title">一套严苛的工程标准，贯穿 8 款空间软件</h2>
+            <div class="mono" style="color:#c084fc;">02 / 08 · PRO LAYERED IMAGING</div>
+            <h3>Reality Image Studio</h3>
           </div>
-          <span style="font-family:'SF Mono',monospace;font-size:12.5px;font-weight:700;padding:7px 14px;border-radius:999px;background:#0e1116;color:#fff;">PICO OS 6 · arm64-v8a</span>
         </div>
+        <p class="app-desc">把 Photoshop 级图层引擎带入混合现实：自研 256px 瓦片合成、原生 PSD 双向读写，更能将全部图层沿 Z 轴实时炸裂展开在真实空间中。</p>
+      </div>
 
-        <div class="summary-pillars">
-          <div class="pillar-box"><div class="p-title">原生 SpatialUI</div><div class="p-desc">磨砂玻璃窗口、浮条 Ornament、眼动凝视高亮全系一致。</div></div>
-          <div class="pillar-box"><div class="p-title">硬核自研内核</div><div class="p-desc">瓦片图像合成、16 轨非编、7-Zip 26、Mihomo 原生核心。</div></div>
-          <div class="pillar-box"><div class="p-title">离线隐私主权</div><div class="p-desc">零广告、零强制账号、数据留在本地与私有局域网。</div></div>
-          <div class="pillar-box"><div class="p-title">跨端与全球化</div><div class="p-desc">打通 PICO / Mac / Windows，最高适配 26 种界面语言。</div></div>
-        </div>
+      <div class="full-frame">
+        <img src="../assets/shots/image-1.webp" />
+        <span class="frame-cap">Spatial Layer View · 3D 空间图层景深展开</span>
+      </div>
 
-        <table class="matrix-tbl">
-          <thead>
-            <tr>
-              <th>产品名称</th>
-              <th>核心场景</th>
-              <th>标志性能力</th>
-              <th>支持格式 / 协议</th>
-              <th>跨端与语言</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><div class="tbl-app"><img src="../assets/icons/office.png" />Reality Office</div></td><td>空间办公</td><td>三合一离线办公 · 修订对比 · 贴墙演示</td><td>DOCX, XLSX, PPTX, ODT, PDF</td><td>PICO · 18 语</td></tr>
-            <tr><td><div class="tbl-app"><img src="../assets/icons/image.png" />Reality Image Studio</div></td><td>图层修图</td><td>27 混合 · 40 滤镜 · PatchMatch · 3D 图层</td><td>PSD, RIS, PNG, JPEG, WebP, HEIF</td><td>PICO · MIT 开源</td></tr>
-            <tr><td><div class="tbl-app"><img src="../assets/icons/video.png" />Reality Video Editor</div></td><td>影视剪辑</td><td>8V+8A 多轨 · 四色轮示波器 · LUFS 混音</td><td>H.264/265, .cube, SRT, FCPXML</td><td>PICO · 9 语</td></tr>
-            <tr><td><div class="tbl-app"><img src="../assets/icons/cad.png" />Reality CAD</div></td><td>工业建模</td><td>特征树 · 空间 3D 转台 · 斑马纹曲率</td><td>SolidWorks, CATIA, Rhino, DXF (52)</td><td>PICO · 空间 CAD</td></tr>
-            <tr><td><div class="tbl-app"><img src="../assets/icons/nas.png" />Reality NAS Player</div></td><td>NAS 影院</td><td>免密钥海报墙 · 4 大 VR 影院 · 全景立体</td><td>SMB, WebDAV, NFS, Plex, ISO, MKV</td><td>PICO/Mac/Win · 23 语</td></tr>
-            <tr><td><div class="tbl-app"><img src="../assets/icons/transfer.png" />Reality File Transfer</div></td><td>极速互传</td><td>USB 有线优先 · 断网续传 · 多设备群发</td><td>UDP 发现 + HTTP 传输 · 整目录</td><td>PICO/Mac/Win · 8 语</td></tr>
-            <tr><td><div class="tbl-app"><img src="../assets/icons/unzip.png" />Reality Unzip</div></td><td>解压缩</td><td>7-Zip 26.02 · 免解压看图 · SHA-256</td><td>ZIP, 7Z, RAR5, ZST, LZ4, BR (60+)</td><td>PICO · arm64 原生</td></tr>
-            <tr><td><div class="tbl-app"><img src="../assets/icons/rocket.png" />Reality Rocket</div></td><td>空间代理</td><td>Mihomo v1.19.34 · 扫码推配置 · 全站测速</td><td>YAML, VLESS, HY2, TUIC, WG, TUN</td><td>PICO · 26 语含 RTL</td></tr>
-          </tbody>
-        </table>
-      </section>
+      <div class="bento-3">
+        <div class="bento-box">
+          <div class="big">27<small>混合模式</small></div>
+          <h4>完整图层与原生 PSD 读写</h4>
+          <p>无限图层与嵌套图层组、蒙版、8 种实时图层样式，直接交换 Photoshop .psd 与参考线。</p>
+        </div>
+        <div class="bento-box">
+          <div class="big">40<small>款滤镜</small></div>
+          <h4>Camera Raw 与液化引擎</h4>
+          <p>40 款实时滤镜加 16 项无损调整，包含交互式 RGB 曲线、色阶、液化推拉与色彩查找表。</p>
+        </div>
+        <div class="bento-box">
+          <div class="big">32<small>款工具</small></div>
+          <h4>PatchMatch 内容识别填充</h4>
+          <p>多尺度 PatchMatch 修复、污点修复画笔、自由变换透视、标尺吸附与完整历史记录。</p>
+        </div>
+      </div>
 
-      <!-- Grand Finale: Return to All 8 Apps -->
-      <footer class="finale">
-        <div class="finale-icons">
-          <img src="../assets/icons/office.png" alt="" />
-          <img src="../assets/icons/image.png" alt="" />
-          <img src="../assets/icons/video.png" alt="" />
-          <img src="../assets/icons/cad.png" alt="" />
-          <img src="../assets/icons/nas.png" alt="" />
-          <img src="../assets/icons/transfer.png" alt="" />
-          <img src="../assets/icons/unzip.png" alt="" />
-          <img src="../assets/icons/rocket.png" alt="" />
+      <hr class="rule-dark" />
+
+      <!-- 03 VIDEO EDITOR -->
+      <div class="app-head">
+        <div class="app-id">
+          <img src="../assets/icons/video.png" />
+          <div>
+            <div class="mono" style="color:#60a5fa;">03 / 08 · OFFLINE SPATIAL NLE</div>
+            <h3>Reality Video Editor</h3>
+          </div>
         </div>
-        <h2 class="finale-h2"><span>8 APPS</span> · ONE REALITY</h2>
-        <p class="finale-sub">办公 · 修图 · 剪辑 · 建模 · 观影 · 互传 · 解压 · 网络 — 为 PICO Space Pro 而生</p>
-        <div class="finale-foot">
-          <span>THE REALITY TEAM</span>
-          <span>·</span>
-          <span class="url">jason-jm.github.io/reality-team</span>
+        <p class="app-desc">无需联网与账号的完整非编工作室。超宽双监看、16 轨精剪、四色轮与实时示波器，从粗剪到 H.265 成片或 FCPXML 1.10 工程交接一步到位。</p>
+      </div>
+
+      <div class="duo-grid">
+        <div class="fig-card stretch">
+          <img src="../assets/shots/video-1.webp" />
+          <div class="fig-foot"><span class="mono" style="color:rgba(255,255,255,0.45);">01 · TIMELINE</span><span>8V + 8A 多轨时间线 · 底部精准步进拨轮</span></div>
         </div>
-      </footer>
-    </div>
+        <div class="duo-side">
+          <div class="fig-card">
+            <img src="../assets/shots/video-2.webp" />
+            <div class="fig-foot"><span class="mono" style="color:rgba(255,255,255,0.45);">02 · COLOR</span><span>四色轮与节点调色</span></div>
+          </div>
+          <div class="fig-card scope-fit">
+            <img src="../assets/shots/video-3.webp" />
+            <div class="fig-foot"><span class="mono" style="color:rgba(255,255,255,0.45);">03 · SCOPES</span><span>实时 RGB 分量示波器</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hairline-4">
+        <div><span class="k">8V + 8A</span><p>多轨精剪，J/L-Cut、波纹/滑移修剪、双机位波形同步与变速曲线。</p></div>
+        <div><span class="k">4 SCOPES & LUT</span><p>四色轮、波形/RGB 分量/矢量示波器、.cube LUT 与跟踪遮罩。</p></div>
+        <div><span class="k">LUFS AUDIO</span><p>旁白直录、四段参量 EQ、齿音消除、对白闪避与综合响度表。</p></div>
+        <div><span class="k">FCPXML 1.10</span><p>16:9 / 9:16 竖屏裁切、SRT 多语字幕、H.264/265 与 EDL 互通。</p></div>
+      </div>
+
+      <hr class="rule-dark" />
+
+      <!-- 04 REALITY CAD -->
+      <div class="app-head">
+        <div class="app-id">
+          <img src="../assets/icons/cad.png" />
+          <div>
+            <div class="mono" style="color:#38bdf8;">04 / 08 · SPATIAL INDUSTRIAL DESIGN</div>
+            <h3>Reality CAD</h3>
+          </div>
+        </div>
+        <p class="app-desc">把工业模型请出平面屏幕。一键开启 Space View 空间转台，在真实桌面上审阅三维尺寸与 CMF 材质；切回工作台即可调整特征树与斑马纹曲面。</p>
+      </div>
+
+      <div class="vol-hero">
+        <img src="../assets/shots/cad-2.webp" />
+        <div class="vol-cap">
+          <span class="mono">VOLUMETRIC SPACE VIEW</span>
+          <strong>脱离窗框，把 1:1 三维原型直接放在眼前评审。</strong>
+        </div>
+      </div>
+
+      <div class="pair-2">
+        <div class="fig-card">
+          <img src="../assets/shots/cad-1.webp" />
+          <div class="fig-foot"><span class="mono" style="color:rgba(255,255,255,0.45);">PARAMETRIC TREE</span><span>特征树、三维尺寸与实时抽壳</span></div>
+        </div>
+        <div class="fig-card">
+          <img src="../assets/shots/cad-3.webp" />
+          <div class="fig-foot"><span class="mono" style="color:rgba(255,255,255,0.45);">ZEBRA & CURVATURE</span><span>实时斑马纹 G2 曲面连续性检测</span></div>
+        </div>
+      </div>
+
+      <div class="cad-bar">
+        <div><span class="cnt">52</span><span class="lbl">工业 CAD 格式体系</span></div>
+        <div class="fmts">SolidWorks (.sldprt / .sldasm) · CATIA V5 · PTC Creo · Siemens NX · Inventor & Fusion · Rhino (.3dm) · Alias · KeyShot · Revit · DWG / DXF · STEP / IGES · 批量转换与交付队列</div>
+      </div>
+    </section>
+
+    <!-- ================ BAND 3 · DAYLIGHT OFFICE & CINEMA ================ -->
+    <section class="band-warm">
+      <span class="chap-eyebrow light mono">CHAPTER II · OFFICE & CINEMA</span>
+      <h2 class="chap-h2" style="color:#0a0b0d;">白天专注办公，<br /><span class="serif">入夜</span>坐进环地轨道影院。</h2>
+
+      <!-- 01 REALITY OFFICE -->
+      <div class="app-head">
+        <div class="app-id light">
+          <img src="../assets/icons/office.png" />
+          <div>
+            <div class="mono" style="color:#2563eb;">01 / 08 · SPATIAL OFFICE SUITE</div>
+            <h3>Reality Office</h3>
+          </div>
+        </div>
+        <p class="app-desc light">Pages 文档、Sheets 表格、Slides 演示三合一。不申请 Android 联网权限，支持多窗口并排对照、18 种界面语言与 Present on Wall 实景贴墙演示。</p>
+      </div>
+
+      <div class="office-triptych">
+        <div class="full-frame light" style="margin-bottom:0;">
+          <img src="../assets/shots/office-1.webp" style="height:100%;" />
+          <span class="frame-cap">Slides · 演示文稿与空间上墙放映</span>
+        </div>
+        <div class="office-side">
+          <div class="full-frame light">
+            <img src="../assets/shots/office-2.webp" />
+            <span class="frame-cap">Sheets · 跨表公式与数据条</span>
+          </div>
+          <div class="full-frame light">
+            <img src="../assets/shots/office-3.webp" />
+            <span class="frame-cap">Pages · 长文排版与修订追踪</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hairline-3-light">
+        <div><h4>Pages · 专业审阅</h4><p>大纲目录、页眉页脚、脚注、Track Changes 修订追踪、文档差异对比与批注，原生读写 DOCX / ODT。</p></div>
+        <div><h4>Sheets · 公式与求解</h4><p>SUMIFS / XLOOKUP 跨表函数、Goal Seek 单变量反推求解、冻结窗格、条件格式与多类图表。</p></div>
+        <div><h4>Slides · 实景上墙</h4><p>独立演讲者控制台 + Present on Wall 墙面贴合放映，全套件支持一键导出 PDF 与物理键盘快捷键。</p></div>
+      </div>
+
+      <hr class="rule-light" />
+
+      <!-- 05 REALITY NAS PLAYER -->
+      <div class="app-head">
+        <div class="app-id light">
+          <img src="../assets/icons/nas.png" />
+          <div>
+            <div class="mono" style="color:#6366f1;">05 / 08 · NAS LIBRARY & VR CINEMA</div>
+            <h3>Reality NAS Player</h3>
+          </div>
+        </div>
+        <p class="app-desc light">免 API Key 自动刮削电影、剧集、纪录片与动漫海报墙，直连全协议 NAS 与媒体服务器，支持头显 + macOS + Windows 跨端与 23 种语言。</p>
+      </div>
+
+      <div class="nas-portal">
+        <div class="nas-shot">
+          <img src="../assets/shots/nas-2.webp" />
+          <span class="frame-cap">太空观景厅 · 4 大沉浸式 VR 影院之一</span>
+        </div>
+        <div class="nas-shot">
+          <img src="../assets/shots/nas-1.webp" />
+          <span class="frame-cap">免密钥自动刮削海报墙</span>
+        </div>
+      </div>
+
+      <div class="proto-row">
+        <span>SMB</span><span>WebDAV</span><span>NFS</span><span>FTP / SFTP</span><span>DLNA</span>
+        <span>Jellyfin</span><span>Emby</span><span>Plex</span><span>ISO / BDMV</span>
+        <span>DTS / TrueHD</span><span>ASS / PGS</span><span>VR180 & 360°</span>
+      </div>
+    </section>
+
+    <!-- ================ BAND 4 · TITANIUM CORE UTILITIES ================ -->
+    <section class="band-titanium">
+      <span class="chap-eyebrow mono">CHAPTER III · CORE INFRASTRUCTURE</span>
+      <h2 class="chap-h2">互联、归档、网络。<br /><span style="color:rgba(245,245,247,0.40);">把每一件高频小事做到工业级。</span></h2>
+
+      <!-- 06 FILE TRANSFER -->
+      <div class="app-head">
+        <div class="app-id">
+          <img src="../assets/icons/transfer.png" />
+          <div>
+            <div class="mono" style="color:#a78bfa;">06 / 08 · CROSS-DEVICE LAN TRANSFER</div>
+            <h3>Reality File Transfer</h3>
+          </div>
+        </div>
+        <p class="app-desc">PICO ↔ Mac ↔ Windows 三端零云端直传。UDP 自动发现、整文件夹目录保留、一发多台；USB 插线自动提速，拔线无感回落 Wi-Fi 断点续传。</p>
+      </div>
+
+      <div class="transfer-grid">
+        <div class="fig-card stretch">
+          <img src="../assets/shots/transfer-1.webp" />
+          <div class="fig-foot"><span class="mono" style="color:rgba(255,255,255,0.45);">PICO SPACE PRO</span><span>分类文件网格 · 双悬浮发送浮条</span></div>
+        </div>
+        <div class="fig-card stretch desktop-fit">
+          <img src="../assets/shots/transfer-3.webp" />
+          <div class="fig-foot"><span class="mono" style="color:rgba(255,255,255,0.45);">macOS / WINDOWS</span><span>桌面端一键同时群发 3 台设备</span></div>
+        </div>
+      </div>
+
+      <div class="hairline-4">
+        <div><span class="k">USB → WI-FI</span><p>插线优先走高速有线通道，拔线 20 秒内自动切回 Wi-Fi 续传。</p></div>
+        <div><span class="k">3 PLATFORMS</span><p>原生覆盖 PICO OS 6、macOS（ARM/Intel）与 Windows，零云端账号。</p></div>
+        <div><span class="k">FOLDER TREES</span><p>完整保留嵌套目录结构与修改时间，支持 SHA-256 逐字节一致校验。</p></div>
+        <div><span class="k">LIVE THUMBS</span><p>即时预览视频、PDF 首页、Office 正文与代码，8 种语言即切即生效。</p></div>
+      </div>
+
+      <hr class="rule-dark" />
+
+      <!-- 07 UNZIP -->
+      <div class="unzip-top">
+        <div class="app-id">
+          <img src="../assets/icons/unzip.png" />
+          <div>
+            <div class="mono" style="color:#60a5fa;">07 / 08 · NATIVE 7-ZIP ARCHIVE ENGINE</div>
+            <h3>Reality Unzip</h3>
+          </div>
+        </div>
+        <div class="unzip-big">
+          <strong>60+</strong>
+          <span>原生支持归档格式<br />7-Zip 26.02 + ZST / LZ4 / BR</span>
+        </div>
+      </div>
+
+      <div class="trio-3">
+        <div class="fig-card">
+          <img src="../assets/shots/unzip-1.webp" />
+          <div class="fig-foot"><span class="mono" style="color:rgba(255,255,255,0.45);">01 · BROWSER</span><span>RAR5 分卷 / ZST / LZ4 / BR</span></div>
+        </div>
+        <div class="fig-card">
+          <img src="../assets/shots/unzip-2.webp" />
+          <div class="fig-foot"><span class="mono" style="color:rgba(255,255,255,0.45);">02 · PREVIEW</span><span>免解压直览图册与按需提取</span></div>
+        </div>
+        <div class="fig-card">
+          <img src="../assets/shots/unzip-3.webp" />
+          <div class="fig-foot"><span class="mono" style="color:rgba(255,255,255,0.45);">03 · VERIFY</span><span>SHA-256 校验与逐字节对比</span></div>
+        </div>
+      </div>
+
+      <hr class="rule-dark" />
+
+      <!-- 08 ROCKET -->
+      <div class="app-head">
+        <div class="app-id">
+          <img src="../assets/icons/rocket.png" />
+          <div>
+            <div class="mono" style="color:#38bdf8;">08 / 08 · NATIVE MIHOMO SPATIAL VPN</div>
+            <h3>Reality Rocket</h3>
+          </div>
+        </div>
+        <p class="app-desc">Clash Verge 内核 × Shadowrocket 诊断体验。内置原生 arm64 Mihomo v1.19.34 核心与手机扫码局域网推配置，在头显里告别输入超长订阅链接。</p>
+      </div>
+
+      <div class="pair-2">
+        <div class="fig-card">
+          <img src="../assets/shots/rocket-1.webp" />
+          <div class="fig-foot"><span class="mono" style="color:rgba(255,255,255,0.45);">DASHBOARD</span><span>实时吞吐曲线与一键全站连通测速</span></div>
+        </div>
+        <div class="fig-card">
+          <img src="../assets/shots/rocket-2.webp" />
+          <div class="fig-foot"><span class="mono" style="color:rgba(255,255,255,0.45);">RULE ENGINE</span><span>分流规则检索与域名命中模拟器</span></div>
+        </div>
+      </div>
+
+      <div class="hairline-4">
+        <div><span class="k">MIHOMO v1.19.34</span><p>NDK 27 arm64 16KB 页对齐编译，gVisor TUN + 局域网直连绕过。</p></div>
+        <div><span class="k">QR LAN PUSH</span><p>手机扫码推送 Clash YAML 与 VLESS / VMess / Trojan / HY2 / TUIC / WG。</p></div>
+        <div><span class="k">TELEMETRY</span><p>48 秒吞吐图、全站测速与 4 路实时 WebSocket 流量/连接/日志流。</p></div>
+        <div><span class="k">26 LOCALES + RTL</span><p>内置离线 GeoIP/GeoSite 一键热更新，完整支持 26 国语言含阿拉伯语 RTL。</p></div>
+      </div>
+    </section>
+
+    <!-- ================ BAND 5 · SWISS TECHNICAL MONOGRAPH TABLE ================ -->
+    <section class="band-table">
+      <div class="tbl-head-row">
+        <div>
+          <span class="chap-eyebrow light mono">TECHNICAL MONOGRAPH · 01 — 08</span>
+          <h2>全系 8 款核心规格一览</h2>
+        </div>
+        <span class="mono" style="color:rgba(10,11,13,0.48);">PICO OS 6 · arm64-v8a</span>
+      </div>
+
+      <table class="mono-tbl">
+        <thead>
+          <tr><th>产品</th><th>领域</th><th>核心引擎与标志能力</th><th>格式 / 协议支持</th><th>平台与语言</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><div class="tbl-name"><img src="../assets/icons/office.png" />Reality Office</div></td><td>空间办公</td><td>三合一离线办公 · 修订对比 · Goal Seek · 贴墙放映</td><td class="mono" style="font-size:11px;letter-spacing:0;">DOCX, XLSX, PPTX, ODT, PDF</td><td>PICO · 18 语</td></tr>
+          <tr><td><div class="tbl-name"><img src="../assets/icons/image.png" />Reality Image Studio</div></td><td>图层修图</td><td>256px 瓦片 · 27 混合 · 40 滤镜 · PatchMatch · 3D 图层</td><td class="mono" style="font-size:11px;letter-spacing:0;">PSD, RIS, PNG, JPEG, WebP, HEIF</td><td>PICO · MIT 开源</td></tr>
+          <tr><td><div class="tbl-name"><img src="../assets/icons/video.png" />Reality Video Editor</div></td><td>影视剪辑</td><td>8V+8A 精剪 · 四色轮示波器 · LUFS 混音 · FCPXML</td><td class="mono" style="font-size:11px;letter-spacing:0;">H.264/265, .cube, SRT, FCPXML, EDL</td><td>PICO · 9 语</td></tr>
+          <tr><td><div class="tbl-name"><img src="../assets/icons/cad.png" />Reality CAD</div></td><td>工业建模</td><td>参数化特征树 · 空间 3D 转台 · 斑马纹曲率诊断</td><td class="mono" style="font-size:11px;letter-spacing:0;">SolidWorks, CATIA, Rhino, DXF (52)</td><td>PICO · 空间 CAD</td></tr>
+          <tr><td><div class="tbl-name"><img src="../assets/icons/nas.png" />Reality NAS Player</div></td><td>NAS 影院</td><td>免密钥海报墙 · 4 大 VR 影院 · 原盘 · VR180/360°</td><td class="mono" style="font-size:11px;letter-spacing:0;">SMB, WebDAV, NFS, Plex, ISO, DTS</td><td>PICO/Mac/Win · 23 语</td></tr>
+          <tr><td><div class="tbl-name"><img src="../assets/icons/transfer.png" />Reality File Transfer</div></td><td>极速互传</td><td>USB 有线优先 · 断网自动续传 · 整文件夹多台群发</td><td class="mono" style="font-size:11px;letter-spacing:0;">UDP 发现 + HTTP · 任意文件/目录</td><td>PICO/Mac/Win · 8 语</td></tr>
+          <tr><td><div class="tbl-name"><img src="../assets/icons/unzip.png" />Reality Unzip</div></td><td>解压缩</td><td>7-Zip 26.02 · 免解压看图/搜文本 · SHA-256 校验</td><td class="mono" style="font-size:11px;letter-spacing:0;">ZIP, 7Z, RAR5, ZST, LZ4, BR (60+)</td><td>PICO · arm64 原生</td></tr>
+          <tr><td><div class="tbl-name"><img src="../assets/icons/rocket.png" />Reality Rocket</div></td><td>空间代理</td><td>Mihomo v1.19.34 · 扫码推配置 · 全站测速 · 规则模拟</td><td class="mono" style="font-size:11px;letter-spacing:0;">YAML, VLESS, HY2, TUIC, WG, TUN</td><td>PICO · 26 语含 RTL</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ================ BAND 6 · PITCH-BLACK CLOSING MONOLITH ================ -->
+    <footer class="band-finale">
+      <div class="finale-icons">
+        <img src="../assets/icons/office.png" />
+        <img src="../assets/icons/image.png" />
+        <img src="../assets/icons/video.png" />
+        <img src="../assets/icons/cad.png" />
+        <img src="../assets/icons/nas.png" />
+        <img src="../assets/icons/transfer.png" />
+        <img src="../assets/icons/unzip.png" />
+        <img src="../assets/icons/rocket.png" />
+      </div>
+      <h2 class="finale-h2">Eight Apps. <span class="serif">One Reality.</span></h2>
+      <p class="finale-sub">办公 · 修图 · 剪辑 · 建模 · 观影 · 互传 · 解压 · 网络 — 八款原生空间软件齐聚 PICO Space Pro</p>
+      <div class="finale-bar">
+        <span>THE REALITY TEAM</span>
+        <span>·</span>
+        <strong>jason-jm.github.io/reality-team</strong>
+      </div>
+    </footer>
   </div>
 </body>
 </html>
