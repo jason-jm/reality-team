@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Reality Team — 八款原生空间生产力应用 · PICO Space Pro</title>
+  <meta name="description" content="The Reality Team 专为 PICO Space Pro 与 PICO OS 6 打造的 8 款原生空间生产力软件：Reality Office、Reality Image Studio、Reality Video Editor、Reality CAD、Reality NAS Player、Reality File Transfer、Reality Unzip、Reality Rocket。" />
+  <meta property="og:title" content="The Reality Team — Reality 全系 8 款空间生产力应用" />
+  <meta property="og:description" content="办公、修图、剪辑、工业建模、NAS 影院、三端互传、解压缩与智能代理——一站式重塑 PICO Space Pro 空间计算工作流。" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="assets/icons/rocket.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Top Navigation -->
+  <header class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="#top" class="brand-lockup" aria-label="The Reality Team">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </span>
+        <span class="brand-text">THE REALITY TEAM</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#matrix" data-i18n="nav.suite">全系 8 款</a>
+        <a href="#showcase" data-i18n="nav.deepdive">产品详解</a>
+        <a href="#specs" data-i18n="nav.architecture">技术参数</a>
+        <a href="#poster-section" data-i18n="nav.poster">分享长图</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch Language">
+          <span class="lang-opt active" data-lang="zh">中</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-opt" data-lang="en">EN</span>
+        </button>
+        <a href="https://github.com/jason-jm" target="_blank" rel="noopener noreferrer" class="nav-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-1.94c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.13v3.16c0 .31.21.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- =========================================================
+         ACT I · HERO — EIGHT APPS, ONE SPATIAL ECOSYSTEM
+    ========================================================== -->
+    <section class="hero" id="hero">
+      <div class="hero-ambient" id="heroAmbient" aria-hidden="true"></div>
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="hero-head">
+          <div class="eyebrow-pill">
+            <span class="pulse-dot"></span>
+            <span data-i18n="hero.eyebrow">THE REALITY TEAM · 专为 PICO SPACE PRO 与 PICO OS 6 打造</span>
+          </div>
+
+          <h1 class="hero-title" data-i18n-html="hero.title">
+            <span class="hero-num">8</span> 款原生空间应用，<br />一套完整生产力生态。
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            从文档办公、专业图层修图、离线多轨剪辑、空间工业建模，到 NAS 私人影院、三端极速互传、60+ 格式解压缩与原生代理引擎——全系基于 PICO SpatialUI 原生打造，离线优先、零广告、覆盖空间计算每一个高频场景。
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#matrix" class="btn-primary" data-i18n="hero.ctaExplore">探索全系 8 款软件</a>
+            <a href="#poster-section" class="btn-ghost" data-i18n="hero.ctaPoster">查看全景亮点长图</a>
+          </div>
+        </div>
+
+        <!-- Interactive Hero Spatial Stage + Real 8-App OS Dock -->
+        <div class="hero-stage-wrap">
+          <div class="spatial-stage" id="heroStage">
+            <div class="stage-chrome">
+              <div class="stage-app-meta">
+                <img id="stageIcon" src="assets/icons/office.png" alt="Reality Office" class="stage-icon" />
+                <div>
+                  <div class="stage-kicker" id="stageKicker">01 / 08 · 空间办公套件</div>
+                  <div class="stage-name" id="stageName">Reality Office</div>
+                </div>
+              </div>
+              <div class="stage-pills" id="stagePills"></div>
+              <a href="#app-office" class="stage-jump" id="stageJump" data-i18n="hero.stageJump">深入查看 →</a>
+            </div>
+
+            <div class="stage-viewport">
+              <img id="stageImg" src="assets/shots/office-1.webp" alt="Reality Office PICO OS 6 Interface" class="stage-img" />
+              <div class="stage-caption-bar">
+                <span id="stageTagline">Pages 文档 · Sheets 表格 · Slides 演示，纯离线多窗口办公</span>
+                <button type="button" class="stage-zoom-btn" id="stageZoomBtn" data-i18n="common.zoom">放大原图</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PICO OS 6 Inspired Floating 8-App Spatial Dock -->
+          <div class="spatial-dock-wrap">
+            <div class="dock-hint" data-i18n="hero.dockHint">点击下方任意图标，实时预览 8 款产品真实界面</div>
+            <div class="spatial-dock" id="heroDock" role="tablist" aria-label="Reality 8 Apps Dock"></div>
+          </div>
+        </div>
+
+        <!-- Suite Stats Strip -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-value">08</div>
+            <div class="stat-label" data-i18n="stats.apps">款原生空间应用</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">04</div>
+            <div class="stat-label" data-i18n="stats.pillars">大生产力场景全覆盖</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">100%</div>
+            <div class="stat-label" data-i18n="stats.native">PICO SpatialUI 原生体验</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">26</div>
+            <div class="stat-label" data-i18n="stats.langs">最高多语言本地化</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">0</div>
+            <div class="stat-label" data-i18n="stats.zero">广告 · 追踪 · 云端绑架</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ACT II · SUITE MATRIX (WARM ARCHITECTURAL ALABASTER)
+    ========================================================== -->
+    <section class="section-light matrix-section" id="matrix">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker" data-i18n="matrix.kicker">SUITE MATRIX · 01 — 08</div>
+          <div class="section-head-split">
+            <h2 class="section-title" data-i18n-html="matrix.title">全系八款，<br />覆盖空间工作每一环。</h2>
+            <p class="section-lead" data-i18n="matrix.lead">
+              不是零散的概念 Demo，而是彼此衔接的完整桌面级空间工作流：传输素材、解包归档、剪辑调色、精修设计、工业建模、文档演示、NAS 观影与全球高速网络，一台头显全部搞定。
+            </p>
+          </div>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="filter-bar reveal" id="categoryFilters" role="tablist">
+          <button class="filter-btn active" data-cat="all" data-i18n="filter.all">全部 8 款</button>
+          <button class="filter-btn" data-cat="creative" data-i18n="filter.creative">创意制作 (3)</button>
+          <button class="filter-btn" data-cat="office" data-i18n="filter.office">空间办公 (1)</button>
+          <button class="filter-btn" data-cat="media" data-i18n="filter.media">沉浸影音 (1)</button>
+          <button class="filter-btn" data-cat="utility" data-i18n="filter.utility">传输与工具 (3)</button>
+        </div>
+
+        <!-- 8-App Matrix Cards Grid -->
+        <div class="matrix-grid" id="matrixGrid"></div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ACT III · 8 FLAGSHIP PRODUCT DEEP-DIVE CHAPTERS
+    ========================================================== -->
+    <section id="showcase" class="showcase-root" aria-label="Product Deep Dives"></section>
+
+    <!-- =========================================================
+         ACT IV · ENGINEERING DNA & MASTER COMPARISON MATRIX
+    ========================================================== -->
+    <section class="section-light specs-section" id="specs">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker" data-i18n="dna.kicker">ENGINEERING PHILOSOPHY</div>
+          <div class="section-head-split">
+            <h2 class="section-title" data-i18n-html="dna.title">为什么是<br />Reality 系列？</h2>
+            <p class="section-lead" data-i18n="dna.lead">
+              八款软件共享同一套严苛的工程标准：原生磨砂玻璃材质、眼动凝视高亮反馈、自研底层计算核心，以及尊重隐私与数据主权的本地优先哲学。
+            </p>
+          </div>
+        </div>
+
+        <div class="dna-grid reveal">
+          <article class="dna-card">
+            <div class="dna-num">01</div>
+            <h3 data-i18n="dna.c1Title">原生 PICO SpatialUI</h3>
+            <p data-i18n="dna.c1Body">严格遵循 PICO OS 6 设计体系，统一悬浮磨砂玻璃窗口、工具 Ornament 浮条、Subwindow 侧栏与眼动凝视交互，毫无 2D 移植割裂感。</p>
+          </article>
+          <article class="dna-card">
+            <div class="dna-num">02</div>
+            <h3 data-i18n="dna.c2Title">硬核底层自研内核</h3>
+            <p data-i18n="dna.c2Body">256px 瓦片图像合成与 PatchMatch 修复、多轨非编与示波器、7-Zip 26.02 引擎、Mihomo v1.19.34 原生 arm64 Go 核心，一切为真实生产而写。</p>
+          </article>
+          <article class="dna-card">
+            <div class="dna-num">03</div>
+            <h3 data-i18n="dna.c3Title">离线优先 · 零广告</h3>
+            <p data-i18n="dna.c3Body">文档、素材与媒体库留在你自己的设备和局域网内。无需注册账号、无云端强制订阅、无弹窗广告，断网环境同样可靠运转。</p>
+          </article>
+          <article class="dna-card">
+            <div class="dna-num">04</div>
+            <h3 data-i18n="dna.c4Title">跨端协同与全球多语</h3>
+            <p data-i18n="dna.c4Body">NAS Player 与 File Transfer 原生打通 PICO + macOS + Windows；系列最高支持 26 种界面语言（含阿拉伯语 RTL），面向全球创作者。</p>
+          </article>
+        </div>
+
+        <!-- Master 8-App Technical Matrix Table -->
+        <div class="table-card reveal">
+          <div class="table-header">
+            <div>
+              <div class="table-kicker" data-i18n="table.kicker">TECHNICAL SPECIFICATION MATRIX</div>
+              <h3 class="table-title" data-i18n="table.title">全系 8 款核心规格一览</h3>
+            </div>
+            <span class="table-badge">PICO OS 6 · arm64-v8a</span>
+          </div>
+          <div class="table-scroll">
+            <table class="spec-table" id="specTable">
+              <thead>
+                <tr>
+                  <th data-i18n="table.colApp">产品</th>
+                  <th data-i18n="table.colCat">定位</th>
+                  <th data-i18n="table.colCore">核心亮点与引擎</th>
+                  <th data-i18n="table.colFormats">格式 / 协议支持</th>
+                  <th data-i18n="table.colPlatform">端侧与语言</th>
+                </tr>
+              </thead>
+              <tbody id="specTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ACT V · SHAREABLE LONG POSTER & GRAND 8-APP FINALE
+    ========================================================== -->
+    <section class="finale-section" id="poster-section">
+      <div class="finale-glow" aria-hidden="true"></div>
+      <div class="container">
+        <!-- Return to All 8 Apps Constellation -->
+        <div class="finale-head reveal">
+          <div class="eyebrow-pill">
+            <span class="pulse-dot"></span>
+            <span data-i18n="finale.eyebrow">EIGHT APPS · ONE REALITY</span>
+          </div>
+          <h2 class="finale-title" data-i18n-html="finale.title">
+            八款齐聚，<br />空间计算从此真正可用。
+          </h2>
+          <p class="finale-sub" data-i18n="finale.sub">
+            办公 · 修图 · 剪辑 · 建模 · 观影 · 互传 · 解压 · 网络 — The Reality Team 持续为 PICO Space Pro 构建下一代空间生产力基础设施。
+          </p>
+        </div>
+
+        <!-- All 8 Icons Celebration Wall -->
+        <div class="finale-icons-wall reveal" id="finaleIconsWall"></div>
+
+        <!-- Staggered 8 Real UI Filmstrip Mosaic -->
+        <div class="finale-mosaic reveal" id="finaleMosaic"></div>
+
+        <!-- Shareable Long Poster Showcase + Download Card -->
+        <div class="poster-promo-card reveal">
+          <div class="poster-promo-copy">
+            <div class="stage-kicker" data-i18n="poster.kicker">SHAREABLE INFOGRAPHIC · 高清全景长图</div>
+            <h3 data-i18n="poster.title">一图看懂 Reality 全系 8 款亮点</h3>
+            <p data-i18n="poster.desc">
+              专为微信、小红书、飞书与 X（Twitter）分享排版的高清视网膜长图，完整收录 8 款软件真实 PICO OS 6 界面、核心参数与全系亮点汇总。
+            </p>
+            <div class="poster-actions">
+              <a href="poster/reality-series-poster.png" download="Reality-Series-8-Apps-Poster.png" class="btn-primary" data-i18n="poster.downloadPng">
+                下载超清分享长图 (PNG)
+              </a>
+              <a href="poster/reality-series-poster.jpg" target="_blank" rel="noopener noreferrer" class="btn-ghost" data-i18n="poster.openNewTab">
+                新窗口预览长图 ↗
+              </a>
+            </div>
+          </div>
+          <div class="poster-preview-window" id="posterPreviewBox">
+            <img src="poster/reality-series-poster.jpg" alt="Reality Series All 8 Apps Long Infographic Poster" loading="lazy" />
+            <div class="poster-preview-fade">
+              <span data-i18n="poster.previewHint">点击查看大图</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand-lockup">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-text">THE REALITY TEAM</span>
+        </div>
+        <p class="footer-note" data-i18n="footer.note">为 PICO Space Pro 与空间计算时代打造的 8 款原生生产力软件。</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/jason-jm/RealityOffice" target="_blank" rel="noopener noreferrer">Reality Office</a>
+        <a href="https://github.com/jason-jm/reality-video-editor" target="_blank" rel="noopener noreferrer">Reality Video Editor</a>
+        <a href="https://github.com/jason-jm/reality-nas-player" target="_blank" rel="noopener noreferrer">Reality NAS Player</a>
+        <a href="https://github.com/jason-jm" target="_blank" rel="noopener noreferrer">GitHub @jason-jm</a>
+      </div>
+      <div class="footer-copy">© 2026 The Reality Team · Built for PICO OS 6</div>
+    </div>
+  </footer>
+
+  <!-- Full-Screen HD Image Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">✕</button>
+    <button class="lightbox-nav prev" id="lightboxPrev" type="button" aria-label="Previous">‹</button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImg" src="" alt="" />
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox-nav next" id="lightboxNext" type="button" aria-label="Next">›</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
