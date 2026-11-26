@@ -1,680 +1,506 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reality — Eight Native Spatial Apps by The Reality Team</title>
-  <meta name="description" content="The Reality Team 为 PICO Space Pro 打造的 8 款原生空间生产力软件：Reality Office、Reality Image Studio、Reality Video Editor、Reality CAD、Reality NAS Player、Reality File Transfer、Reality Unzip、Reality Rocket。" />
-  <meta property="og:title" content="The Reality Team — Reality 全系 8 款空间生产力软件" />
-  <meta property="og:description" content="八款原生空间应用，一座完整的数字工作室。专为 PICO Space Pro 与 PICO OS 6 打造。" />
-  <meta property="og:image" content="https://jason-jm.github.io/reality-team/poster/reality-series-poster.jpg" />
-  <link rel="icon" type="image/png" href="assets/icons/rocket.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reality 系列 · The Reality Team</title>
+<meta name="description" content="Reality Team 为 PICO Space Pro 打造的八款应用：文档表格演示、修图、视频剪辑、工业设计评审、NAS 观影、跨设备传文件、解压缩和网络代理。">
+<meta property="og:title" content="Reality 系列 · The Reality Team">
+<meta property="og:description" content="Reality Team 为 PICO Space Pro 打造的八款应用：文档表格演示、修图、视频剪辑、工业设计评审、NAS 观影、跨设备传文件、解压缩和网络代理。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://jason-jm.github.io/reality-team/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#07090D">
+<link rel="icon" href="assets/favicon.png">
+<link rel="alternate" hreflang="zh-CN" href="https://jason-jm.github.io/reality-team/">
+<link rel="alternate" hreflang="en" href="https://jason-jm.github.io/reality-team/en/">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <!-- Architectural Floating Header -->
-  <header class="nav" id="siteNav">
-    <div class="nav-inner">
-      <a href="#top" class="wordmark">
-        <span class="wordmark-main">Reality</span>
-        <span class="wordmark-sub">by The Reality Team</span>
-      </a>
-
-      <nav class="nav-menu" aria-label="Primary">
-        <a href="#index" data-i18n="nav.index">全系索引</a>
-        <a href="#creative" data-i18n="nav.creative">专业创作</a>
-        <a href="#workspace" data-i18n="nav.workspace">办公与影院</a>
-        <a href="#utilities" data-i18n="nav.utilities">效率核心</a>
-        <a href="#monograph" data-i18n="nav.specs">规格总览</a>
-      </nav>
-
-      <div class="nav-right">
-        <button class="lang-btn" id="langToggle" type="button" aria-label="Toggle Language">
-          <span class="lang-item active" data-lang="zh">中</span>
-          <span class="lang-slash">/</span>
-          <span class="lang-item" data-lang="en">EN</span>
-        </button>
-        <a href="https://github.com/jason-jm" target="_blank" rel="noopener noreferrer" class="nav-gh">
-          <span>GitHub</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-      </div>
+<a class="skip" href="#series">跳到正文</a>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Reality">
+      <span class="brand-mark" aria-hidden="true"><i style="--c:#2F63DC"></i><i style="--c:#18A4CE"></i><i style="--c:#7A45E8"></i><i style="--c:#5A6E86"></i><i style="--c:#E1354B"></i><i style="--c:#1CAE76"></i><i style="--c:#E79B12"></i><i style="--c:#4A5AE6"></i></span>
+      <span class="brand-name">Reality</span><span class="brand-by">The Reality Team</span>
+    </a>
+    <nav class="mini" aria-label="全部应用">
+      <a href="#office" data-app="office" title="Reality Office"><span class="icon xs" aria-hidden="true"><img src="assets/icons/office-bg.webp" alt="" class="l0"><img src="assets/icons/office-fg2.webp" alt="" class="l1"><img src="assets/icons/office-fg3.webp" alt="" class="l2"></span><span>Office</span></a><a href="#image" data-app="image" title="Reality Image Studio"><span class="icon xs" aria-hidden="true"><img src="assets/icons/image-bg.webp" alt="" class="l0"><img src="assets/icons/image-fg2.webp" alt="" class="l1"><img src="assets/icons/image-fg3.webp" alt="" class="l2"></span><span>Image Studio</span></a><a href="#video" data-app="video" title="Reality Video Editor"><span class="icon xs" aria-hidden="true"><img src="assets/icons/video-bg.webp" alt="" class="l0"><img src="assets/icons/video-fg2.webp" alt="" class="l1"><img src="assets/icons/video-fg3.webp" alt="" class="l2"></span><span>Video Editor</span></a><a href="#cad" data-app="cad" title="Reality CAD"><span class="icon xs" aria-hidden="true"><img src="assets/icons/cad-bg.webp" alt="" class="l0"><img src="assets/icons/cad-fg2.webp" alt="" class="l1"><img src="assets/icons/cad-fg3.webp" alt="" class="l2"></span><span>CAD</span></a><a href="#nas" data-app="nas" title="Reality NAS Player"><span class="icon xs" aria-hidden="true"><img src="assets/icons/nas-bg.webp" alt="" class="l0"><img src="assets/icons/nas-fg2.webp" alt="" class="l1"><img src="assets/icons/nas-fg3.webp" alt="" class="l2"></span><span>NAS Player</span></a><a href="#transfer" data-app="transfer" title="Reality File Transfer"><span class="icon xs" aria-hidden="true"><img src="assets/icons/transfer-bg.webp" alt="" class="l0"><img src="assets/icons/transfer-fg2.webp" alt="" class="l1"><img src="assets/icons/transfer-fg3.webp" alt="" class="l2"></span><span>File Transfer</span></a><a href="#unzip" data-app="unzip" title="Reality Unzip"><span class="icon xs" aria-hidden="true"><img src="assets/icons/unzip-bg.webp" alt="" class="l0"><img src="assets/icons/unzip-fg2.webp" alt="" class="l1"><img src="assets/icons/unzip-fg3.webp" alt="" class="l2"></span><span>Unzip</span></a><a href="#rocket" data-app="rocket" title="Reality Rocket"><span class="icon xs" aria-hidden="true"><img src="assets/icons/rocket-bg.webp" alt="" class="l0"><img src="assets/icons/rocket-fg2.webp" alt="" class="l1"><img src="assets/icons/rocket-fg3.webp" alt="" class="l2"></span><span>Rocket</span></a>
+    </nav>
+    <div class="nav-links">
+      <a href="#series">全部应用</a>
+      <a href="#download">下载</a>
+      <a class="lang" href="en/" hreflang="en">English</a>
     </div>
-  </header>
-
-  <main id="top">
-    <!-- ===============================================================
-         ACT I · LUMINOUS GALLERY HERO & INTERACTIVE 3D SPATIAL STAGE
-         Benchmarked against Apple Vision Pro + Swiss Architectural Grid
-    ================================================================ -->
-    <section class="hero">
-      <div class="wrap">
-        <div class="coord-bar">
-          <span>THE REALITY TEAM</span>
-          <span class="coord-mid">PICO SPACE PRO · OS 6</span>
-          <span>COLLECTION 01 — 08</span>
-        </div>
-
-        <div class="hero-copy">
-          <h1 class="hero-display" data-i18n-html="hero.title">
-            八款原生空间应用，<br />
-            <span class="muted">一座完整的数字工作室。</span>
-          </h1>
-          <div class="hero-subrow">
-            <p class="hero-lead" data-i18n="hero.lead">
-              从文档办公、Photoshop 级图层修图、离线多轨剪辑、空间工业建模，到 NAS 私人影院、三端极速互传、60+ 格式解压缩与原生代理引擎——全系基于 PICO SpatialUI 精雕细琢，离线优先，零广告。
-            </p>
-            <div class="hero-actions">
-              <a href="#index" class="action-solid" data-i18n="hero.ctaPrimary">浏览全系 8 款</a>
-              <a href="#poster" class="action-line" data-i18n="hero.ctaSecondary">高清分享长图 ↓</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Interactive 3D Spatial Carousel Stage (No boxy wrapper — floating in open gallery space) -->
-      <div class="spatial-theatre" id="spatialTheatre">
-        <div class="theatre-stage" id="theatreStage" aria-live="polite"></div>
-
-        <div class="wrap theatre-controls">
-          <div class="theatre-meta">
-            <span class="mono-num" id="heroNum">01 / 08</span>
-            <span class="theatre-title" id="heroAppName">Reality Office</span>
-            <span class="theatre-desc" id="heroAppLine">Pages 文档 · Sheets 表格 · Slides 演示，纯离线多窗口办公</span>
-          </div>
-          <div class="theatre-nav-btns">
-            <button type="button" class="circle-btn" id="heroPrev" aria-label="Previous App">←</button>
-            <button type="button" class="circle-btn" id="heroNext" aria-label="Next App">→</button>
-            <a href="#app-office" class="text-jump" id="heroDeepLink" data-i18n="common.explore">深入了解 ↗</a>
-          </div>
-        </div>
-
-        <!-- Tactile 8-Icon Floating Dock -->
-        <div class="wrap">
-          <div class="dock-rail" id="heroDock" role="tablist" aria-label="Switch Reality App"></div>
-        </div>
-      </div>
-
-      <!-- Architectural Figure Strip -->
-      <div class="wrap">
-        <div class="figure-strip">
-          <div class="figure-cell">
-            <span class="figure-val">08</span>
-            <span class="figure-lbl" data-i18n="stat.apps">款原生空间应用</span>
-          </div>
-          <div class="figure-cell">
-            <span class="figure-val">100%</span>
-            <span class="figure-lbl" data-i18n="stat.ui">PICO SpatialUI 原生构建</span>
-          </div>
-          <div class="figure-cell">
-            <span class="figure-val">26</span>
-            <span class="figure-lbl" data-i18n="stat.lang">最高多语言含 RTL 镜像</span>
-          </div>
-          <div class="figure-cell">
-            <span class="figure-val">0</span>
-            <span class="figure-lbl" data-i18n="stat.zero">广告 · 追踪 · 云端绑架</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===============================================================
-         ACT II · INTERACTIVE SWISS SPECIMEN INDEX (01 — 08)
-         Inspired by Teenage Engineering / Swiss Editorial Catalogue
-    ================================================================ -->
-    <section class="index-section" id="index">
-      <div class="wrap">
-        <div class="editorial-header">
-          <span class="eyebrow" data-i18n="index.eyebrow">00 / SUITE DIRECTORY</span>
-          <div class="editorial-split">
-            <h2 class="section-h2" data-i18n-html="index.title">不是零散工具，<br />是彼此咬合的八大拼图。</h2>
-            <p class="section-intro" data-i18n="index.intro">
-              用 File Transfer 把素材无线或有线传进头显，用 Unzip 免解压挑图，用 Video Editor 与 Image Studio 完成剪辑精修，用 CAD 审阅三维模型，用 Office 整理演示文档，夜晚坐进 NAS Player 的太空影院，全链路由 Reality Rocket 护航。
-            </p>
-          </div>
-        </div>
-
-        <div class="index-layout">
-          <div class="index-rows" id="indexRows"></div>
-          <aside class="index-preview-col" aria-hidden="true">
-            <div class="index-sticky-frame">
-              <div class="index-preview-media">
-                <img id="indexPreviewImg" src="assets/shots/office-1.webp" alt="" />
-              </div>
-              <div class="index-preview-foot">
-                <div class="index-preview-head">
-                  <img id="indexPreviewIcon" src="assets/icons/office.png" alt="" />
-                  <div>
-                    <div class="mono-sm" id="indexPreviewNum">01 / 08</div>
-                    <div class="index-preview-title" id="indexPreviewTitle">Reality Office</div>
-                  </div>
-                </div>
-                <p class="index-preview-copy" id="indexPreviewCopy"></p>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===============================================================
-         ACT III · PITCH-BLACK PRO CREATIVE STUDIO
-         02 Image Studio · 03 Video Editor · 04 Reality CAD
-         Benchmarked against Apple Pro Apps & Linear Dark Studio
-    ================================================================ -->
-    <section class="dark-theatre" id="creative">
-      <div class="wrap">
-        <div class="chapter-prelude">
-          <span class="eyebrow dark" data-i18n="creative.eyebrow">CHAPTER I · PRO CREATIVE SUITE</span>
-          <h2 class="prelude-h2" data-i18n-html="creative.title">
-            修图、剪辑、工业建模。<br />
-            <span class="serif-italic">Pro-grade</span> 创作，原生运行于头显。
-          </h2>
-        </div>
-
-        <!-- 02 · REALITY IMAGE STUDIO — Full-Bleed Centerpiece + Sculptural 3-Tile Bento -->
-        <article class="studio-feature" id="app-image">
-          <div class="feature-top">
-            <div class="feature-id">
-              <img src="assets/icons/image.png" alt="Reality Image Studio" class="app-badge-icon" />
-              <div>
-                <div class="mono-sm accent-orchid">02 / 08 · PRO LAYERED IMAGING</div>
-                <h3 class="feature-h3">Reality Image Studio</h3>
-              </div>
-            </div>
-            <p class="feature-lead" data-i18n="image.lead">
-              把 Photoshop 级图层引擎带入混合现实：自研 256px 瓦片合成、原生 PSD 双向读写，更能将全部图层沿 Z 轴实时炸裂展开在真实空间。
-            </p>
-          </div>
-
-          <div class="hero-media-stage" data-gallery="image">
-            <div class="media-canvas dark-canvas">
-              <img id="img-image" src="assets/shots/image-1.webp" alt="Reality Image Studio Spatial Layer View" />
-              <button class="expand-btn" data-zoom-app="image" type="button" aria-label="Zoom">⤢</button>
-            </div>
-            <div class="segmented-bar dark" data-tabs="image"></div>
-          </div>
-
-          <div class="bento-3 dark-bento">
-            <div class="bento-tile">
-              <div class="bento-metric">27<span class="unit">模式</span></div>
-              <h4 data-i18n="image.b1Title">完整图层与原生 PSD</h4>
-              <p data-i18n-html="image.b1Desc">无限像素、文字、形状与调整图层，嵌套图层组与蒙版、8 种实时图层样式，直接导入导出 Photoshop <code>.psd</code> 与工程参考线。</p>
-            </div>
-            <div class="bento-tile">
-              <div class="bento-metric">40<span class="unit">滤镜</span></div>
-              <h4 data-i18n="image.b2Title">Camera Raw 与液化引擎</h4>
-              <p data-i18n="image.b2Desc">40 款实时滤镜加 16 项无损调整，包含 Camera Raw、交互式 RGB 曲线、色阶、液化推拉与色彩查找表，拖拽即时预览、松手全分辨率精算。</p>
-            </div>
-            <div class="bento-tile">
-              <div class="bento-metric">32<span class="unit">工具</span></div>
-              <h4 data-i18n="image.b3Title">PatchMatch 内容识别</h4>
-              <p data-i18n="image.b3Desc">多尺度 PatchMatch 内容识别填充、污点修复画笔、自由变换透视、笔刷流量/硬度引擎与全历史记录回溯，纯离线流畅运行。</p>
-            </div>
-          </div>
-        </article>
-
-        <hr class="dark-rule" />
-
-        <!-- 03 · REALITY VIDEO EDITOR — Dual-Monitor Cinema Spread + Glowing Scopes -->
-        <article class="studio-feature" id="app-video">
-          <div class="feature-top">
-            <div class="feature-id">
-              <img src="assets/icons/video.png" alt="Reality Video Editor" class="app-badge-icon" />
-              <div>
-                <div class="mono-sm accent-sky">03 / 08 · OFFLINE SPATIAL NLE</div>
-                <h3 class="feature-h3">Reality Video Editor</h3>
-              </div>
-            </div>
-            <div class="feature-right-stack">
-              <p class="feature-lead" data-i18n="video.lead">
-                无需联网与账号的完整非编工作室。超宽双监看器、16 轨精剪、电影级四色轮与实时示波器，从粗剪到 H.265 成片或 FCPXML 工程交接一步到位。
-              </p>
-              <a href="https://github.com/jason-jm/reality-video-editor" target="_blank" rel="noopener noreferrer" class="dark-ext-link" data-i18n="common.viewGithub">查看开源仓库 ↗</a>
-            </div>
-          </div>
-
-          <div class="cinema-stack">
-            <figure class="cinema-card hero-wide" data-zoom-src="assets/shots/video-1.webp" data-zoom-cap="Reality Video Editor · 多轨时间线与精准步进拨轮">
-              <img src="assets/shots/video-1.webp" alt="Reality Video Editor Multitrack Timeline" loading="lazy" />
-              <figcaption>
-                <span class="mono-sm">01 · TIMELINE</span>
-                <span data-i18n="video.cap1">8 视频轨 + 8 音频轨 · J/L-Cut · 波纹/滑移修剪 · 步进拨轮</span>
-              </figcaption>
-            </figure>
-            <div class="cinema-pair-bottom">
-              <figure class="cinema-card" data-zoom-src="assets/shots/video-2.webp" data-zoom-cap="Reality Video Editor · 节点调色与四色轮">
-                <img src="assets/shots/video-2.webp" alt="Reality Video Editor Color Grading" loading="lazy" />
-                <figcaption>
-                  <span class="mono-sm">02 · COLOR NODES</span>
-                  <span data-i18n="video.cap2">Lift / Gamma / Gain / Offset 四色轮与 .cube LUT</span>
-                </figcaption>
-              </figure>
-              <figure class="cinema-card scope-card" data-zoom-src="assets/shots/video-3.webp" data-zoom-cap="Reality Video Editor · 实时 RGB 分量示波器">
-                <img src="assets/shots/video-3.webp" alt="Reality Video Editor RGB Parade Scopes" loading="lazy" />
-                <figcaption>
-                  <span class="mono-sm">03 · LIVE SCOPES</span>
-                  <span data-i18n="video.cap3">波形图 · RGB 分量 · 矢量示波器 · 直方图</span>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-
-          <div class="hairline-4 dark">
-            <div>
-              <span class="mono-key">8V + 8A</span>
-              <p data-i18n="video.s1">多轨视频与音频精剪，支持双机位波形同步、关键帧缩放与变速曲线。</p>
-            </div>
-            <div>
-              <span class="mono-key">COLOR & LUT</span>
-              <p data-i18n="video.s2">四色轮、四大专业示波器、跟踪窗口遮罩与多版本调色对比。</p>
-            </div>
-            <div>
-              <span class="mono-key">LUFS AUDIO</span>
-              <p data-i18n="video.s3">旁白直录、四段参量 EQ、齿音消除、人声闪避与广播级综合响度表。</p>
-            </div>
-            <div>
-              <span class="mono-key">FCPXML 1.10</span>
-              <p data-i18n="video.s4">16:9 / 9:16 竖屏多画幅、SRT 字幕烧录、H.264/H.265 及 EDL 工程互通。</p>
-            </div>
-          </div>
-        </article>
-
-        <hr class="dark-rule" />
-
-        <!-- 04 · REALITY CAD — Volumetric Space-View Full-Bleed Spread + Precision Pair -->
-        <article class="studio-feature" id="app-cad">
-          <div class="feature-top">
-            <div class="feature-id">
-              <img src="assets/icons/cad.png" alt="Reality CAD" class="app-badge-icon" />
-              <div>
-                <div class="mono-sm accent-cyan">04 / 08 · SPATIAL INDUSTRIAL DESIGN</div>
-                <h3 class="feature-h3">Reality CAD</h3>
-              </div>
-            </div>
-            <p class="feature-lead" data-i18n="cad.lead">
-              把工业模型请出平面屏幕。一键开启 Space View 空间转台，在真实桌面上审阅三维尺寸与 CMF 材质；切回工作台即可调整参数化特征树与斑马纹曲面连续性。
-            </p>
-          </div>
-
-          <!-- Full-bleed Volumetric Hero: Space View First! -->
-          <figure class="volumetric-hero" data-zoom-src="assets/shots/cad-2.webp" data-zoom-cap="Reality CAD · Space View 空间悬浮 3D 转台与分体 CMF 材质面板">
-            <img src="assets/shots/cad-2.webp" alt="Reality CAD Volumetric Space View" loading="lazy" />
-            <div class="volumetric-overlay">
-              <span class="mono-sm">VOLUMETRIC SPACE VIEW</span>
-              <strong data-i18n="cad.volTitle">脱离窗框，把 1:1 三维原型直接放在眼前评审。</strong>
-            </div>
-          </figure>
-
-          <div class="cad-pair">
-            <figure class="cinema-card" data-zoom-src="assets/shots/cad-1.webp" data-zoom-cap="Reality CAD · 参数化特征树与三维尺寸标注">
-              <img src="assets/shots/cad-1.webp" alt="Reality CAD Parametric Modeling" loading="lazy" />
-              <figcaption>
-                <span class="mono-sm">PARAMETRIC TREE</span>
-                <span data-i18n="cad.cap1">草图 · 拉伸 · 曲面放样 · 抽壳 · 拔模与装配体层级</span>
-              </figcaption>
-            </figure>
-            <figure class="cinema-card" data-zoom-src="assets/shots/cad-3.webp" data-zoom-cap="Reality CAD · 实时斑马纹 G2 曲面连续性分析">
-              <img src="assets/shots/cad-3.webp" alt="Reality CAD Zebra Analysis" loading="lazy" />
-              <figcaption>
-                <span class="mono-sm">ZEBRA & CURVATURE</span>
-                <span data-i18n="cad.cap2">实时斑马纹反射、曲率与剖切面诊断，兼顾 2D DXF 工程图</span>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="cad-formats-bar">
-            <div class="cad-big-count">
-              <span>52</span>
-              <small data-i18n="cad.fmtLabel">工业 CAD 格式体系</small>
-            </div>
-            <p class="cad-fmt-list">
-              SolidWorks (.sldprt / .sldasm) · CATIA V5 · PTC Creo · Siemens NX · Autodesk Inventor & Fusion · Rhino (.3dm) · Alias · KeyShot · Revit · DWG / DXF · STEP / IGES · 批量转换与交付队列
-            </p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ===============================================================
-         ACT IV · DAYLIGHT EDITORIAL GALLERY
-         01 Reality Office (Triptych) · 05 Reality NAS Player (Cinema Portal)
-    ================================================================ -->
-    <section class="light-gallery" id="workspace">
-      <div class="wrap">
-        <div class="chapter-prelude light">
-          <span class="eyebrow" data-i18n="workspace.eyebrow">CHAPTER II · OFFICE & CINEMA</span>
-          <h2 class="prelude-h2 dark-ink" data-i18n-html="workspace.title">
-            白天专注办公，<br />
-            <span class="serif-italic">入夜</span>坐进环地轨道影院。
-          </h2>
-        </div>
-
-        <!-- 01 · REALITY OFFICE — Interactive Editorial Triptych -->
-        <article class="gallery-feature" id="app-office">
-          <div class="feature-top light">
-            <div class="feature-id">
-              <img src="assets/icons/office.png" alt="Reality Office" class="app-badge-icon light-shadow" />
-              <div>
-                <div class="mono-sm accent-cobalt">01 / 08 · SPATIAL OFFICE SUITE</div>
-                <h3 class="feature-h3 dark-ink">Reality Office</h3>
-              </div>
-            </div>
-            <div class="feature-right-stack">
-              <p class="feature-lead dark-ink-muted" data-i18n="office.lead">
-                Pages 文档、Sheets 电子表格、Slides 演示文稿三合一。不申请 Android 联网权限，支持多窗口并排对照与 Present on Wall 实景贴墙演示。
-              </p>
-              <div class="inline-links">
-                <a href="https://github.com/jason-jm/RealityOffice" target="_blank" rel="noopener noreferrer" class="light-ext-link" data-i18n="common.viewGithub">GitHub 仓库 ↗</a>
-                <a href="https://github.com/jason-jm/RealityOffice/releases" target="_blank" rel="noopener noreferrer" class="light-ext-link subtle" data-i18n="common.downloadApk">下载 APK ↗</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="triptych-stage">
-            <div class="triptych-main" data-zoom-app="office">
-              <img id="img-office" src="assets/shots/office-1.webp" alt="Reality Office Interface" />
-              <button class="expand-btn" data-zoom-app="office" type="button" aria-label="Zoom">⤢</button>
-            </div>
-            <div class="triptych-cards" data-tabs="office"></div>
-          </div>
-
-          <div class="hairline-3 light">
-            <div>
-              <h4 data-i18n="office.c1T">Pages · 审阅与长文排版</h4>
-              <p data-i18n="office.c1D">大纲目录跳转、页眉页脚、脚注、Track Changes 修订模式、文档差异对比与线程批注，原生读写 DOCX / ODT。</p>
-            </div>
-            <div>
-              <h4 data-i18n="office.c2T">Sheets · 跨表公式与求解</h4>
-              <p data-i18n="office.c2D">内置 SUMIFS / XLOOKUP、Goal Seek 单变量反推求解、冻结行列、条件格式数据条与柱状/折线/饼图，兼容 XLSX / ODS / CSV。</p>
-            </div>
-            <div>
-              <h4 data-i18n="office.c3T">Slides · 实景墙面放映</h4>
-              <p data-i18n="office.c3D">独立演讲者控制台实时预览备注与下一页，Present on Wall 将幻灯片自然锚定在真实墙面，全套件 18 种语言支持一键导 PDF。</p>
-            </div>
-          </div>
-        </article>
-
-        <hr class="light-rule" />
-
-        <!-- 05 · REALITY NAS PLAYER — Carved Obsidian Cinema Portal Inside Daylight Page -->
-        <article class="gallery-feature" id="app-nas">
-          <div class="feature-top light">
-            <div class="feature-id">
-              <img src="assets/icons/nas.png" alt="Reality NAS Player" class="app-badge-icon light-shadow" />
-              <div>
-                <div class="mono-sm accent-violet">05 / 08 · NAS LIBRARY & VR CINEMA</div>
-                <h3 class="feature-h3 dark-ink">Reality NAS Player</h3>
-              </div>
-            </div>
-            <div class="feature-right-stack">
-              <p class="feature-lead dark-ink-muted" data-i18n="nas.lead">
-                扫描你的私有 NAS 与媒体服务器，免 API Key 自动匹配电影、剧集、纪录片与动漫海报墙，随时坐进四大沉浸式 VR 影院观影。
-              </p>
-              <div class="inline-links">
-                <a href="https://jason-jm.github.io/reality-nas-player/" target="_blank" rel="noopener noreferrer" class="light-ext-link" data-i18n="common.productSite">独立官网 ↗</a>
-                <a href="https://github.com/jason-jm/reality-nas-player" target="_blank" rel="noopener noreferrer" class="light-ext-link subtle" data-i18n="common.viewGithub">GitHub 仓库 ↗</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dramatic Full-Bleed Cinema Portal -->
-          <div class="cinema-portal">
-            <div class="portal-viewport">
-              <img id="img-nas" src="assets/shots/nas-2.webp" alt="Reality NAS Player Space Lounge VR Cinema" />
-              <button class="expand-btn" data-zoom-app="nas" type="button" aria-label="Zoom">⤢</button>
-            </div>
-            <div class="portal-bar">
-              <div class="segmented-bar dark" data-tabs="nas"></div>
-              <span class="portal-platforms">PICO OS 6 · macOS · Windows · 23 Languages</span>
-            </div>
-          </div>
-
-          <div class="protocol-marquee">
-            <span>SMB</span><span>WebDAV</span><span>NFS</span><span>FTP / SFTP</span><span>DLNA</span>
-            <span>Jellyfin</span><span>Emby</span><span>Plex</span><span>ISO / BDMV</span>
-            <span>DTS / TrueHD</span><span>ASS / PGS</span><span>VR180 / 360°</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ===============================================================
-         ACT V · PRECISION TITANIUM UTILITIES
-         06 Reality File Transfer · 07 Reality Unzip · 08 Reality Rocket
-         Benchmarked against Linear & Teenage Engineering Precision
-    ================================================================ -->
-    <section class="titanium-section" id="utilities">
-      <div class="wrap">
-        <div class="chapter-prelude">
-          <span class="eyebrow dark" data-i18n="util.eyebrow">CHAPTER III · CORE INFRASTRUCTURE</span>
-          <h2 class="prelude-h2" data-i18n-html="util.title">
-            互联、归档、网络。<br />
-            <span class="muted-dark">把每一件高频小事做到工业级。</span>
-          </h2>
-        </div>
-
-        <!-- 06 · REALITY FILE TRANSFER — Layered Cross-Device Bridge Composition -->
-        <article class="utility-block" id="app-transfer">
-          <div class="utility-split">
-            <div class="utility-copy">
-              <div class="feature-id compact">
-                <img src="assets/icons/transfer.png" alt="Reality File Transfer" class="app-badge-icon" />
-                <div>
-                  <div class="mono-sm accent-iris">06 / 08 · CROSS-DEVICE LAN TRANSFER</div>
-                  <h3 class="feature-h3">Reality File Transfer</h3>
-                </div>
-              </div>
-              <p class="utility-tagline" data-i18n="transfer.tagline">PICO ↔ Mac ↔ Windows 零云端极速互传</p>
-              <p class="utility-desc" data-i18n="transfer.desc">
-                同一局域网自动发现所有设备，支持整文件夹多级目录直传与一发多台。插上 USB 数据线自动切换高速有线通道，拔线 20 秒内无缝退回 Wi-Fi 从精确断点继续，SHA-256 逐字节校验。
-              </p>
-              <dl class="utility-dl">
-                <div><dt>ROUTING</dt><dd data-i18n="transfer.d1">USB 有线优先 · 断网自动续传</dd></div>
-                <div><dt>DEVICES</dt><dd data-i18n="transfer.d2">PICO OS 6 + macOS + Windows 三端原生</dd></div>
-                <div><dt>PREVIEWS</dt><dd data-i18n="transfer.d3">视频 / PDF / Office / 代码 / 压缩包即时缩略图</dd></div>
-                <div><dt>LOCALES</dt><dd data-i18n="transfer.d4">8 种界面语言 · 即切即生效</dd></div>
-              </dl>
-            </div>
-
-            <!-- Layered PICO + Desktop Dual Visual -->
-            <div class="bridge-visual">
-              <figure class="bridge-pico" data-zoom-src="assets/shots/transfer-1.webp" data-zoom-cap="Reality File Transfer · PICO 空间文件视图与双悬浮发送栏">
-                <img src="assets/shots/transfer-1.webp" alt="Reality File Transfer on PICO" loading="lazy" />
-                <span class="bridge-tag">PICO SPACE PRO</span>
-              </figure>
-              <figure class="bridge-desktop" data-zoom-src="assets/shots/transfer-3.webp" data-zoom-cap="Reality File Transfer · Mac / Windows 桌面端一键群发 3 台设备">
-                <img src="assets/shots/transfer-3.webp" alt="Reality File Transfer Desktop Client" loading="lazy" />
-                <span class="bridge-tag">macOS / WINDOWS DESKTOP</span>
-              </figure>
-            </div>
-          </div>
-        </article>
-
-        <hr class="dark-rule" />
-
-        <!-- 07 · REALITY UNZIP — Precision Filmstrip + Monumental 60+ Callout -->
-        <article class="utility-block" id="app-unzip">
-          <div class="utility-split reverse-copy-top">
-            <div class="unzip-header-row">
-              <div class="feature-id compact">
-                <img src="assets/icons/unzip.png" alt="Reality Unzip" class="app-badge-icon" />
-                <div>
-                  <div class="mono-sm accent-sky">07 / 08 · NATIVE 7-ZIP ARCHIVE ENGINE</div>
-                  <h3 class="feature-h3">Reality Unzip</h3>
-                </div>
-              </div>
-              <div class="unzip-stat-inline">
-                <span class="unzip-big">60+</span>
-                <span data-i18n-html="unzip.stat">原生支持归档格式<br />7-Zip 26.02 + ZST / LZ4 / BR</span>
-              </div>
-            </div>
-
-            <div class="unzip-trio">
-              <figure class="cinema-card" data-zoom-src="assets/shots/unzip-1.webp" data-zoom-cap="Reality Unzip · 原生浏览 RAR5 分卷、AES ZIP、TAR.ZST / BR / LZ4">
-                <img src="assets/shots/unzip-1.webp" alt="Reality Unzip Browser" loading="lazy" />
-                <figcaption><span class="mono-sm">01 · BROWSER</span><span data-i18n="unzip.c1">60+ 格式直读与 15 种格式打包</span></figcaption>
-              </figure>
-              <figure class="cinema-card" data-zoom-src="assets/shots/unzip-2.webp" data-zoom-cap="Reality Unzip · 压缩包内免解压相册预览与筛选">
-                <img src="assets/shots/unzip-2.webp" alt="Reality Unzip In-Archive Photo Album" loading="lazy" />
-                <figcaption><span class="mono-sm">02 · ZERO-EXTRACT</span><span data-i18n="unzip.c2">免解压看图册、搜文本与按需提取</span></figcaption>
-              </figure>
-              <figure class="cinema-card" data-zoom-src="assets/shots/unzip-3.webp" data-zoom-cap="Reality Unzip · 内置 SHA-256 哈希校验与完整性审计">
-                <img src="assets/shots/unzip-3.webp" alt="Reality Unzip SHA-256 Verification" loading="lazy" />
-                <figcaption><span class="mono-sm">03 · INTEGRITY</span><span data-i18n="unzip.c3">SHA-256 哈希核验与逐字节冲突对比</span></figcaption>
-              </figure>
-            </div>
-          </div>
-        </article>
-
-        <hr class="dark-rule" />
-
-        <!-- 08 · REALITY ROCKET — Full-Width Telemetry Showcase -->
-        <article class="utility-block" id="app-rocket">
-          <div class="feature-top">
-            <div class="feature-id">
-              <img src="assets/icons/rocket.png" alt="Reality Rocket" class="app-badge-icon" />
-              <div>
-                <div class="mono-sm accent-cyan">08 / 08 · NATIVE MIHOMO SPATIAL VPN</div>
-                <h3 class="feature-h3">Reality Rocket</h3>
-              </div>
-            </div>
-            <p class="feature-lead" data-i18n="rocket.lead">
-              Clash Verge 级内核能力 × Shadowrocket 级连通诊断。内置原生 arm64 Mihomo v1.19.34 核心与手机扫码局域网推配置，在头显里告别输入超长订阅链接。
-            </p>
-          </div>
-
-          <div class="hero-media-stage" data-gallery="rocket">
-            <div class="media-canvas dark-canvas">
-              <img id="img-rocket" src="assets/shots/rocket-1.webp" alt="Reality Rocket Dashboard" />
-              <button class="expand-btn" data-zoom-app="rocket" type="button" aria-label="Zoom">⤢</button>
-            </div>
-            <div class="segmented-bar dark" data-tabs="rocket"></div>
-          </div>
-
-          <div class="hairline-4 dark">
-            <div>
-              <span class="mono-key">MIHOMO v1.19.34</span>
-              <p data-i18n="rocket.s1">NDK 27 原生 arm64 编译、16KB 页对齐，支持 gVisor TUN 与局域网直连绕过（保障 PC 串流零延迟）。</p>
-            </div>
-            <div>
-              <span class="mono-key">QR LAN PUSH</span>
-              <p data-i18n="rocket.s2">一次性安全令牌二维码推送服务，手机扫一扫即导入 Clash YAML 及 VLESS / HY2 / TUIC / WG 协议。</p>
-            </div>
-            <div>
-              <span class="mono-key">LIVE DIAGNOSTICS</span>
-              <p data-i18n="rocket.s3">48 秒吞吐曲线、Google / Cloudflare / GitHub 一键全站测速与 4 路实时 WebSocket 连接日志。</p>
-            </div>
-            <div>
-              <span class="mono-key">26 LOCALES + RTL</span>
-              <p data-i18n="rocket.s4">内置域名分流命中模拟器、离线 GeoDB 一键热更新，完整覆盖 26 种全球语言含阿拉伯语 RTL。</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ===============================================================
-         ACT VI · SWISS TECHNICAL MONOGRAPH (CLEAN FULL-BLEED TABLE)
-    ================================================================ -->
-    <section class="monograph-section" id="monograph">
-      <div class="wrap">
-        <div class="editorial-header">
-          <span class="eyebrow" data-i18n="mono.eyebrow">TECHNICAL MONOGRAPH · 01 — 08</span>
-          <div class="editorial-split">
-            <h2 class="section-h2" data-i18n-html="mono.title">一套严苛标准，<br />贯穿全部八款产品。</h2>
-            <p class="section-intro" data-i18n="mono.intro">
-              每一款 Reality 应用都基于原生 PICO SpatialUI 构建，无 Material 拼凑感，无后台广告 SDK，用真实底层引擎交付桌面级生产力。
-            </p>
-          </div>
-        </div>
-
-        <div class="mono-table-wrap">
-          <table class="mono-table">
-            <thead>
-              <tr>
-                <th data-i18n="table.colApp">产品</th>
-                <th data-i18n="table.colRole">领域</th>
-                <th data-i18n="table.colEngine">核心引擎与特性</th>
-                <th data-i18n="table.colFmt">关键格式 / 协议</th>
-                <th data-i18n="table.colPlat">平台与语言</th>
-              </tr>
-            </thead>
-            <tbody id="monoTableBody"></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===============================================================
-         ACT VII · GRAND FINALE — EIGHT APPS, ONE REALITY + POSTER
-    ================================================================ -->
-    <section class="finale" id="poster">
-      <div class="wrap">
-        <div class="finale-center">
-          <div class="finale-constellation" id="finaleConstellation"></div>
-          <h2 class="finale-display" data-i18n-html="finale.title">
-            Eight Apps.<br />
-            <span class="serif-italic">One Reality.</span>
-          </h2>
-          <p class="finale-copy" data-i18n="finale.copy">
-            办公 · 修图 · 剪辑 · 建模 · 观影 · 互传 · 解压 · 网络 — 八款原生空间软件齐聚 PICO Space Pro。
-          </p>
-        </div>
-
-        <!-- Editorial Shareable Long Poster Showcase -->
-        <div class="poster-spread">
-          <div class="poster-meta">
-            <span class="eyebrow dark" data-i18n="poster.eyebrow">SHAREABLE LONG POSTER</span>
-            <h3 data-i18n-html="poster.title">一张杂志级全景长图，<br />随时分享全部 8 款亮点。</h3>
-            <p data-i18n="poster.desc">
-              2560px 超清视网膜排版，完整收录 8 款软件 16 张真实 PICO OS 6 界面、核心参数与全系总览，专为微信、小红书、飞书与 X（Twitter）高清转发打造。
-            </p>
-            <div class="poster-btns">
-              <a href="poster/reality-series-poster.png" download="Reality-Series-8-Apps-Poster.png" class="action-light" data-i18n="poster.dlPng">下载超清原图 (PNG)</a>
-              <a href="poster/reality-series-poster.jpg" target="_blank" rel="noopener noreferrer" class="action-dark-line" data-i18n="poster.openJpg">新窗口预览 (JPG) ↗</a>
-            </div>
-          </div>
-
-          <div class="poster-frame" id="posterOpenTrigger" role="button" tabindex="0">
-            <img src="poster/reality-series-poster.jpg" alt="The Reality Team — 8 Apps Long Infographic Poster" loading="lazy" />
-            <div class="poster-scrim"><span data-i18n="poster.inspect">点击全屏查阅 ⤢</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap footer-row">
-      <div class="footer-left">
-        <span class="wordmark-main">Reality</span>
-        <span class="footer-sep">·</span>
-        <span data-i18n="footer.tag">The Reality Team · Built for PICO Space Pro & PICO OS 6</span>
-      </div>
-      <div class="footer-right">
-        <a href="https://github.com/jason-jm/RealityOffice" target="_blank" rel="noopener noreferrer">Office</a>
-        <a href="https://github.com/jason-jm/reality-video-editor" target="_blank" rel="noopener noreferrer">Video Editor</a>
-        <a href="https://github.com/jason-jm/reality-nas-player" target="_blank" rel="noopener noreferrer">NAS Player</a>
-        <a href="https://github.com/jason-jm" target="_blank" rel="noopener noreferrer">GitHub @jason-jm ↗</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Minimal Museum Lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-    <button class="lb-close" id="lbClose" type="button" aria-label="Close">✕</button>
-    <button class="lb-nav prev" id="lbPrev" type="button" aria-label="Previous">←</button>
-    <figure class="lb-stage">
-      <img id="lbImg" src="" alt="" />
-      <figcaption id="lbCap"></figcaption>
-    </figure>
-    <button class="lb-nav next" id="lbNext" type="button" aria-label="Next">→</button>
   </div>
+</header>
 
-  <script src="app.js"></script>
+<main id="top">
+<section class="hero">
+  <div class="glow" aria-hidden="true"><i style="--c:#2F63DC"></i><i style="--c:#18A4CE"></i><i style="--c:#7A45E8"></i><i style="--c:#5A6E86"></i><i style="--c:#E1354B"></i><i style="--c:#1CAE76"></i><i style="--c:#E79B12"></i><i style="--c:#4A5AE6"></i></div>
+  <div class="hero-in">
+    <p class="eyebrow">The Reality Team · 为 PICO Space Pro 打造</p>
+    <h1>一个系列，<br>八款空间应用。</h1>
+    <p class="hero-lede">写文档、算表格、做演示，修图、剪视频、看模型，在 NAS 上看片，在头显和电脑之间传文件，打开压缩包，管理网络代理。Reality 系列把这些日常用得到的事放进 PICO Space Pro。</p>
+    <div class="hero-cta">
+      <a class="btn btn-light" href="#series">查看全部 8 款应用</a>
+      <a class="btn btn-ghost" href="#download">下载</a>
+    </div>
+  </div>
+  <ul class="dock" aria-label="全部应用">
+    <li><a href="#office" style="--c:#2F63DC"><span class="icon lg" aria-hidden="true"><img src="assets/icons/office-bg.webp" alt="" class="l0"><img src="assets/icons/office-fg2.webp" alt="" class="l1"><img src="assets/icons/office-fg3.webp" alt="" class="l2"></span><span class="dock-name">Office</span><span class="dock-cat">办公套件</span></a></li>
+    <li><a href="#image" style="--c:#18A4CE"><span class="icon lg" aria-hidden="true"><img src="assets/icons/image-bg.webp" alt="" class="l0"><img src="assets/icons/image-fg2.webp" alt="" class="l1"><img src="assets/icons/image-fg3.webp" alt="" class="l2"></span><span class="dock-name">Image Studio</span><span class="dock-cat">图像编辑</span></a></li>
+    <li><a href="#video" style="--c:#7A45E8"><span class="icon lg" aria-hidden="true"><img src="assets/icons/video-bg.webp" alt="" class="l0"><img src="assets/icons/video-fg2.webp" alt="" class="l1"><img src="assets/icons/video-fg3.webp" alt="" class="l2"></span><span class="dock-name">Video Editor</span><span class="dock-cat">视频剪辑</span></a></li>
+    <li><a href="#cad" style="--c:#5A6E86"><span class="icon lg" aria-hidden="true"><img src="assets/icons/cad-bg.webp" alt="" class="l0"><img src="assets/icons/cad-fg2.webp" alt="" class="l1"><img src="assets/icons/cad-fg3.webp" alt="" class="l2"></span><span class="dock-name">CAD</span><span class="dock-cat">工业设计评审</span></a></li>
+    <li><a href="#nas" style="--c:#E1354B"><span class="icon lg" aria-hidden="true"><img src="assets/icons/nas-bg.webp" alt="" class="l0"><img src="assets/icons/nas-fg2.webp" alt="" class="l1"><img src="assets/icons/nas-fg3.webp" alt="" class="l2"></span><span class="dock-name">NAS Player</span><span class="dock-cat">NAS 影音</span></a></li>
+    <li><a href="#transfer" style="--c:#1CAE76"><span class="icon lg" aria-hidden="true"><img src="assets/icons/transfer-bg.webp" alt="" class="l0"><img src="assets/icons/transfer-fg2.webp" alt="" class="l1"><img src="assets/icons/transfer-fg3.webp" alt="" class="l2"></span><span class="dock-name">File Transfer</span><span class="dock-cat">跨设备传文件</span></a></li>
+    <li><a href="#unzip" style="--c:#E79B12"><span class="icon lg" aria-hidden="true"><img src="assets/icons/unzip-bg.webp" alt="" class="l0"><img src="assets/icons/unzip-fg2.webp" alt="" class="l1"><img src="assets/icons/unzip-fg3.webp" alt="" class="l2"></span><span class="dock-name">Unzip</span><span class="dock-cat">压缩与解压</span></a></li>
+    <li><a href="#rocket" style="--c:#4A5AE6"><span class="icon lg" aria-hidden="true"><img src="assets/icons/rocket-bg.webp" alt="" class="l0"><img src="assets/icons/rocket-fg2.webp" alt="" class="l1"><img src="assets/icons/rocket-fg3.webp" alt="" class="l2"></span><span class="dock-name">Rocket</span><span class="dock-cat">网络代理</span></a></li>
+  </ul>
+  <div class="strips" aria-hidden="true">
+    <div class="strip strip-a"><div class="track"><figure class="card"><img class="" src="assets/shots/office-slides.webp" srcset="assets/shots/office-slides-sm.webp 900w, assets/shots/office-slides.webp 1500w" sizes="480px" width="1500" height="1005" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/video-workspace.webp" srcset="assets/shots/video-workspace-sm.webp 900w, assets/shots/video-workspace.webp 1800w" sizes="480px" width="1800" height="658" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/image-raw.webp" srcset="assets/shots/image-raw-sm.webp 900w, assets/shots/image-raw.webp 1280w" sizes="480px" width="1280" height="720" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/nas-wall-zh.webp" srcset="assets/shots/nas-wall-zh-sm.webp 900w, assets/shots/nas-wall-zh.webp 1100w" sizes="480px" width="1100" height="822" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/cad-model.webp" srcset="assets/shots/cad-model-sm.webp 900w, assets/shots/cad-model.webp 1600w" sizes="480px" width="1600" height="1000" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/transfer-desktop.webp" srcset="assets/shots/transfer-desktop-sm.webp 900w, assets/shots/transfer-desktop.webp 1800w" sizes="480px" width="1800" height="1212" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/office-sheets.webp" srcset="assets/shots/office-sheets-sm.webp 900w, assets/shots/office-sheets.webp 1500w" sizes="480px" width="1500" height="1005" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/office-slides.webp" srcset="assets/shots/office-slides-sm.webp 900w, assets/shots/office-slides.webp 1500w" sizes="480px" width="1500" height="1005" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/video-workspace.webp" srcset="assets/shots/video-workspace-sm.webp 900w, assets/shots/video-workspace.webp 1800w" sizes="480px" width="1800" height="658" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/image-raw.webp" srcset="assets/shots/image-raw-sm.webp 900w, assets/shots/image-raw.webp 1280w" sizes="480px" width="1280" height="720" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/nas-wall-zh.webp" srcset="assets/shots/nas-wall-zh-sm.webp 900w, assets/shots/nas-wall-zh.webp 1100w" sizes="480px" width="1100" height="822" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/cad-model.webp" srcset="assets/shots/cad-model-sm.webp 900w, assets/shots/cad-model.webp 1600w" sizes="480px" width="1600" height="1000" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/transfer-desktop.webp" srcset="assets/shots/transfer-desktop-sm.webp 900w, assets/shots/transfer-desktop.webp 1800w" sizes="480px" width="1800" height="1212" alt="" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/office-sheets.webp" srcset="assets/shots/office-sheets-sm.webp 900w, assets/shots/office-sheets.webp 1500w" sizes="480px" width="1500" height="1005" alt="" decoding="async"></figure></div></div>
+    <div class="strip strip-b"><div class="track"><figure class="card"><img class="" src="assets/shots/nas-cinema.webp" srcset="assets/shots/nas-cinema-sm.webp 900w, assets/shots/nas-cinema.webp 1600w" sizes="480px" width="1600" height="900" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/cad-zebra.webp" srcset="assets/shots/cad-zebra-sm.webp 900w, assets/shots/cad-zebra.webp 1600w" sizes="480px" width="1600" height="1000" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/video-color.webp" srcset="assets/shots/video-color-sm.webp 900w, assets/shots/video-color.webp 1800w" sizes="480px" width="1800" height="704" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/unzip-photos.webp" srcset="assets/shots/unzip-photos-sm.webp 900w, assets/shots/unzip-photos.webp 1800w" sizes="480px" width="1800" height="1125" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/rocket-dashboard.webp" srcset="assets/shots/rocket-dashboard-sm.webp 900w, assets/shots/rocket-dashboard.webp 1600w" sizes="480px" width="1600" height="1000" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/office-pages.webp" srcset="assets/shots/office-pages-sm.webp 900w, assets/shots/office-pages.webp 1500w" sizes="480px" width="1500" height="1005" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/image-spatial.webp" srcset="assets/shots/image-spatial-sm.webp 900w, assets/shots/image-spatial.webp 1280w" sizes="480px" width="1280" height="720" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/transfer-incoming.webp" srcset="assets/shots/transfer-incoming-sm.webp 900w, assets/shots/transfer-incoming.webp 1800w" sizes="480px" width="1800" height="1125" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/nas-cinema.webp" srcset="assets/shots/nas-cinema-sm.webp 900w, assets/shots/nas-cinema.webp 1600w" sizes="480px" width="1600" height="900" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/cad-zebra.webp" srcset="assets/shots/cad-zebra-sm.webp 900w, assets/shots/cad-zebra.webp 1600w" sizes="480px" width="1600" height="1000" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/video-color.webp" srcset="assets/shots/video-color-sm.webp 900w, assets/shots/video-color.webp 1800w" sizes="480px" width="1800" height="704" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/unzip-photos.webp" srcset="assets/shots/unzip-photos-sm.webp 900w, assets/shots/unzip-photos.webp 1800w" sizes="480px" width="1800" height="1125" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/rocket-dashboard.webp" srcset="assets/shots/rocket-dashboard-sm.webp 900w, assets/shots/rocket-dashboard.webp 1600w" sizes="480px" width="1600" height="1000" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/office-pages.webp" srcset="assets/shots/office-pages-sm.webp 900w, assets/shots/office-pages.webp 1500w" sizes="480px" width="1500" height="1005" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/image-spatial.webp" srcset="assets/shots/image-spatial-sm.webp 900w, assets/shots/image-spatial.webp 1280w" sizes="480px" width="1280" height="720" alt="" loading="lazy" decoding="async"></figure><figure class="card"><img class="" src="assets/shots/transfer-incoming.webp" srcset="assets/shots/transfer-incoming-sm.webp 900w, assets/shots/transfer-incoming.webp 1800w" sizes="480px" width="1800" height="1125" alt="" loading="lazy" decoding="async"></figure></div></div>
+  </div>
+  <ul class="facts">
+    <li><b>8</b><span>款应用</span></li>
+    <li><b>3</b><span>款开源</span></li>
+    <li><b>PICO OS 6</b><span>原生空间应用</span></li>
+    <li><b>0</b><span>个账号要注册</span></li>
+  </ul>
+</section>
+
+<section class="overview" id="series">
+  <div class="wrap">
+    <p class="kicker">系列一览</p>
+    <h2 class="display">从办公到影音，每一款都做一件事。</h2>
+    <p class="section-lede">八款应用都用 PICO Spatial SDK 和 SpatialUI 开发，以空间窗口运行，操作方式一致。点任意一款查看它的功能。</p>
+    <div class="cards">
+      <a class="app-card" href="#office" style="--c:#2F63DC;--ink:#1D4EC2;--tint:#EEF3FD">
+        <span class="icon md" aria-hidden="true"><img src="assets/icons/office-bg.webp" alt="" class="l0"><img src="assets/icons/office-fg2.webp" alt="" class="l1"><img src="assets/icons/office-fg3.webp" alt="" class="l2"></span>
+        <span class="app-card-cat">办公套件</span>
+        <h3>Reality Office</h3>
+        <p>文档、表格和演示三合一，在头显里打开、编辑、保存 Office 文件。</p>
+        <span class="app-card-ver">1.3.4 · 已发布</span>
+      </a>
+      <a class="app-card" href="#image" style="--c:#18A4CE;--ink:#0A7698;--tint:#EBF7FB">
+        <span class="icon md" aria-hidden="true"><img src="assets/icons/image-bg.webp" alt="" class="l0"><img src="assets/icons/image-fg2.webp" alt="" class="l1"><img src="assets/icons/image-fg3.webp" alt="" class="l2"></span>
+        <span class="app-card-cat">图像编辑</span>
+        <h3>Reality Image Studio</h3>
+        <p>基于图层的图像编辑器，支持 Photoshop PSD 导入导出。</p>
+        <span class="app-card-ver">1.0.0</span>
+      </a>
+      <a class="app-card" href="#video" style="--c:#7A45E8;--ink:#5F2FCC;--tint:#F2EDFD">
+        <span class="icon md" aria-hidden="true"><img src="assets/icons/video-bg.webp" alt="" class="l0"><img src="assets/icons/video-fg2.webp" alt="" class="l1"><img src="assets/icons/video-fg3.webp" alt="" class="l2"></span>
+        <span class="app-card-cat">视频剪辑</span>
+        <h3>Reality Video Editor</h3>
+        <p>离线视频剪辑：从粗剪、调色、混音到导出成片。</p>
+        <span class="app-card-ver">1.0.1 · 已发布</span>
+      </a>
+      <a class="app-card" href="#cad" style="--c:#5A6E86;--ink:#44566D;--tint:#EFF2F6">
+        <span class="icon md" aria-hidden="true"><img src="assets/icons/cad-bg.webp" alt="" class="l0"><img src="assets/icons/cad-fg2.webp" alt="" class="l1"><img src="assets/icons/cad-fg3.webp" alt="" class="l2"></span>
+        <span class="app-card-cat">工业设计评审</span>
+        <h3>Reality CAD</h3>
+        <p>面向工业设计评审的空间 CAD 工作台。</p>
+        <span class="app-card-ver">设计预览版</span>
+      </a>
+      <a class="app-card" href="#nas" style="--c:#E1354B;--ink:#C21F35;--tint:#FDEEF0">
+        <span class="icon md" aria-hidden="true"><img src="assets/icons/nas-bg.webp" alt="" class="l0"><img src="assets/icons/nas-fg2.webp" alt="" class="l1"><img src="assets/icons/nas-fg3.webp" alt="" class="l2"></span>
+        <span class="app-card-cat">NAS 影音</span>
+        <h3>Reality NAS Player</h3>
+        <p>连接 NAS 和媒体服务器，把影片整理成海报墙，在 VR 影院里播放。</p>
+        <span class="app-card-ver">1.2.1 · 已发布</span>
+      </a>
+      <a class="app-card" href="#transfer" style="--c:#1CAE76;--ink:#0E8558;--tint:#EAF8F1">
+        <span class="icon md" aria-hidden="true"><img src="assets/icons/transfer-bg.webp" alt="" class="l0"><img src="assets/icons/transfer-fg2.webp" alt="" class="l1"><img src="assets/icons/transfer-fg3.webp" alt="" class="l2"></span>
+        <span class="app-card-cat">跨设备传文件</span>
+        <h3>Reality File Transfer</h3>
+        <p>PICO、Mac、Windows 之间在局域网里互传文件，不经过云端。</p>
+        <span class="app-card-ver">1.0.0</span>
+      </a>
+      <a class="app-card" href="#unzip" style="--c:#E79B12;--ink:#A86400;--tint:#FDF5E6">
+        <span class="icon md" aria-hidden="true"><img src="assets/icons/unzip-bg.webp" alt="" class="l0"><img src="assets/icons/unzip-fg2.webp" alt="" class="l1"><img src="assets/icons/unzip-fg3.webp" alt="" class="l2"></span>
+        <span class="app-card-cat">压缩与解压</span>
+        <h3>Reality Unzip</h3>
+        <p>在头显上打开、预览、解压和创建压缩包。</p>
+        <span class="app-card-ver">1.0 候选版</span>
+      </a>
+      <a class="app-card" href="#rocket" style="--c:#4A5AE6;--ink:#3443C8;--tint:#EEF0FD">
+        <span class="icon md" aria-hidden="true"><img src="assets/icons/rocket-bg.webp" alt="" class="l0"><img src="assets/icons/rocket-fg2.webp" alt="" class="l1"><img src="assets/icons/rocket-fg3.webp" alt="" class="l2"></span>
+        <span class="app-card-cat">网络代理</span>
+        <h3>Reality Rocket</h3>
+        <p>基于 Mihomo 内核的网络代理客户端。</p>
+        <span class="app-card-ver">1.0.0</span>
+      </a>
+    </div>
+    <ul class="common">
+      <li><h3>原生空间窗口</h3><p>全部基于 PICO Spatial SDK 与 SpatialUI，可以和其他应用的窗口并排摆放。</p></li>
+      <li><h3>不需要账号</h3><p>八款应用都没有账号体系，打开就能用。</p></li>
+      <li><h3>文件留在本地</h3><p>Office、Image Studio、Video Editor 和 Unzip 在头显上处理文件；File Transfer 只在局域网里传输。</p></li>
+      <li><h3>源代码公开</h3><p>Office、Video Editor、NAS Player 的源代码在 GitHub 上以 MIT 许可证发布。</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="chapter" aria-labelledby="ch-create">
+  <div class="wrap chapter-in">
+    <span class="chapter-no">01</span>
+    <div><h2 id="ch-create">办公与创作</h2><p>文档、图像、视频和三维模型</p></div>
+    <span class="chapter-apps">Office · Image Studio · Video Editor · CAD</span>
+  </div>
+</section>
+
+<section class="app" id="office" data-app="office" style="--c:#2F63DC;--ink:#1D4EC2;--tint:#EEF3FD">
+  <div class="wrap">
+    <div class="app-head">
+      <span class="icon xl" role="img" aria-label="Reality Office"><img src="assets/icons/office-bg.webp" alt="" class="l0"><img src="assets/icons/office-fg2.webp" alt="" class="l1"><img src="assets/icons/office-fg3.webp" alt="" class="l2"></span>
+      <div class="app-title">
+        <p class="app-meta"><span>01 / 08</span><span>办公套件</span><span class="badge">1.3.4 · 已发布</span></p>
+        <h2>Reality Office</h2>
+        <p class="app-oneliner">文档、表格和演示三合一，在头显里打开、编辑、保存 Office 文件。</p>
+      </div>
+      <div class="app-intro">
+        <p>Pages 写文档，Sheets 做表格，Slides 做演示。三个编辑器都能离线使用，可以在新窗口里打开另一个文件，对照着写。</p>
+        <div class="app-links"><a class="btn btn-accent" href="https://github.com/jason-jm/RealityOffice/releases/download/v1.3.4-build10/RealityOffice-v1.3.4-build10.apk" rel="noopener">下载 APK</a><a class="btn btn-line" href="https://github.com/jason-jm/RealityOffice" rel="noopener">源代码</a><a class="btn btn-line" href="https://jason-jm.github.io/RealityOffice/" rel="noopener">官网</a></div>
+      </div>
+    </div>
+    <figure class="shot-main" data-gallery="office">
+      <button class="zoom" type="button" data-index="0"><img class="" src="assets/shots/office-slides.webp" srcset="assets/shots/office-slides-sm.webp 900w, assets/shots/office-slides.webp 1500w" sizes="(min-width: 1100px) 1040px, 92vw" width="1500" height="1005" alt="Reality Office · Slides 编辑一份欢迎演示，第一页是葛饰北斋的《神奈川冲浪里》" loading="lazy" decoding="async"></button>
+      <figcaption>Slides 编辑一份欢迎演示，第一页是葛饰北斋的《神奈川冲浪里》</figcaption>
+    </figure>
+    <h3 class="sub">主要功能</h3>
+    <ul class="features">
+      <li><h4>Pages 文档</h4><p>标题样式与大纲导航、带页码的目录、图片和表格、脚注、页眉页脚。修订、批注，以及比较两个版本的差异。</p></li>
+      <li><h4>Sheets 表格</h4><p>跨工作表公式（SUMIFS、XLOOKUP 等）、单变量求解、冻结窗格、多列排序与筛选、下拉列表、条件格式，柱形图、折线图和饼图。</p></li>
+      <li><h4>Slides 演示</h4><p>版式、对齐参考线、表格和图表、切换与动画、备注和排练计时。演示者视图；投影到墙面可以把放映面板放在识别到的墙上。</p></li>
+      <li><h4>多窗口对照</h4><p>在新窗口中打开另一个文件，一边看原稿一边写，或者参考表格改演示里的图表。</p></li>
+      <li><h4>常用格式</h4><p>读写 DOCX、ODT、XLSX、ODS、PPTX、ODP 和 CSV，还能打开 DOC、RTF、XLS、PPT。三个编辑器都能导出 PDF。</p></li>
+      <li><h4>自动保存与恢复</h4><p>不申请联网权限。自动保存，意外退出后可以恢复草稿；遇到宏等无法编辑的内容会先提示另存一份。</p></li>
+    </ul>
+    <h3 class="sub">更多截图</h3>
+    <div class="gallery" data-gallery="office">
+      <figure><button class="zoom" type="button" data-index="1"><img class="" src="assets/shots/office-pages.webp" srcset="assets/shots/office-pages-sm.webp 900w, assets/shots/office-pages.webp 1500w" sizes="(min-width: 1100px) 340px, 45vw" width="1500" height="1005" alt="Reality Office · Pages 中的活动日程文档，带表格和标题" loading="lazy" decoding="async"></button><figcaption>Pages 中的活动日程文档，带表格和标题</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="2"><img class="" src="assets/shots/office-sheets.webp" srcset="assets/shots/office-sheets-sm.webp 900w, assets/shots/office-sheets.webp 1500w" sizes="(min-width: 1100px) 340px, 45vw" width="1500" height="1005" alt="Reality Office · Sheets 中的材料预算表" loading="lazy" decoding="async"></button><figcaption>Sheets 中的材料预算表</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="3"><img class="" src="assets/shots/office-home.webp" srcset="assets/shots/office-home-sm.webp 900w, assets/shots/office-home.webp 1500w" sizes="(min-width: 1100px) 340px, 45vw" width="1500" height="947" alt="Reality Office · 主页：新建空白文件、模板和最近使用的文件" loading="lazy" decoding="async"></button><figcaption>主页：新建空白文件、模板和最近使用的文件</figcaption></figure>
+    </div>
+    <ul class="chips" aria-label="规格"><li>PICO OS 6.2+</li><li>18 种界面语言</li><li>MIT 开源</li></ul>
+  </div>
+</section>
+
+<section class="app" id="image" data-app="image" style="--c:#18A4CE;--ink:#0A7698;--tint:#EBF7FB">
+  <div class="wrap">
+    <div class="app-head">
+      <span class="icon xl" role="img" aria-label="Reality Image Studio"><img src="assets/icons/image-bg.webp" alt="" class="l0"><img src="assets/icons/image-fg2.webp" alt="" class="l1"><img src="assets/icons/image-fg3.webp" alt="" class="l2"></span>
+      <div class="app-title">
+        <p class="app-meta"><span>02 / 08</span><span>图像编辑</span><span class="badge">1.0.0</span></p>
+        <h2>Reality Image Studio</h2>
+        <p class="app-oneliner">基于图层的图像编辑器，支持 Photoshop PSD 导入导出。</p>
+      </div>
+      <div class="app-intro">
+        <p>画布是一个浮动窗口，左边是工具栏，右边是面板。图层、蒙版、调整图层、滤镜和修复工具都在头显里完成。</p>
+        
+      </div>
+    </div>
+    <figure class="shot-main" data-gallery="image">
+      <button class="zoom" type="button" data-index="0"><img class="" src="assets/shots/image-raw.webp" srcset="assets/shots/image-raw-sm.webp 900w, assets/shots/image-raw.webp 1280w" sizes="(min-width: 1100px) 1040px, 92vw" width="1280" height="720" alt="Reality Image Studio · Camera Raw 滤镜调整一张海边照片" loading="lazy" decoding="async"></button>
+      <figcaption>Camera Raw 滤镜调整一张海边照片</figcaption>
+    </figure>
+    <h3 class="sub">主要功能</h3>
+    <ul class="features">
+      <li><h4>图层</h4><p>像素、文字、形状和调整图层；图层组、图层蒙版和剪贴蒙版；27 种混合模式；斜面浮雕、描边、投影等 8 种图层样式。</p></li>
+      <li><h4>PSD 互通</h4><p>导入和导出 8 位 RGB/灰度 PSD，保留图层、组、混合模式、蒙版和参考线。自有 .ris 工程保留全部可编辑内容。</p></li>
+      <li><h4>调整与滤镜</h4><p>16 种非破坏性调整（色阶、曲线、色相/饱和度等）和 40 种滤镜，包括 Camera Raw、液化、移轴模糊、智能锐化和降噪。</p></li>
+      <li><h4>修复与选区</h4><p>污点修复画笔、仿制图章、内容识别填充；快速选择、魔棒、色彩范围，选区可扩展、收缩、羽化。</p></li>
+      <li><h4>32 种工具</h4><p>画笔、渐变、加深减淡、文字与形状、裁剪拉直、可透视变形的自由变换；完整的历史记录。</p></li>
+      <li><h4>空间图层视图</h4><p>把整个图层堆叠沿深度方向展开在房间里，逐层查看。</p></li>
+    </ul>
+    <h3 class="sub">更多截图</h3>
+    <div class="gallery" data-gallery="image">
+      <figure><button class="zoom" type="button" data-index="1"><img class="" src="assets/shots/image-mask.webp" srcset="assets/shots/image-mask-sm.webp 900w, assets/shots/image-mask.webp 1280w" sizes="(min-width: 1100px) 340px, 45vw" width="1280" height="651" alt="Reality Image Studio · 图层蒙版与选区" loading="lazy" decoding="async"></button><figcaption>图层蒙版与选区</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="2"><img class="" src="assets/shots/image-spatial.webp" srcset="assets/shots/image-spatial-sm.webp 900w, assets/shots/image-spatial.webp 1280w" sizes="(min-width: 1100px) 340px, 45vw" width="1280" height="720" alt="Reality Image Studio · 空间图层视图：图层沿深度方向展开" loading="lazy" decoding="async"></button><figcaption>空间图层视图：图层沿深度方向展开</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="3"><img class="" src="assets/shots/image-text.webp" srcset="assets/shots/image-text-sm.webp 900w, assets/shots/image-text.webp 1280w" sizes="(min-width: 1100px) 340px, 45vw" width="1280" height="705" alt="Reality Image Studio · 文字、形状与图层样式" loading="lazy" decoding="async"></button><figcaption>文字、形状与图层样式</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="4"><img class="" src="assets/shots/image-transform.webp" srcset="assets/shots/image-transform-sm.webp 900w, assets/shots/image-transform.webp 1280w" sizes="(min-width: 1100px) 340px, 45vw" width="1280" height="668" alt="Reality Image Studio · 自由变换" loading="lazy" decoding="async"></button><figcaption>自由变换</figcaption></figure>
+    </div>
+    <ul class="chips" aria-label="规格"><li>JPEG · PNG · WebP · HEIF · AVIF · GIF · BMP</li><li>蓝牙键盘快捷键</li><li>16 种调整 · 40 种滤镜</li></ul>
+  </div>
+</section>
+
+<section class="app dark" id="video" data-app="video" style="--c:#7A45E8;--ink:#5F2FCC;--tint:#F2EDFD">
+  <div class="wrap">
+    <div class="app-head">
+      <span class="icon xl" role="img" aria-label="Reality Video Editor"><img src="assets/icons/video-bg.webp" alt="" class="l0"><img src="assets/icons/video-fg2.webp" alt="" class="l1"><img src="assets/icons/video-fg3.webp" alt="" class="l2"></span>
+      <div class="app-title">
+        <p class="app-meta"><span>03 / 08</span><span>视频剪辑</span><span class="badge">1.0.1 · 已发布</span></p>
+        <h2>Reality Video Editor</h2>
+        <p class="app-oneliner">离线视频剪辑：从粗剪、调色、混音到导出成片。</p>
+      </div>
+      <div class="app-intro">
+        <p>素材留在设备上，不需要账号或网络。超宽布局里源监视器和时间线监视器并排，下面是多条轨道。</p>
+        <div class="app-links"><a class="btn btn-accent" href="https://github.com/jason-jm/reality-video-editor/releases/latest" rel="noopener">发布页</a><a class="btn btn-line" href="https://github.com/jason-jm/reality-video-editor" rel="noopener">源代码</a></div>
+      </div>
+    </div>
+    <figure class="shot-main" data-gallery="video">
+      <button class="zoom" type="button" data-index="0"><img class="" src="assets/shots/video-workspace.webp" srcset="assets/shots/video-workspace-sm.webp 900w, assets/shots/video-workspace.webp 1800w" sizes="(min-width: 1100px) 1040px, 92vw" width="1800" height="658" alt="Reality Video Editor · 源监视器和时间线监视器并排" loading="lazy" decoding="async"></button>
+      <figcaption>源监视器和时间线监视器并排</figcaption>
+    </figure>
+    <h3 class="sub">主要功能</h3>
+    <ul class="features">
+      <li><h4>整理素材</h4><p>媒体池、场次/镜头/条次记录、收藏标记、关键词和智能素材箱。大体积的素材可以生成代理文件来播放。</p></li>
+      <li><h4>剪辑</h4><p>入点出点、插入与覆盖、匹配帧；波纹、滑移修剪和 J/L 剪辑；最多 8 条视频轨和 8 条音频轨，支持键盘快捷键。</p></li>
+      <li><h4>多机位与关键帧</h4><p>按波形同步录音和画面，切换机位时保持对白连续；缩放关键帧和变速。</p></li>
+      <li><h4>调色</h4><p>一级色轮、静帧对比、波形与 RGB 分量示波器、.cube LUT、可跟踪的局部窗口，同一片段保留多个调色版本。</p></li>
+      <li><h4>声音</h4><p>直接录制旁白，EQ 和齿音消除，音乐在人声下自动避让，混音总线；LUFS 响度和真峰值表。</p></li>
+      <li><h4>交付</h4><p>导出 H.264/H.265 视频、静帧或 WAV；9:16 竖屏和方形画幅；SRT/WebVTT 字幕；FCPXML 1.10 和 CMX 3600 EDL 交接工程。</p></li>
+    </ul>
+    <h3 class="sub">更多截图</h3>
+    <div class="gallery" data-gallery="video">
+      <figure><button class="zoom" type="button" data-index="1"><img class="" src="assets/shots/video-timeline.webp" srcset="assets/shots/video-timeline-sm.webp 900w, assets/shots/video-timeline.webp 1800w" sizes="(min-width: 1100px) 340px, 45vw" width="1800" height="708" alt="Reality Video Editor · 多轨时间线：画面、字幕和两条音轨" loading="lazy" decoding="async"></button><figcaption>多轨时间线：画面、字幕和两条音轨</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="2"><img class="" src="assets/shots/video-color.webp" srcset="assets/shots/video-color-sm.webp 900w, assets/shots/video-color.webp 1800w" sizes="(min-width: 1100px) 340px, 45vw" width="1800" height="704" alt="Reality Video Editor · 调色：RGB 分量示波器和一级色轮" loading="lazy" decoding="async"></button><figcaption>调色：RGB 分量示波器和一级色轮</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="3"><img class="" src="assets/shots/video-audio.webp" srcset="assets/shots/video-audio-sm.webp 900w, assets/shots/video-audio.webp 1800w" sizes="(min-width: 1100px) 340px, 45vw" width="1800" height="729" alt="Reality Video Editor · 音轨和 EQ 曲线" loading="lazy" decoding="async"></button><figcaption>音轨和 EQ 曲线</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="4"><img class="" src="assets/shots/video-media.webp" srcset="assets/shots/video-media-sm.webp 900w, assets/shots/video-media.webp 1800w" sizes="(min-width: 1100px) 340px, 45vw" width="1800" height="689" alt="Reality Video Editor · 媒体池和所选素材的预览" loading="lazy" decoding="async"></button><figcaption>媒体池和所选素材的预览</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="5"><img class="" src="assets/shots/video-deliver.webp" srcset="assets/shots/video-deliver-sm.webp 900w, assets/shots/video-deliver.webp 1800w" sizes="(min-width: 1100px) 340px, 45vw" width="1800" height="682" alt="Reality Video Editor · 导出设置和渲染队列" loading="lazy" decoding="async"></button><figcaption>导出设置和渲染队列</figcaption></figure>
+    </div>
+    <ul class="chips" aria-label="规格"><li>8 视频轨 + 8 音频轨</li><li>9 种界面语言</li><li>MIT 开源</li></ul>
+  </div>
+</section>
+
+<section class="app" id="cad" data-app="cad" style="--c:#5A6E86;--ink:#44566D;--tint:#EFF2F6">
+  <div class="wrap">
+    <div class="app-head">
+      <span class="icon xl" role="img" aria-label="Reality CAD"><img src="assets/icons/cad-bg.webp" alt="" class="l0"><img src="assets/icons/cad-fg2.webp" alt="" class="l1"><img src="assets/icons/cad-fg3.webp" alt="" class="l2"></span>
+      <div class="app-title">
+        <p class="app-meta"><span>04 / 08</span><span>工业设计评审</span><span class="badge">设计预览版</span></p>
+        <h2>Reality CAD</h2>
+        <p class="app-oneliner">面向工业设计评审的空间 CAD 工作台。</p>
+      </div>
+      <div class="app-intro">
+        <p>当前为设计预览版：界面和流程可以完整体验，示例模型内置在应用里；打开和导出真实的 CAD 文件还没有接入。</p>
+        
+      </div>
+    </div>
+    <figure class="shot-main" data-gallery="cad">
+      <button class="zoom" type="button" data-index="0"><img class="" src="assets/shots/cad-model.webp" srcset="assets/shots/cad-model-sm.webp 900w, assets/shots/cad-model.webp 1600w" sizes="(min-width: 1100px) 1040px, 92vw" width="1600" height="1000" alt="Reality CAD · 建模工作台：特征树、视口和属性面板" loading="lazy" decoding="async"></button>
+      <figcaption>建模工作台：特征树、视口和属性面板</figcaption>
+    </figure>
+    <h3 class="sub">主要功能</h3>
+    <ul class="features">
+      <li><h4>特征树与装配</h4><p>草图、拉伸、放样、圆角、抽壳、拔模、阵列等特征按顺序列出，可以调整参数；装配体显示零件层级和配合关系。</p></li>
+      <li><h4>视口</h4><p>视图立方、尺寸标注；斑马纹、曲率和剖切面三种检查方式。</p></li>
+      <li><h4>空间视图</h4><p>把模型从窗口里拿出来，按 1:1 尺寸放在房间里查看。</p></li>
+      <li><h4>工程图</h4><p>二维 DXF 工程图视图，查看视图、尺寸和标题栏。</p></li>
+      <li><h4>交付中心</h4><p>导出队列、交付记录、批量转换，以及 52 种 CAD 格式的对照表。</p></li>
+      <li><h4>设计预览</h4><p>使用内置示例数据演示完整流程，便于评估界面和交互。</p></li>
+    </ul>
+    <h3 class="sub">更多截图</h3>
+    <div class="gallery" data-gallery="cad">
+      <figure><button class="zoom" type="button" data-index="1"><img class="" src="assets/shots/cad-zebra.webp" srcset="assets/shots/cad-zebra-sm.webp 900w, assets/shots/cad-zebra.webp 1600w" sizes="(min-width: 1100px) 340px, 45vw" width="1600" height="1000" alt="Reality CAD · 斑马纹检查曲面连续性" loading="lazy" decoding="async"></button><figcaption>斑马纹检查曲面连续性</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="2"><img class="" src="assets/shots/cad-section.webp" srcset="assets/shots/cad-section-sm.webp 900w, assets/shots/cad-section.webp 1600w" sizes="(min-width: 1100px) 340px, 45vw" width="1600" height="1000" alt="Reality CAD · 剖切面与曲率" loading="lazy" decoding="async"></button><figcaption>剖切面与曲率</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="3"><img class="" src="assets/shots/cad-drawing.webp" srcset="assets/shots/cad-drawing-sm.webp 900w, assets/shots/cad-drawing.webp 1600w" sizes="(min-width: 1100px) 340px, 45vw" width="1600" height="1000" alt="Reality CAD · 二维 DXF 工程图视图" loading="lazy" decoding="async"></button><figcaption>二维 DXF 工程图视图</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="4"><img class="" src="assets/shots/cad-space.webp" srcset="assets/shots/cad-space-sm.webp 900w, assets/shots/cad-space.webp 1800w" sizes="(min-width: 1100px) 340px, 45vw" width="1800" height="1013" alt="Reality CAD · 空间视图：模型放在房间里查看" loading="lazy" decoding="async"></button><figcaption>空间视图：模型放在房间里查看</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="5"><img class="" src="assets/shots/cad-deliver.webp" srcset="assets/shots/cad-deliver-sm.webp 900w, assets/shots/cad-deliver.webp 1600w" sizes="(min-width: 1100px) 340px, 45vw" width="1600" height="1000" alt="Reality CAD · 交付中心的导出队列" loading="lazy" decoding="async"></button><figcaption>交付中心的导出队列</figcaption></figure>
+    </div>
+    <ul class="chips" aria-label="规格"><li>PICO OS 6.2</li><li>示例模型内置</li></ul>
+  </div>
+</section>
+
+<section class="chapter" aria-labelledby="ch-watch">
+  <div class="wrap chapter-in">
+    <span class="chapter-no">02</span>
+    <div><h2 id="ch-watch">影音</h2><p>把 NAS 里的影片搬进影院</p></div>
+    <span class="chapter-apps">NAS Player</span>
+  </div>
+</section>
+
+<section class="app dark" id="nas" data-app="nas" style="--c:#E1354B;--ink:#C21F35;--tint:#FDEEF0">
+  <div class="wrap">
+    <div class="app-head">
+      <span class="icon xl" role="img" aria-label="Reality NAS Player"><img src="assets/icons/nas-bg.webp" alt="" class="l0"><img src="assets/icons/nas-fg2.webp" alt="" class="l1"><img src="assets/icons/nas-fg3.webp" alt="" class="l2"></span>
+      <div class="app-title">
+        <p class="app-meta"><span>05 / 08</span><span>NAS 影音</span><span class="badge">1.2.1 · 已发布</span></p>
+        <h2>Reality NAS Player</h2>
+        <p class="app-oneliner">连接 NAS 和媒体服务器，把影片整理成海报墙，在 VR 影院里播放。</p>
+      </div>
+      <div class="app-intro">
+        <p>它会读取文件夹和文件名里的片名、年份、季集号和已有的 NFO，把电影、剧集、纪录片和动漫排成可以筛选、选集和续播的海报墙。</p>
+        <div class="app-links"><a class="btn btn-accent" href="https://github.com/jason-jm/reality-nas-player/releases/latest" rel="noopener">发布页</a><a class="btn btn-line" href="https://github.com/jason-jm/reality-nas-player" rel="noopener">源代码</a><a class="btn btn-line" href="https://jason-jm.github.io/reality-nas-player/" rel="noopener">官网</a></div>
+      </div>
+    </div>
+    <figure class="shot-main" data-gallery="nas">
+      <button class="zoom" type="button" data-index="0"><img class="" src="assets/shots/nas-wall-zh.webp" srcset="assets/shots/nas-wall-zh-sm.webp 900w, assets/shots/nas-wall-zh.webp 1100w" sizes="(min-width: 1100px) 1040px, 92vw" width="1100" height="822" alt="Reality NAS Player · 海报墙" loading="lazy" decoding="async"></button>
+      <figcaption>海报墙</figcaption>
+    </figure>
+    <h3 class="sub">主要功能</h3>
+    <ul class="features">
+      <li><h4>连接来源</h4><p>SMB、WebDAV、NFS、FTP、SFTP、DLNA，以及 Jellyfin、Emby、Plex 服务器；也可以直接打开头显里的影片。</p></li>
+      <li><h4>自动识别</h4><p>从公开影视目录获取海报和简介，首次扫描不需要注册或填写密钥；可以另外填写自己的 TMDB 密钥。</p></li>
+      <li><h4>海报墙</h4><p>按类型筛选，打开剧集选季选集，选择同一部影片的不同版本，从上次停下的地方继续。</p></li>
+      <li><h4>格式</h4><p>MKV、MP4、MOV、WebM、TS/M2TS、AVI 等常见视频，兼容的未加密蓝光和 DVD 备份（ISO、BDMV、VIDEO_TS）。</p></li>
+      <li><h4>字幕与音轨</h4><p>SRT、WebVTT、ASS/SSA、PGS 等字幕，切换内嵌或外挂字幕和音轨。</p></li>
+      <li><h4>影院与全景</h4><p>四个 VR 影院环境可选，也能播放 VR180 和 360° 视频。macOS 和 Windows 桌面版使用同一套媒体库引擎。</p></li>
+    </ul>
+    <h3 class="sub">更多截图</h3>
+    <div class="gallery" data-gallery="nas">
+      <figure><button class="zoom" type="button" data-index="1"><img class="" src="assets/shots/nas-detail-zh.webp" srcset="assets/shots/nas-detail-zh-sm.webp 900w, assets/shots/nas-detail-zh.webp 1100w" sizes="(min-width: 1100px) 340px, 45vw" width="1100" height="704" alt="Reality NAS Player · 影片详情：简介和版本" loading="lazy" decoding="async"></button><figcaption>影片详情：简介和版本</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="2"><img class="" src="assets/shots/nas-cinema.webp" srcset="assets/shots/nas-cinema-sm.webp 900w, assets/shots/nas-cinema.webp 1600w" sizes="(min-width: 1100px) 340px, 45vw" width="1600" height="900" alt="Reality NAS Player · 私人影院" loading="lazy" decoding="async"></button><figcaption>私人影院</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="3"><img class="" src="assets/shots/nas-lounge.webp" srcset="assets/shots/nas-lounge-sm.webp 900w, assets/shots/nas-lounge.webp 1780w" sizes="(min-width: 1100px) 340px, 45vw" width="1780" height="1001" alt="Reality NAS Player · 太空休息室影院" loading="lazy" decoding="async"></button><figcaption>太空休息室影院</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="4"><img class="" src="assets/shots/nas-subtitles.webp" srcset="assets/shots/nas-subtitles-sm.webp 900w, assets/shots/nas-subtitles.webp 979w" sizes="(min-width: 1100px) 340px, 45vw" width="979" height="580" alt="Reality NAS Player · 切换字幕和音轨" loading="lazy" decoding="async"></button><figcaption>切换字幕和音轨</figcaption></figure>
+    </div>
+    <ul class="chips" aria-label="规格"><li>PICO · macOS · Windows</li><li>23 种界面语言</li><li>MIT 开源</li></ul>
+  </div>
+</section>
+
+<section class="chapter" aria-labelledby="ch-tools">
+  <div class="wrap chapter-in">
+    <span class="chapter-no">03</span>
+    <div><h2 id="ch-tools">连接与工具</h2><p>传文件、解压缩、管理网络</p></div>
+    <span class="chapter-apps">File Transfer · Unzip · Rocket</span>
+  </div>
+</section>
+
+<section class="app" id="transfer" data-app="transfer" style="--c:#1CAE76;--ink:#0E8558;--tint:#EAF8F1">
+  <div class="wrap">
+    <div class="app-head">
+      <span class="icon xl" role="img" aria-label="Reality File Transfer"><img src="assets/icons/transfer-bg.webp" alt="" class="l0"><img src="assets/icons/transfer-fg2.webp" alt="" class="l1"><img src="assets/icons/transfer-fg3.webp" alt="" class="l2"></span>
+      <div class="app-title">
+        <p class="app-meta"><span>06 / 08</span><span>跨设备传文件</span><span class="badge">1.0.0</span></p>
+        <h2>Reality File Transfer</h2>
+        <p class="app-oneliner">PICO、Mac、Windows 之间在局域网里互传文件，不经过云端。</p>
+      </div>
+      <div class="app-intro">
+        <p>设备在同一个局域网内会互相发现，任意多台 PICO、Mac、PC 之间都能双向传输，不需要账号。</p>
+        
+      </div>
+    </div>
+    <figure class="shot-main" data-gallery="transfer">
+      <button class="zoom" type="button" data-index="0"><img class="" src="assets/shots/transfer-incoming.webp" srcset="assets/shots/transfer-incoming-sm.webp 900w, assets/shots/transfer-incoming.webp 1800w" sizes="(min-width: 1100px) 1040px, 92vw" width="1800" height="1125" alt="Reality File Transfer · 收到来自 MacBook Pro 的文件时确认接收" loading="lazy" decoding="async"></button>
+      <figcaption>收到来自 MacBook Pro 的文件时确认接收</figcaption>
+    </figure>
+    <h3 class="sub">主要功能</h3>
+    <ul class="features">
+      <li><h4>自动发现</h4><p>同一 Wi-Fi 下自动找到设备；找不到时可以输入对方显示的 IP 地址添加。</p></li>
+      <li><h4>多设备双向</h4><p>一次发给多台设备；PICO、Mac、PC 之间任意方向都能发送。</p></li>
+      <li><h4>文件夹与续传</h4><p>整个文件夹按原目录结构发送；断网后自动续传，失败的记录可以继续发送。</p></li>
+      <li><h4>USB 优先</h4><p>用数据线连接的 PICO 带 USB 标签、排在设备列表最前面。</p></li>
+      <li><h4>头显文件浏览</h4><p>PICO 端按图片、视频、音频、文档、安装包、压缩包分类浏览本机文件，带缩略图。</p></li>
+      <li><h4>接收确认</h4><p>收到文件时弹出确认，可以设置以后自动接收某台设备的文件。</p></li>
+    </ul>
+    <h3 class="sub">更多截图</h3>
+    <div class="gallery" data-gallery="transfer">
+      <figure><button class="zoom" type="button" data-index="1"><img class="" src="assets/shots/transfer-desktop.webp" srcset="assets/shots/transfer-desktop-sm.webp 900w, assets/shots/transfer-desktop.webp 1800w" sizes="(min-width: 1100px) 340px, 45vw" width="1800" height="1212" alt="Reality File Transfer · Mac 版：选择设备，拖入文件发送" loading="lazy" decoding="async"></button><figcaption>Mac 版：选择设备，拖入文件发送</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="2"><img class="" src="assets/shots/transfer-previews.webp" srcset="assets/shots/transfer-previews-sm.webp 900w, assets/shots/transfer-previews.webp 1800w" sizes="(min-width: 1100px) 340px, 45vw" width="1800" height="1125" alt="Reality File Transfer · PICO 端按类型浏览本机文件" loading="lazy" decoding="async"></button><figcaption>PICO 端按类型浏览本机文件</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="3"><img class="" src="assets/shots/transfer-pico.webp" srcset="assets/shots/transfer-pico-sm.webp 900w, assets/shots/transfer-pico.webp 1800w" sizes="(min-width: 1100px) 340px, 45vw" width="1800" height="1125" alt="Reality File Transfer · PICO 端主界面" loading="lazy" decoding="async"></button><figcaption>PICO 端主界面</figcaption></figure>
+    </div>
+    <ul class="chips" aria-label="规格"><li>PICO · macOS · Windows</li><li>8 种界面语言</li><li>只走局域网</li></ul>
+  </div>
+</section>
+
+<section class="app" id="unzip" data-app="unzip" style="--c:#E79B12;--ink:#A86400;--tint:#FDF5E6">
+  <div class="wrap">
+    <div class="app-head">
+      <span class="icon xl" role="img" aria-label="Reality Unzip"><img src="assets/icons/unzip-bg.webp" alt="" class="l0"><img src="assets/icons/unzip-fg2.webp" alt="" class="l1"><img src="assets/icons/unzip-fg3.webp" alt="" class="l2"></span>
+      <div class="app-title">
+        <p class="app-meta"><span>07 / 08</span><span>压缩与解压</span><span class="badge">1.0 候选版</span></p>
+        <h2>Reality Unzip</h2>
+        <p class="app-oneliner">在头显上打开、预览、解压和创建压缩包。</p>
+      </div>
+      <div class="app-intro">
+        <p>基于 7-Zip、Zstandard、LZ4 和 Brotli。不用先解压就能看压缩包里的文本和图片，只解压需要的文件。</p>
+        
+      </div>
+    </div>
+    <figure class="shot-main" data-gallery="unzip">
+      <button class="zoom" type="button" data-index="0"><img class="" src="assets/shots/unzip-browse.webp" srcset="assets/shots/unzip-browse-sm.webp 900w, assets/shots/unzip-browse.webp 1600w" sizes="(min-width: 1100px) 1040px, 92vw" width="1600" height="1000" alt="Reality Unzip · 浏览下载目录里的压缩包" loading="lazy" decoding="async"></button>
+      <figcaption>浏览下载目录里的压缩包</figcaption>
+    </figure>
+    <h3 class="sub">主要功能</h3>
+    <ul class="features">
+      <li><h4>常见格式</h4><p>ZIP、7z、RAR、TAR、GZ、BZ2、XZ、ZST、LZ4、Brotli、ISO、CAB、WIM、DMG 等，也能处理分卷压缩包。</p></li>
+      <li><h4>免解压预览</h4><p>直接查看压缩包里的文本和图片；文本可以搜索、按行跳转、切换编码。</p></li>
+      <li><h4>按需解压</h4><p>选择单个文件或文件夹解压，支持批量操作，同名文件可以选择处理方式。</p></li>
+      <li><h4>创建压缩包</h4><p>把文件打包成压缩包，可以设置密码。</p></li>
+      <li><h4>校验与比较</h4><p>测试压缩包完整性，计算和比对 SHA-256，按字节比较两个文件。</p></li>
+      <li><h4>文件统计</h4><p>查看文件夹占用空间和文件清单，导出清单报告。</p></li>
+    </ul>
+    <h3 class="sub">更多截图</h3>
+    <div class="gallery" data-gallery="unzip">
+      <figure><button class="zoom" type="button" data-index="1"><img class="" src="assets/shots/unzip-photos.webp" srcset="assets/shots/unzip-photos-sm.webp 900w, assets/shots/unzip-photos.webp 1800w" sizes="(min-width: 1100px) 340px, 45vw" width="1800" height="1125" alt="Reality Unzip · 压缩包内的图片总览" loading="lazy" decoding="async"></button><figcaption>压缩包内的图片总览</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="2"><img class="" src="assets/shots/unzip-preview.webp" srcset="assets/shots/unzip-preview-sm.webp 900w, assets/shots/unzip-preview.webp 1600w" sizes="(min-width: 1100px) 340px, 45vw" width="1600" height="1000" alt="Reality Unzip · 选择要预览的图片" loading="lazy" decoding="async"></button><figcaption>选择要预览的图片</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="3"><img class="" src="assets/shots/unzip-verify.webp" srcset="assets/shots/unzip-verify-sm.webp 900w, assets/shots/unzip-verify.webp 1600w" sizes="(min-width: 1100px) 340px, 45vw" width="1600" height="1000" alt="Reality Unzip · SHA-256 校验" loading="lazy" decoding="async"></button><figcaption>SHA-256 校验</figcaption></figure>
+    </div>
+    <ul class="chips" aria-label="规格"><li>PICO OS 6 · arm64</li><li>7-Zip · Zstandard · LZ4 · Brotli</li></ul>
+  </div>
+</section>
+
+<section class="app" id="rocket" data-app="rocket" style="--c:#4A5AE6;--ink:#3443C8;--tint:#EEF0FD">
+  <div class="wrap">
+    <div class="app-head">
+      <span class="icon xl" role="img" aria-label="Reality Rocket"><img src="assets/icons/rocket-bg.webp" alt="" class="l0"><img src="assets/icons/rocket-fg2.webp" alt="" class="l1"><img src="assets/icons/rocket-fg3.webp" alt="" class="l2"></span>
+      <div class="app-title">
+        <p class="app-meta"><span>08 / 08</span><span>网络代理</span><span class="badge">1.0.0</span></p>
+        <h2>Reality Rocket</h2>
+        <p class="app-oneliner">基于 Mihomo 内核的网络代理客户端。</p>
+      </div>
+      <div class="app-intro">
+        <p>内置 arm64 版 Mihomo（Clash.Meta）内核。配置、节点、分流规则、连接和日志分成七个页面，在头显里管理。</p>
+        
+      </div>
+    </div>
+    <figure class="shot-main" data-gallery="rocket">
+      <button class="zoom" type="button" data-index="0"><img class="" src="assets/shots/rocket-dashboard.webp" srcset="assets/shots/rocket-dashboard-sm.webp 900w, assets/shots/rocket-dashboard.webp 1600w" sizes="(min-width: 1100px) 1040px, 92vw" width="1600" height="1000" alt="Reality Rocket · 仪表盘：连接状态、实时速率和常用网站延迟" loading="lazy" decoding="async"></button>
+      <figcaption>仪表盘：连接状态、实时速率和常用网站延迟</figcaption>
+    </figure>
+    <h3 class="sub">主要功能</h3>
+    <ul class="features">
+      <li><h4>导入配置</h4><p>支持 Clash YAML、Base64 订阅，以及 vless、vmess、trojan、ss、hysteria2、tuic、socks5、http、wireguard 链接；订阅可以定时更新。</p></li>
+      <li><h4>手机扫码推送</h4><p>头显上显示二维码，用手机浏览器把订阅或配置推送过来，不用在头显里输入长链接。</p></li>
+      <li><h4>分流</h4><p>规则、全局、直连三种模式；自定义规则和规则命中测试；按应用分流，局域网流量直连。</p></li>
+      <li><h4>状态与日志</h4><p>实时速率曲线、当前连接列表和运行日志。</p></li>
+      <li><h4>连通测试</h4><p>一键测试 Google、Cloudflare、GitHub 等常用网站的延迟。</p></li>
+      <li><h4>规则数据与语言</h4><p>内置 GeoIP/GeoSite 数据，可以在设置中更新；26 种界面语言，包括从右到左的语言。</p></li>
+    </ul>
+    <h3 class="sub">更多截图</h3>
+    <div class="gallery" data-gallery="rocket">
+      <figure><button class="zoom" type="button" data-index="1"><img class="" src="assets/shots/rocket-proxies.webp" srcset="assets/shots/rocket-proxies-sm.webp 900w, assets/shots/rocket-proxies.webp 1600w" sizes="(min-width: 1100px) 340px, 45vw" width="1600" height="1000" alt="Reality Rocket · 代理节点" loading="lazy" decoding="async"></button><figcaption>代理节点</figcaption></figure>
+      <figure><button class="zoom" type="button" data-index="2"><img class="" src="assets/shots/rocket-settings.webp" srcset="assets/shots/rocket-settings-sm.webp 900w, assets/shots/rocket-settings.webp 1600w" sizes="(min-width: 1100px) 340px, 45vw" width="1600" height="1000" alt="Reality Rocket · 系统设置" loading="lazy" decoding="async"></button><figcaption>系统设置</figcaption></figure>
+    </div>
+    <ul class="chips" aria-label="规格"><li>Mihomo 内核</li><li>26 种界面语言</li></ul>
+  </div>
+</section>
+
+<section class="download" id="download">
+  <div class="wrap">
+    <p class="kicker">下载</p>
+    <h2 class="display">获取 Reality 系列应用</h2>
+    <p class="section-lede">已发布的版本可以从 GitHub 下载 APK，安装到 PICO Space Pro。其余应用还没有公开下载。</p>
+    <div class="dl-table" role="table">
+      <div class="dl-row dl-headrow" role="row"><span role="columnheader">应用</span><span role="columnheader">版本</span><span role="columnheader">平台</span><span role="columnheader">获取</span></div>
+      <div class="dl-row" role="row" style="--c:#2F63DC"><span role="cell" class="dl-app"><span class="icon sm" aria-hidden="true"><img src="assets/icons/office-bg.webp" alt="" class="l0"><img src="assets/icons/office-fg2.webp" alt="" class="l1"><img src="assets/icons/office-fg3.webp" alt="" class="l2"></span><a href="#office">Reality Office</a></span><span role="cell">1.3.4</span><span role="cell">PICO</span><span role="cell" class="dl-get"><a href="https://github.com/jason-jm/RealityOffice/releases/download/v1.3.4-build10/RealityOffice-v1.3.4-build10.apk" rel="noopener">下载 APK</a> <a href="https://github.com/jason-jm/RealityOffice" rel="noopener">源代码</a> <a href="https://jason-jm.github.io/RealityOffice/" rel="noopener">官网</a></span></div>
+      <div class="dl-row" role="row" style="--c:#18A4CE"><span role="cell" class="dl-app"><span class="icon sm" aria-hidden="true"><img src="assets/icons/image-bg.webp" alt="" class="l0"><img src="assets/icons/image-fg2.webp" alt="" class="l1"><img src="assets/icons/image-fg3.webp" alt="" class="l2"></span><a href="#image">Reality Image Studio</a></span><span role="cell">1.0.0</span><span role="cell">PICO</span><span role="cell" class="dl-get"><em>暂未提供下载</em></span></div>
+      <div class="dl-row" role="row" style="--c:#7A45E8"><span role="cell" class="dl-app"><span class="icon sm" aria-hidden="true"><img src="assets/icons/video-bg.webp" alt="" class="l0"><img src="assets/icons/video-fg2.webp" alt="" class="l1"><img src="assets/icons/video-fg3.webp" alt="" class="l2"></span><a href="#video">Reality Video Editor</a></span><span role="cell">1.0.1</span><span role="cell">PICO</span><span role="cell" class="dl-get"><a href="https://github.com/jason-jm/reality-video-editor/releases/latest" rel="noopener">发布页</a> <a href="https://github.com/jason-jm/reality-video-editor" rel="noopener">源代码</a></span></div>
+      <div class="dl-row" role="row" style="--c:#5A6E86"><span role="cell" class="dl-app"><span class="icon sm" aria-hidden="true"><img src="assets/icons/cad-bg.webp" alt="" class="l0"><img src="assets/icons/cad-fg2.webp" alt="" class="l1"><img src="assets/icons/cad-fg3.webp" alt="" class="l2"></span><a href="#cad">Reality CAD</a></span><span role="cell">预览版</span><span role="cell">PICO</span><span role="cell" class="dl-get"><em>暂未提供下载</em></span></div>
+      <div class="dl-row" role="row" style="--c:#E1354B"><span role="cell" class="dl-app"><span class="icon sm" aria-hidden="true"><img src="assets/icons/nas-bg.webp" alt="" class="l0"><img src="assets/icons/nas-fg2.webp" alt="" class="l1"><img src="assets/icons/nas-fg3.webp" alt="" class="l2"></span><a href="#nas">Reality NAS Player</a></span><span role="cell">1.2.1</span><span role="cell">PICO · macOS · Windows</span><span role="cell" class="dl-get"><a href="https://github.com/jason-jm/reality-nas-player/releases/latest" rel="noopener">发布页</a> <a href="https://github.com/jason-jm/reality-nas-player" rel="noopener">源代码</a> <a href="https://jason-jm.github.io/reality-nas-player/" rel="noopener">官网</a></span></div>
+      <div class="dl-row" role="row" style="--c:#1CAE76"><span role="cell" class="dl-app"><span class="icon sm" aria-hidden="true"><img src="assets/icons/transfer-bg.webp" alt="" class="l0"><img src="assets/icons/transfer-fg2.webp" alt="" class="l1"><img src="assets/icons/transfer-fg3.webp" alt="" class="l2"></span><a href="#transfer">Reality File Transfer</a></span><span role="cell">1.0.0</span><span role="cell">PICO · macOS · Windows</span><span role="cell" class="dl-get"><em>暂未提供下载</em></span></div>
+      <div class="dl-row" role="row" style="--c:#E79B12"><span role="cell" class="dl-app"><span class="icon sm" aria-hidden="true"><img src="assets/icons/unzip-bg.webp" alt="" class="l0"><img src="assets/icons/unzip-fg2.webp" alt="" class="l1"><img src="assets/icons/unzip-fg3.webp" alt="" class="l2"></span><a href="#unzip">Reality Unzip</a></span><span role="cell">1.0 RC</span><span role="cell">PICO</span><span role="cell" class="dl-get"><em>暂未提供下载</em></span></div>
+      <div class="dl-row" role="row" style="--c:#4A5AE6"><span role="cell" class="dl-app"><span class="icon sm" aria-hidden="true"><img src="assets/icons/rocket-bg.webp" alt="" class="l0"><img src="assets/icons/rocket-fg2.webp" alt="" class="l1"><img src="assets/icons/rocket-fg3.webp" alt="" class="l2"></span><a href="#rocket">Reality Rocket</a></span><span role="cell">1.0.0</span><span role="cell">PICO</span><span role="cell" class="dl-get"><em>暂未提供下载</em></span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand"><span class="brand-mark" aria-hidden="true"><i style="--c:#2F63DC"></i><i style="--c:#18A4CE"></i><i style="--c:#7A45E8"></i><i style="--c:#5A6E86"></i><i style="--c:#E1354B"></i><i style="--c:#1CAE76"></i><i style="--c:#E79B12"></i><i style="--c:#4A5AE6"></i></span><b>The Reality Team</b></div>
+    <ul class="foot-apps"><li><a href="#office">Reality Office</a></li><li><a href="#image">Reality Image Studio</a></li><li><a href="#video">Reality Video Editor</a></li><li><a href="#cad">Reality CAD</a></li><li><a href="#nas">Reality NAS Player</a></li><li><a href="#transfer">Reality File Transfer</a></li><li><a href="#unzip">Reality Unzip</a></li><li><a href="#rocket">Reality Rocket</a></li></ul>
+    <p>PICO 与 PICO Space Pro 是其各自所有者的商标。本站展示的界面截图来自 PICO OS 6 模拟器。</p>
+    <p>© 2026 The Reality Team · <a href="https://github.com/jason-jm">GitHub</a> · <a href="en/">English</a></p>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshots">
+  <button class="lb-close" type="button" aria-label="关闭">×</button>
+  <button class="lb-prev" type="button" aria-label="上一张">‹</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-next" type="button" aria-label="下一张">›</button>
+</dialog>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

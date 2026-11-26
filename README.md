@@ -1,21 +1,21 @@
-# The Reality Team — Reality Suite for PICO Space Pro
+# The Reality Team · Reality series website
 
-Eight native spatial productivity applications crafted for **PICO Space Pro** and **PICO OS 6** with PICO SpatialUI:
+Website for the eight Reality apps for PICO Space Pro: Reality Office, Reality Image Studio,
+Reality Video Editor, Reality CAD, Reality NAS Player, Reality File Transfer, Reality Unzip and
+Reality Rocket.
 
-1. **Reality Office** — Offline Pages, Sheets & Slides spatial office suite ([GitHub](https://github.com/jason-jm/RealityOffice))
-2. **Reality Image Studio** — Photoshop-class layered image editor with 3D Spatial Layer View, PSD I/O & PatchMatch
-3. **Reality Video Editor** — Offline 8V+8A multitrack NLE with color scopes, audio mixing & FCPXML 1.10 ([GitHub](https://github.com/jason-jm/reality-video-editor))
-4. **Reality CAD** — Spatial industrial design workbench with parametric feature tree, Space View & 52 CAD formats
-5. **Reality NAS Player** — Keyless NAS poster wall, 4 immersive VR cinemas & Blu-ray / 360° playback ([GitHub](https://github.com/jason-jm/reality-nas-player))
-6. **Reality File Transfer** — Zero-cloud LAN & USB-first file transfer across PICO, macOS & Windows
-7. **Reality Unzip** — Native 7-Zip 26.02 spatial archive manager supporting 60+ formats & zero-extract previews
-8. **Reality Rocket** — Native arm64 Mihomo v1.19.34 spatial VPN & proxy client with QR LAN push & 26 locales
+Live site: https://jason-jm.github.io/reality-team/ (Chinese) and https://jason-jm.github.io/reality-team/en/ (English)
 
-## Live Website
+## Editing
 
-Published via GitHub Pages: `https://jason-jm.github.io/reality-team/`
+- Text for both languages: `src/content.py`
+- Design and behaviour: `src/site.css`, `src/site.js`
+- Screenshots and icons: `assets/shots/*.webp` (1800 px and `-sm` 900 px), `assets/icons/<app>-{bg,fg2,fg3}.webp` (the three PICO icon layers)
 
-## Shareable Infographic Poster
+Rebuild the pages from the repository root:
 
-- Ultra-HD Retina PNG: `poster/reality-series-poster.png`
-- Fast Share JPEG: `poster/reality-series-poster.jpg`
+```sh
+python3 src/build.py .
+```
+
+The build needs Python 3 and ImageMagick (`magick`, used to read screenshot sizes). The site is plain HTML, CSS and JavaScript with no external fonts or scripts.
