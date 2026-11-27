@@ -10,7 +10,8 @@ Live site: https://jason-jm.github.io/reality-team/ (Chinese) and https://jason-
 
 - Text for both languages: `src/content.py`
 - Design and behaviour: `src/site.css`, `src/site.js`
-- Screenshots and icons: `assets/shots/*.webp` (1800 px and `-sm` 900 px), `assets/icons/<app>-{bg,fg2,fg3}.webp` (the three PICO icon layers)
+- Screenshots: `assets/shots/<name>.webp` is the full crop (1840 to 2880 px wide), `<name>-md.webp` 1400 px and `<name>-sm.webp` 800 px; pages let the browser choose by screen density, and the lightbox opens the full crop. Names ending in `-zh` or `-en` are per language. Most captures are 3200 × 3200 spatial views from the PICO 6.2 emulator (`pico-cli capture screenshot --spatial --size 3200x3200`), cropped around the window without scaling and lightly sharpened.
+- Icons: `assets/icons/<app>-{bg,fg2,fg3}.webp` (the three PICO icon layers)
 
 Rebuild the pages from the repository root:
 

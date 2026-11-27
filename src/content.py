@@ -258,8 +258,8 @@ APPS = [
         "links": [],
         "shots": [("unzip-browse", ("浏览下载目录里的压缩包", "Browsing archives in Downloads")),
                   ("unzip-photos", ("压缩包内的图片总览", "Picture overview inside an archive")),
-                  ("unzip-preview", ("选择要预览的图片", "Choosing a picture to preview")),
-                  ("unzip-verify", ("SHA-256 校验", "Checking a SHA-256 hash"))],
+                  ("unzip-preview", ("不解压，直接预览压缩包里的图片", "Previewing a picture without extracting it")),
+                  ("unzip-verify", ("检查压缩包完整性：未发现错误", "Testing the archive: no errors found"))],
         "features": [
             (("常见格式", "ZIP、7z、RAR、TAR、GZ、BZ2、XZ、ZST、LZ4、Brotli、ISO、CAB、WIM、DMG 等，也能处理分卷压缩包。"),
              ("Common formats", "ZIP, 7z, RAR, TAR, GZ, BZ2, XZ, ZST, LZ4, Brotli, ISO, CAB, WIM, DMG and more, including split volumes.")),
@@ -287,7 +287,7 @@ APPS = [
                  "It bundles the Mihomo (Clash.Meta) core for arm64. Profiles, nodes, rules, connections and logs each have their own page on the headset."),
         "links": [],
         "shots": [("rocket-dashboard", ("仪表盘：连接状态、实时速率和常用网站延迟", "Dashboard: connection state, live traffic and site latency")),
-                  ("rocket-proxies", ("代理节点", "Proxy nodes")),
+                  ("rocket-rules", ("分流规则：按域名把流量分给直连、代理或拦截", "Routing rules send each domain direct, through the proxy or to the block list")),
                   ("rocket-settings", ("系统设置", "Settings"))],
         "features": [
             (("导入配置", "支持 Clash YAML、Base64 订阅，以及 vless、vmess、trojan、ss、hysteria2、tuic、socks5、http、wireguard 链接；订阅可以定时更新。"),

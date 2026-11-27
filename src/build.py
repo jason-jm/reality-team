@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 """Builds the Reality series site: index.html (Chinese) and en/index.html (English).
 
-    python3 src/build.py .      (from the repository root; assets/ holds the screenshots and icons)
-
-Edit src/content.py for text, src/site.css and src/site.js for the design.
+    build.py <site dir>     (the dir that holds assets/)
 """
-import html, os, subprocess, sys
+import html, os, shutil, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content import SITE, APPS, HERO_TOP, HERO_BOTTOM
 
 ROOT = sys.argv[1]
 LANGS = {"zh": 0, "en": 1}
-LOCALIZED = {"nas-wall", "nas-detail"}
+LOCALIZED = {"nas-wall", "nas-detail", "nas-subtitles", "office-slides", "office-pages", "office-sheets", "office-home"}
 
 _dims = {}
 def dims(key):
@@ -20,6 +18,11 @@ def dims(key):
                              capture_output=True, text=True, check=True).stdout.split()
         _dims[key] = (int(out[0]), int(out[1]))
     return _dims[key]
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+# cache-busting tag for the stylesheet and script: first 8 hex digits of their SHA-256
+import hashlib
+VER = {f: hashlib.sha256(open(os.path.join(HERE, f), "rb").read()).hexdigest()[:8] for f in ("site.css", "site.js")}
 
 def e(s): return html.escape(s, quote=True)
 
@@ -31,12 +34,14 @@ class Page:
     def s(self, key): return SITE[key][self.i]
     def shot(self, key):
         return f"{key}-{self.lang}" if key in LOCALIZED else key
-    def img(self, key, alt, cls="", sizes="(min-width: 1100px) 1040px, 92vw", lazy=True, eager_hi=False):
+    def img(self, key, alt, cls="", sizes="(min-width: 1208px) 1160px, calc(100vw - 48px)", lazy=True, eager_hi=False):
+        # <key>-sm.webp 800 px, <key>-md.webp 1400 px, <key>.webp the full crop (1600-2880 px)
         k = self.shot(key); w, h = dims(k)
         src = f"{self.pre}assets/shots/{k}"
         load = 'loading="lazy" decoding="async"' if lazy else ('fetchpriority="high"' if eager_hi else 'decoding="async"')
-        return (f'<img class="{cls}" src="{src}.webp" srcset="{src}-sm.webp 900w, {src}.webp {w}w" sizes="{sizes}" '
-                f'width="{w}" height="{h}" alt="{e(alt)}" {load}>')
+        sets = [f"{src}-sm.webp 800w"] + ([f"{src}-md.webp 1400w"] if w > 1400 else []) + [f"{src}.webp {w}w"]
+        return (f'<img class="{cls}" src="{src}-md.webp" srcset="{", ".join(sets)}" sizes="{sizes}" '
+                f'data-full="{src}.webp" width="{w}" height="{h}" alt="{e(alt)}" {load}>')
     def icon(self, app, size_cls="", label=True):
         k = app["key"]; p = f"{self.pre}assets/icons/{k}"
         alt = f' role="img" aria-label="{e(app["name"])}"' if label else ' aria-hidden="true"'
@@ -71,7 +76,7 @@ def render(lang):
 <link rel="icon" href="{P.pre}assets/favicon.png">
 <link rel="alternate" hreflang="zh-CN" href="https://jason-jm.github.io/reality-team/">
 <link rel="alternate" hreflang="en" href="https://jason-jm.github.io/reality-team/en/">
-<link rel="stylesheet" href="{P.pre}assets/site.css">
+<link rel="stylesheet" href="{P.pre}assets/site.css?v={VER["site.css"]}">
 </head>
 <body>
 <a class="skip" href="#series">{e(s("skip"))}</a>
@@ -112,7 +117,7 @@ def render(lang):
           f'<span class="dock-cat">{e(t(a["category"]))}</span></a></li>\n')
     w('  </ul>\n  <div class="strips" aria-hidden="true">\n')
     for row, keys in (("a", HERO_TOP), ("b", HERO_BOTTOM)):
-        cards = "".join(f'<figure class="card">{P.img(k, "", sizes="480px", lazy=(row == "b"))}</figure>' for k in keys)
+        cards = "".join(f'<figure class="card">{P.img(k, "", sizes="(max-width: 680px) 300px, 440px", lazy=(row == "b"))}</figure>' for k in keys)
         w(f'    <div class="strip strip-{row}"><div class="track">{cards}{cards}</div></div>\n')
     w('  </div>\n  <ul class="facts">\n')
     for pair in SITE["facts"]:
@@ -195,7 +200,7 @@ def render(lang):
             if rest:
                 w(f'    <h3 class="sub">{e(s("gallery"))}</h3>\n    <div class="gallery" data-gallery="{a["key"]}">\n')
                 for j, (key, alt) in enumerate(rest, start=1):
-                    w(f'      <figure><button class="zoom" type="button" data-index="{j}">{P.img(key, shot_alt[key], sizes="(min-width: 1100px) 340px, 45vw")}</button><figcaption>{e(t(alt))}</figcaption></figure>\n')
+                    w(f'      <figure><button class="zoom" type="button" data-index="{j}">{P.img(key, shot_alt[key], sizes="(min-width: 1208px) 380px, (min-width: 680px) 32vw, 48vw")}</button><figcaption>{e(t(alt))}</figcaption></figure>\n')
                 w('    </div>\n')
             w(f'    <ul class="chips" aria-label="{e(s("specs"))}">' + "".join(f'<li>{e(t(c))}</li>' for c in a["specs"]) + '</ul>\n')
             w('  </div>\n</section>\n')
@@ -234,17 +239,15 @@ def render(lang):
   <figure><img alt=""><figcaption></figcaption></figure>
   <button class="lb-next" type="button" aria-label="{e(s("next"))}">›</button>
 </dialog>
-<script src="{P.pre}assets/site.js" defer></script>
+<script src="{P.pre}assets/site.js?v={VER["site.js"]}" defer></script>
 </body>
 </html>
 ''')
     return "".join(out)
 
-import shutil
-HERE = os.path.dirname(os.path.abspath(__file__))
-for f in ("site.css", "site.js"):
-    shutil.copyfile(os.path.join(HERE, f), f"{ROOT}/assets/{f}")
 os.makedirs(f"{ROOT}/en", exist_ok=True)
 open(f"{ROOT}/index.html", "w").write(render("zh"))
 open(f"{ROOT}/en/index.html", "w").write(render("en"))
+for f in ("site.css", "site.js"):   # keep the served copies in step with the sources beside this script
+    shutil.copyfile(os.path.join(HERE, f), f"{ROOT}/assets/{f}")
 print("built", ROOT)

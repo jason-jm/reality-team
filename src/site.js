@@ -29,7 +29,7 @@
   const show = (i) => {
     at = (i + list.length) % list.length;
     const b = list[at], im = b.querySelector("img");
-    img.src = im.currentSrc && im.currentSrc.endsWith("-sm.webp") ? im.currentSrc.replace("-sm.webp", ".webp") : im.src.replace("-sm.webp", ".webp");
+    img.src = im.dataset.full;   // the full-resolution crop
     img.alt = im.alt;
     cap.textContent = im.alt;
   };
